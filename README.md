@@ -6,12 +6,7 @@ Nearly every project that wants to incorporate multiple models needs to handle k
 
 This leads to the proliferation of essentially the same code repeated across multiple codebases that all need to be updated when new models are released, token costs change, a model is deprecated, etc.
 
-## Proposal
-
-Centralized ownership (by an open source foundation) of a tech stack agnostic utility that defines model information and allows developers to easily import and consume these definitions in their own codebases.
-
-## Examples
-
+### Examples
 - [LangChain `base/base_language/count_tokens.ts`](https://github.com/langchain-ai/langchainjs/blob/main/langchain/src/base_language/count_tokens.ts)
 - [LiteLLM `model_prices_and_context_window.json`](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)
   - **Note**: This was my inspiration for this initiative
@@ -24,3 +19,87 @@ Centralized ownership (by an open source foundation) of a tech stack agnostic ut
 - [AutoGPT `autogpt/core/resource/model_providers/openai.py`](https://github.com/Significant-Gravitas/AutoGPT/blob/master/autogpts/autogpt/autogpt/core/resource/model_providers/openai.py)
 - [AgentGPT `next/src/types/modelSettings.ts`](https://github.com/reworkd/AgentGPT/blob/main/next/src/types/modelSettings.ts)
 - [MetaGPT `utils/token_counter.py`](https://github.com/geekan/MetaGPT/blob/main/metagpt/utils/token_counter.py)
+
+## Proposal
+
+Centralized ownership (by an open source foundation) of a tech stack agnostic utility that defines model information and allows developers to easily import and consume these definitions in their own codebases.
+
+### JSON Schema
+
+A [JSON Schema](https://json-schema.org/) definition can be found in [`model.schema.json`](./model.schema.json), and example model definitions can be found in the [`/models` directory](./models).
+
+This schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
+
+#### Example
+
+Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
+
+```json
+{
+  "modelId": "gpt-3.5-turbo",
+  "modelName": "GPT-3.5 Turbo",
+  "modelProvider": "openai",
+  "modelDescription": "Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.",
+  "modelInfo": "https://platform.openai.com/docs/models/gpt-3-5",
+  "modelVersion": "latest",
+  "modelType": "chat",
+  "contextWindow": 4097,
+  "costPerToken": {
+    "input": 0.0000015,
+    "output": 0.000002
+  },
+  "knowledgeCutoff": "2021-09-01",
+  "tokenEncoding": "cl100k_base",
+  "tuning": ["function", "instruction"]
+}
+```
+
+#### Required Properties
+
+- `modelId`: The identifier of the model that the provider uses
+  - **Example**: `gpt-3.5-turbo`
+- `modelName`: The human-friendly name of the model
+	- **Example**: `GPT-3.5 Turbo`
+- `modelType`: The type of model (`chat` or `completion`)
+	- **Example**: `chat`
+- `contextWindow`: The maximum number of tokens in the model's context window
+	- **Example**: `4096`
+
+#### Optional Properties
+
+- `modelProvider`: The provider of the model in lowercase
+  - **Example**: `openai`
+- `modelDescription`: A human-friendly description of the model
+- `modelVersion`: The version of the model
+  - **Example** `0613`
+- `costPerToken`: The cost per token in USD
+  - **Note**: supports either a basic number or an object with `input` and `output` numbers to define different costs between input tokens and output tokens
+- `knowledgeCutoff`: The training data cutoff date for the model
+  - **Note**: This is helpful when dealing with applications where you may need to know if you should supplement the model's training data with more recent information
+- `tokenEncoding`: What encoding the model uses for tokens
+  - **Example**: `cl100k_base`
+  - **Note**: This is helpful when using `tiktoken`, `gpt-tokenizer`, etc. or needing to know if a model needs an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
+- `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, and `code`
+  - **Example**: `["function", "instruction"]`
+  - **Note**: This is helpful when deciding which models are suitable for given tasks
+
+### Roadmap
+
+- [x] Create JSON Schema
+- [x] Generate example model definitions
+- [ ] Create a GitHub Action to validate definitions against schema
+- [ ] Integrate more model definitions
+- [ ] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
+- [ ] Generate language-specific packages for importing these definitions into other codebases
+  - [ ] TypeScript
+  - [ ] Python
+  - [ ] Rust
+  - [ ] Go
+  - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
+- [ ] Create a GitHub Action to generate these packages
+- [ ] Create a GitHub Action to publish these packages to NPM, PyPI, etc.
+- [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
+- [ ] Update publishing actions to publish to the AI Engineer Foundation's NPM, PyPI, etc.
+- [ ] Get projects to adopt the language-specific packages
+- [ ] Get model providers to adopt the schema definition
+- [ ] Ongoing support, evangelism, and maintenance of the project
