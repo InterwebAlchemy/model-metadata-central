@@ -1,3 +1,5 @@
+# Model Metadata Central
+
 A centralized, open source approach to storing and sharing model definitions like context windows, cost per token, etc.
 
 ## Problem
@@ -96,7 +98,7 @@ Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://
 - [x] Create JSON Schema
 - [x] Generate example model definitions
 - [x] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
-- [ ] Rename to `model-metadata-central`
+- [x] Rename to `model-metadata-central`
 - [ ] Integrate a GitHub Action to validate metadata against schema
 - [ ] Publish JSON Schema to GitHub Pages
 - [ ] Integrate metadata for more models
