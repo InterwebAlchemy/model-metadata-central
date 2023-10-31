@@ -74,7 +74,7 @@
       "items": {
         "type": "string"
       },
-      "enum": ["function", "isntruction", "code"],
+      "enum": ["function", "isntruction", "code", "multilingual", "multimodal"],
       "uniqueItems": true,
       "minItems": 1
     }

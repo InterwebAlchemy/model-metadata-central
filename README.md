@@ -51,13 +51,17 @@ This schema defines properties that are relevant to the model and developers who
 - `modelVersion`: The version of the model
   - **Example** `0613`
 - `costPerToken`: The cost per token in USD
+  - **Example**: ```json {
+    "input": 0.0000015,
+    "output": 0.000002
+  }```
   - **Note**: supports either a basic number or an object with `input` and `output` numbers to define different costs between input tokens and output tokens
 - `knowledgeCutoff`: The training data cutoff date for the model
   - **Note**: This is helpful when dealing with applications where you may need to know if you should supplement the model's training data with more recent information
 - `tokenEncoding`: What encoding the model uses for tokens
   - **Example**: `cl100k_base`
-  - **Note**: This is helpful when using `tiktoken`, `gpt-tokenizer`, etc. or needing to know if a model needs an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
-- `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, and `code`
+  - **Note**: This is helpful when using `tiktoken`, `gpt-tokenizer`, etc. or needing to know if a model requires an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
+- `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, `code`, `multilingual`, and `multimodal`
   - **Example**: `["function", "instruction"]`
   - **Note**: This is helpful when deciding which models are suitable for given tasks
 
@@ -92,19 +96,22 @@ Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://
 - [x] Create JSON Schema
 - [x] Generate example model definitions
 - [x] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
-- [ ] Integrate a GitHub Action to validate definitions against schema
-- [ ] Integrate more model definitions
+- [ ] Rename to `model-metadata-central`
+- [ ] Integrate a GitHub Action to validate metadata against schema
+- [ ] Publish JSON Schema to GitHub Pages
+- [ ] Integrate metadata for more models
+- [ ] Add guidance for including metadata definitions via git submodule
 - [ ] Generate language-specific packages for importing these definitions into other codebases
   - [ ] TypeScript
   - [ ] Python
   - [ ] Rust
   - [ ] Go
   - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
-- [ ] Rename to `model-metadata-central`
 - [ ] Integrate a GitHub Action to generate these packages
 - [ ] Integrate a GitHub Action to publish these packages to NPM, PyPI, etc.
 - [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
 - [ ] Update publishing actions to publish to the AI Engineer Foundation's NPM, PyPI, etc.
-- [ ] Get projects to adopt the language-specific packages
-- [ ] Get model providers to adopt the schema definition
 - [ ] Ongoing support, evangelism, and maintenance of the project
+- [ ] **Hopeful**: Generate static GitHub Pages site that lists models, displays their metadata, and allows filtering by properties
+- [ ] **Hopeful**: Get [projects](https://github.com/InterwebAlchemy/llm-model-definitions#examples) to adopt the language-specific packages and extend them as necessary instead of creating their own model definitions
+- [ ] **Aspirational**: Get model providers to adopt the schema definition and update the repo when model metadata changes or new models are released
