@@ -20,6 +20,8 @@ This leads to the proliferation of essentially the same code repeated across mul
 - [AgentGPT `next/src/types/modelSettings.ts`](https://github.com/reworkd/AgentGPT/blob/main/next/src/types/modelSettings.ts)
 - [MetaGPT `utils/token_counter.py`](https://github.com/geekan/MetaGPT/blob/main/metagpt/utils/token_counter.py)
 
+Have more examples? [Create a Pull Request](https://github.com/InterwebAlchemy/llm-model-definitions/pulls).
+
 ## Proposal
 
 Centralized ownership (by an open source foundation) of a tech stack agnostic utility that defines model information and allows developers to easily import and consume these definitions in their own codebases.
@@ -29,30 +31,6 @@ Centralized ownership (by an open source foundation) of a tech stack agnostic ut
 A [JSON Schema](https://json-schema.org/) definition can be found in [`model.schema.json`](./model.schema.json), and example model definitions can be found in the [`/models` directory](./models).
 
 This schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
-
-#### Example
-
-Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
-
-```json
-{
-  "modelId": "gpt-3.5-turbo",
-  "modelName": "GPT-3.5 Turbo",
-  "modelProvider": "openai",
-  "modelDescription": "Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.",
-  "modelInfo": "https://platform.openai.com/docs/models/gpt-3-5",
-  "modelVersion": "latest",
-  "modelType": "chat",
-  "contextWindow": 4097,
-  "costPerToken": {
-    "input": 0.0000015,
-    "output": 0.000002
-  },
-  "knowledgeCutoff": "2021-09-01",
-  "tokenEncoding": "cl100k_base",
-  "tuning": ["function", "instruction"]
-}
-```
 
 #### Required Properties
 
@@ -83,21 +61,48 @@ Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://
   - **Example**: `["function", "instruction"]`
   - **Note**: This is helpful when deciding which models are suitable for given tasks
 
-### Roadmap
+#### Example
+
+Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
+
+```json
+{
+  "modelId": "gpt-3.5-turbo",
+  "modelName": "GPT-3.5 Turbo",
+  "modelProvider": "openai",
+  "modelDescription": "Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.",
+  "modelInfo": "https://platform.openai.com/docs/models/gpt-3-5",
+  "modelVersion": "latest",
+  "modelType": "chat",
+  "contextWindow": 4097,
+  "costPerToken": {
+    "input": 0.0000015,
+    "output": 0.000002
+  },
+  "knowledgeCutoff": "2021-09-01",
+  "tokenEncoding": "cl100k_base",
+  "tuning": ["function", "instruction"]
+}
+```
+
+## Roadmap
+
+**Note**: This project is open to feedback at every stage of rhis roadmap.
 
 - [x] Create JSON Schema
 - [x] Generate example model definitions
-- [ ] Create a GitHub Action to validate definitions against schema
+- [x] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
+- [ ] Integrate a GitHub Action to validate definitions against schema
 - [ ] Integrate more model definitions
-- [ ] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
 - [ ] Generate language-specific packages for importing these definitions into other codebases
   - [ ] TypeScript
   - [ ] Python
   - [ ] Rust
   - [ ] Go
   - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
-- [ ] Create a GitHub Action to generate these packages
-- [ ] Create a GitHub Action to publish these packages to NPM, PyPI, etc.
+- [ ] Rename to `model-metadata-central`
+- [ ] Integrate a GitHub Action to generate these packages
+- [ ] Integrate a GitHub Action to publish these packages to NPM, PyPI, etc.
 - [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
 - [ ] Update publishing actions to publish to the AI Engineer Foundation's NPM, PyPI, etc.
 - [ ] Get projects to adopt the language-specific packages
