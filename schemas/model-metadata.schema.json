@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/InterwebAlchemy/llm-model-definitions/model.schema.json",
-  "title": "Large Language Model",
-  "description": "A large language model defintion for developer tools",
+  "title": "Language Model Metadata",
+  "description": "A language model metadata defintion for developer tools",
   "type": "object",
   "properties": {
     "modelId": {
