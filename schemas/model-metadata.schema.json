@@ -33,7 +33,7 @@
     "modelType": {
       "description": "The type of model (example: chat)",
       "type": "string",
-      "enum": ["chat", "completion"]
+      "enum": ["chat", "completion", "embedding"]
     },
     "contextWindow": {
       "description": "The maximum number of tokens in the model's context window",
@@ -74,7 +74,7 @@
       "items": {
         "type": "string"
       },
-      "enum": ["function", "isntruction", "code", "multilingual", "multimodal"],
+      "enum": ["function", "instruction", "code", "multilingual", "multimodal"],
       "uniqueItems": true,
       "minItems": 1
     }

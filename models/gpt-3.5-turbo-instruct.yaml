@@ -1,10 +1,10 @@
-modelId: gpt-3.5-turbo
-modelName: GPT-3.5 Turbo
+modelId: gpt-3.5-turbo-instruct
+modelName: GPT-3.5 Turbo Instruct
 modelProvider: openai
-modelDescription: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
+modelDescription: Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions.
 modelInfo: https://platform.openai.com/docs/models/gpt-3-5
 modelVersion: latest
-modelType: chat
+modelType: completion
 contextWindow: 4097
 costPerToken:
   input: 0.0000015
@@ -12,4 +12,5 @@ costPerToken:
 knowledgeCutoff: 2021-09-01
 tokenEncoding: cl100k_base
 tuning:
+  - instruction
   - function

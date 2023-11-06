@@ -30,7 +30,7 @@ Centralized ownership (by an open source foundation) of a tech stack agnostic ut
 
 ### JSON Schema
 
-A [JSON Schema](https://json-schema.org/) definition can be found in [`model.schema.json`](./model.schema.json), and example model definitions can be found in the [`/models` directory](./models).
+A [JSON Schema](https://json-schema.org/) definition can be found in [`model.schema.json`](./model.schema.json), and example Model Metadata definitions can be found in the [`/models` directory](./models).
 
 This schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
 
@@ -40,7 +40,7 @@ This schema defines properties that are relevant to the model and developers who
   - **Example**: `gpt-3.5-turbo`
 - `modelName`: The human-friendly name of the model
 	- **Example**: `GPT-3.5 Turbo`
-- `modelType`: The type of model (`chat` or `completion`)
+- `modelType`: The type of model (`chat`, `completion`, or `embedding`)
 	- **Example**: `chat`
 - `contextWindow`: The maximum number of tokens in the model's context window
 	- **Example**: `4096`
@@ -69,26 +69,24 @@ This schema defines properties that are relevant to the model and developers who
 
 #### Example
 
-Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
+Here is an example Model Metadata definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
 
-```json
-{
-  "modelId": "gpt-3.5-turbo",
-  "modelName": "GPT-3.5 Turbo",
-  "modelProvider": "openai",
-  "modelDescription": "Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.",
-  "modelInfo": "https://platform.openai.com/docs/models/gpt-3-5",
-  "modelVersion": "latest",
-  "modelType": "chat",
-  "contextWindow": 4097,
-  "costPerToken": {
-    "input": 0.0000015,
-    "output": 0.000002
-  },
-  "knowledgeCutoff": "2021-09-01",
-  "tokenEncoding": "cl100k_base",
-  "tuning": ["function", "instruction"]
-}
+```yaml
+modelId: gpt-3.5-turbo
+modelName: GPT-3.5 Turbo
+modelProvider: openai
+modelDescription: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
+modelInfo: https://platform.openai.com/docs/models/gpt-3-5
+modelVersion: latest
+modelType: chat
+contextWindow: 4097
+costPerToken:
+  input: 0.0000015
+  output: 0.000002
+knowledgeCutoff: 2021-09-01
+tokenEncoding: cl100k_base
+tuning:
+  - function
 ```
 
 ## Roadmap
@@ -99,9 +97,8 @@ Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://
 - [x] Generate example model definitions
 - [x] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
 - [x] Rename to `model-metadata-central`
-- [ ] Integrate a GitHub Action to validate metadata against schema
+- [ ] Integrate a GitHub Action to validate Model Metadata definitions against schema
 - [ ] Publish JSON Schema to GitHub Pages
-- [ ] Integrate metadata for more models
 - [ ] Add guidance for including metadata definitions via git submodule
 - [ ] Generate language-specific packages for importing these definitions into other codebases
   - [ ] TypeScript
@@ -109,6 +106,7 @@ Here is the example Model Definition for [OpenAI's GPT-3.5 Turbo model](https://
   - [ ] Rust
   - [ ] Go
   - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
+- [ ] Integrate metadata for more models
 - [ ] Integrate a GitHub Action to generate these packages
 - [ ] Integrate a GitHub Action to publish these packages to NPM, PyPI, etc.
 - [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)

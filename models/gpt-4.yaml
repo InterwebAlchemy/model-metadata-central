@@ -1,0 +1,15 @@
+modelId: gpt-4
+modelName: GPT-4
+modelProvider: openai
+modelDescription: More capable than any GPT-3.5 model able to do more complex tasks and optimized for chat.
+modelInfo: https://platform.openai.com/docs/models/gpt-4
+modelVersion: latest
+modelType: chat
+contextWindow: 8192
+costPerToken:
+  input: 0.00003
+  output: 0.00006
+knowledgeCutoff: 2021-09-01
+tokenEncoding: cl100k_base
+tuning:
+  - function

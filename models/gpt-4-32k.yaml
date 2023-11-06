@@ -1,0 +1,15 @@
+modelId: gpt-4
+modelName: GPT-4 32K
+modelProvider: openai
+modelDescription: Same capabilities as the standard gpt-4 mode but with 4x the context length.
+modelInfo: https://platform.openai.com/docs/models/gpt-4
+modelVersion: latest
+modelType: chat
+contextWindow: 32768
+costPerToken: 
+  input: 0.00006
+  output: 0.00012
+knowledgeCutoff: 2021-09-01
+tokenEncoding: cl100k_base
+tuning:
+  - function
