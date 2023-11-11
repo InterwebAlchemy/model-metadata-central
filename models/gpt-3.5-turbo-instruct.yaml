@@ -6,6 +6,7 @@ model_info: https://platform.openai.com/docs/models/gpt-3-5
 model_version: latest
 model_type: completion
 context_window: 4097
+max_tokens: 4095
 cost_per_token:
   input: 0.0000015
   output: 0.000002

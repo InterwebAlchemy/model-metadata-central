@@ -40,6 +40,11 @@
       "type": "integer",
       "minimum": 1
     },
+    "max_tokens": {
+      "description": "The maximum number of tokens the model will use to generate a response",
+      "type": "integer",
+      "minimum": 1
+    },
     "cost_per_token": {
       "description": "The cost per token in USD",
       "type": ["object", "number"],

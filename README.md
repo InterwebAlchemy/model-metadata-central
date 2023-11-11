@@ -1,6 +1,6 @@
 # Model Metadata Central
 
-A centralized, open source approach to storing and sharing model definitions like context windows, cost per token, etc.
+A centralized, language-agnostic, open-source approach to storing and sharing model definitions like context windows, cost per token, etc.
 
 ## Problem
 
@@ -80,6 +80,7 @@ model_info: https://platform.openai.com/docs/models/gpt-3-5
 model_version: latest
 model_type: chat
 context_window: 4097
+max_tokens: 4095
 cost_per_token:
   input: 0.0000015
   output: 0.000002

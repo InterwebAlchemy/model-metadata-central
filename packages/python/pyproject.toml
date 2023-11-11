@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "model_metadata_central"
+name = "model_metadata"
 version = "0.1.0"
 description = "Model Metadata Central"
 authors = [
