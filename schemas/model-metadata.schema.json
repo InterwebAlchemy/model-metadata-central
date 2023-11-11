@@ -5,42 +5,42 @@
   "description": "A language model metadata defintion for developer tools",
   "type": "object",
   "properties": {
-    "modelId": {
+    "model_id": {
       "description": "The identifier of the model (example: gpt-3.5-turbo)",
       "type": "string"
     },
-    "modelName": {
+    "model_name": {
       "description": "The human-friendly name of the model (example: GPT-3.5 Turbo)",
       "type": "string"
     },
-    "modelProvider": {
+    "model_provider": {
       "description": "The provider of the model in lowercase (example: openai)",
       "type": "string"
     },
-    "modelDescription": {
+    "model_description": {
       "description": "A human-friendly description of the model",
       "type": "string"
     },
-    "modelInfo": {
+    "model_info": {
       "description": "Link to a page with more information about the model",
       "type": "string",
       "format": "uri"
     },
-    "modelVersion": {
+    "model_version": {
       "description": "The version of the model (example: 0613)",
       "type": "string"
     },
-    "modelType": {
+    "model_type": {
       "description": "The type of model (example: chat)",
       "type": "string",
       "enum": ["chat", "completion", "embedding"]
     },
-    "contextWindow": {
+    "context_window": {
       "description": "The maximum number of tokens in the model's context window",
       "type": "integer",
       "minimum": 1
     },
-    "costPerToken": {
+    "cost_per_token": {
       "description": "The cost per token in USD",
       "type": ["object", "number"],
       "minimum": 0,
@@ -57,12 +57,12 @@
         }
       }
     },
-    "knowledgeCutoff": {
+    "knowledge_cutoff": {
       "description": "The training data cutoff date for the model",
       "type": "string",
       "format": "date"
     },
-    "tokenEncoding": {
+    "token_encoding": {
       "description": "What encoding the model uses for tokens (example: cl100k_base)",
       "type": "string",
       "enum": ["cl100k_base", "p50k_base", "p50k_edit", "r50k_base", "llama", "unknown"],
@@ -79,5 +79,5 @@
       "minItems": 1
     }
   },
-  "required": ["modelId", "modelProvider", "modelType", "contextWindow"]
+  "required": ["model_id", "model_provider", "model_type", "context_window"]
 }

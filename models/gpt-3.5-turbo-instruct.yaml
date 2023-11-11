@@ -1,16 +1,16 @@
-modelId: gpt-3.5-turbo-instruct
-modelName: GPT-3.5 Turbo Instruct
-modelProvider: openai
-modelDescription: Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions.
-modelInfo: https://platform.openai.com/docs/models/gpt-3-5
-modelVersion: latest
-modelType: completion
-contextWindow: 4097
-costPerToken:
+model_id: gpt-3.5-turbo-instruct
+model_name: GPT-3.5 Turbo Instruct
+model_provider: openai
+model_description: Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions.
+model_info: https://platform.openai.com/docs/models/gpt-3-5
+model_version: latest
+model_type: completion
+context_window: 4097
+cost_per_token:
   input: 0.0000015
   output: 0.000002
-knowledgeCutoff: 2021-09-01
-tokenEncoding: cl100k_base
+knowledge_cutoff: 2021-09-01
+token_encoding: cl100k_base
 tuning:
   - instruction
   - function

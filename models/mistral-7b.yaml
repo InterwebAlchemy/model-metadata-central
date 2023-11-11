@@ -1,7 +1,7 @@
-modelId: mistral-7b
-modelName: Mistral 7B
-modelDescription: Mistral-7B-v0.1 is a small yet powerful model adaptable to many use-cases.
-modelInfo: https://mistral.ai/news/announcing-mistral-7b/
-modelType: chat
-contextWindow: 8192
-costPerToken: 0
+model_id: mistral-7b
+model_name: Mistral 7B
+model_description: Mistral-7B-v0.1 is a small yet powerful model adaptable to many use-cases.
+model_info: https://mistral.ai/news/announcing-mistral-7b/
+model_type: chat
+context_window: 8192
+cost_per_token: 0

@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "model_metadata_central"
+version = "0.1.0"
+description = "Model Metadata Central"
+authors = [
+  "Eric Allen <era@lakera.ai>"
+]
+license = "MIT"
+readme = "../../README.md"
+homepage = "https://github.com/InterwebAlchemy/model-metadata-central"
+repository = "https://github.com/InterwebAlchemy/model-metadata-central"
+keywords = ["llm", "language model", "metadata", "openai"]
+packages = [
+  { include = "model_metadata_central" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+pyyaml = "^6.0.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+isort = "^5.12.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
