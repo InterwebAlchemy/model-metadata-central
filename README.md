@@ -36,31 +36,31 @@ This schema defines properties that are relevant to the model and developers who
 
 #### Required Properties
 
-- `modelId`: The identifier of the model that the provider uses
+- `model_id`: The identifier of the model that the provider uses
   - **Example**: `gpt-3.5-turbo`
-- `modelName`: The human-friendly name of the model
+- `model_name`: The human-friendly name of the model
 	- **Example**: `GPT-3.5 Turbo`
-- `modelType`: The type of model (`chat`, `completion`, or `embedding`)
+- `model_type`: The type of model (`chat`, `completion`, or `embedding`)
 	- **Example**: `chat`
-- `contextWindow`: The maximum number of tokens in the model's context window
+- `context_window`: The maximum number of tokens in the model's context window
 	- **Example**: `4096`
 
 #### Optional Properties
 
-- `modelProvider`: The provider of the model in lowercase
+- `model_provider`: The provider of the model in lowercase
   - **Example**: `openai`
-- `modelDescription`: A human-friendly description of the model
-- `modelVersion`: The version of the model
+- `model_description`: A human-friendly description of the model
+- `model_version`: The version of the model
   - **Example** `0613`
-- `costPerToken`: The cost per token in USD
+- `cost_per_token`: The cost per token in USD
   - **Example**: ```json {
     "input": 0.0000015,
     "output": 0.000002
   }```
   - **Note**: supports either a basic number or an object with `input` and `output` numbers to define different costs between input tokens and output tokens
-- `knowledgeCutoff`: The training data cutoff date for the model
+- `knowledge_cutoff`: The training data cutoff date for the model
   - **Note**: This is helpful when dealing with applications where you may need to know if you should supplement the model's training data with more recent information
-- `tokenEncoding`: What encoding the model uses for tokens
+- `token_encoding`: What encoding the model uses for tokens
   - **Example**: `cl100k_base`
   - **Note**: This is helpful when using `tiktoken`, `gpt-tokenizer`, etc. or needing to know if a model requires an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
 - `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, `code`, `multilingual`, and `multimodal`
@@ -72,19 +72,19 @@ This schema defines properties that are relevant to the model and developers who
 Here is an example Model Metadata definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
 
 ```yaml
-modelId: gpt-3.5-turbo
-modelName: GPT-3.5 Turbo
-modelProvider: openai
-modelDescription: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
-modelInfo: https://platform.openai.com/docs/models/gpt-3-5
-modelVersion: latest
-modelType: chat
-contextWindow: 4097
-costPerToken:
+model_id: gpt-3.5-turbo
+model_name: GPT-3.5 Turbo
+model_provider: openai
+model_description: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
+model_info: https://platform.openai.com/docs/models/gpt-3-5
+model_version: latest
+model_type: chat
+context_window: 4097
+cost_per_token:
   input: 0.0000015
   output: 0.000002
-knowledgeCutoff: 2021-09-01
-tokenEncoding: cl100k_base
+knowledge_cutoff: 2021-09-01
+token_encoding: cl100k_base
 tuning:
   - function
 ```
@@ -102,7 +102,7 @@ tuning:
 - [ ] Add guidance for including metadata definitions via git submodule
 - [ ] Generate language-specific packages for importing these definitions into other codebases
   - [ ] TypeScript
-  - [ ] Python
+  - [x] Python
   - [ ] Rust
   - [ ] Go
   - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
