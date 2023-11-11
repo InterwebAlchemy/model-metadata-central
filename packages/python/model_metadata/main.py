@@ -1,5 +1,5 @@
-from model_metadata_central.utils.get_models import get_models
-from model_metadata_central.utils.load_metadata import load_metadata
+from model_metadata.utils.get_metadata_models import get_metadata_models
+from model_metadata.utils.load_metadata import load_metadata
 
 
 def get_model_metadata(model_name: str) -> dict:
@@ -8,27 +8,33 @@ def get_model_metadata(model_name: str) -> dict:
     """
     metadata = load_metadata(model_name)
 
-    return metadata[model_name]
+    return metadata
 
 
 def get_models() -> [str]:
     """
     Get all models from central metadata store.
     """
-    models = get_models()
+    models = get_metadata_models()
 
     return models
 
 
-def metadata() -> dict:
+def get_metadata() -> dict:
     """
     Get metadata for all models from central metadata store.
     """
     models = get_models()
 
-    metadata = {}
+    print(models)
+
+    metadata = dict()
 
     for model in models:
-        metadata[model] = get_model_metadata(model)
+        print(model)
+        metadata[f"{model}"] = get_model_metadata(model)
 
     return metadata
+
+
+metadata = get_metadata()

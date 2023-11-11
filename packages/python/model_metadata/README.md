@@ -9,7 +9,7 @@ A centralized, language-agnostic, open-source approach to storing and sharing mo
 ### Get metadata for a specific model
 
 ```python
-from model_metadata import get_model_metadata
+from model_metadata.main import get_model_metadata
 
 turbo_model = get_model_metadata("gpt-3.5-turbo")
 ```
@@ -17,20 +17,20 @@ turbo_model = get_model_metadata("gpt-3.5-turbo")
 ### Working with metadata for all models
 
 ```python
-from model_metadata import metadata
+from model_metadata.main import metadata
 
 max_tokens = {}
 
 # Get the max_tokens for each model that has one defined
-for model in metadata.models:
-    if "max_tokens" in model:
-        max_tokens[model.model_id] = model.max_tokens
+for model, model_metadata in metadata.items():
+    if "max_tokens" in model_metadata:
+        max_tokens[model] = model_metadata["max_tokens"]
 ```
 
 ### Get a list of available models
 
 ```python
-from model_metadata import get_models
+from model_metadata.main import get_models
 
 models = get_models()
 ```

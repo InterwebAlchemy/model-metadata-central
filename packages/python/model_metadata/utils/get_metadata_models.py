@@ -1,16 +1,17 @@
 import os
+from pathlib import Path
 
-from model_metadata_central.utils.get_metadata_directory import get_metadata_directory
+from model_metadata.utils.get_metadata_directory import get_metadata_directory
 
 
-def get_models() -> [str]:
+def get_metadata_models() -> [str]:
     """
     Get all models from central metadata store.
     """
     metadata_directory = get_metadata_directory()
 
     model_names = [
-        model_name.split(".")[0]
+        Path(model_name).stem
         for model_name in os.listdir(metadata_directory)
         if model_name.endswith(".yaml")
     ]

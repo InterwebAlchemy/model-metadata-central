@@ -1,7 +1,8 @@
 import os
 
 import yaml
-from model_metadata_central.utils.get_metadata_directory import get_metadata_directory
+
+from model_metadata.utils.get_metadata_directory import get_metadata_directory
 
 
 def load_metadata(model_name: str) -> dict:

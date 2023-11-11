@@ -1,18 +1,18 @@
 import os
 
-from model_metadata_central.utils.get_metadata_directory import get_metadata_directory
-from model_metadata_central.utils.get_models import get_models
-from model_metadata_central.utils.load_metadata import load_metadata
+from model_metadata.utils.get_metadata_directory import get_metadata_directory
+from model_metadata.utils.get_metadata_models import get_metadata_models
+from model_metadata.utils.load_metadata import load_metadata
 
 
 def test_get_metadata_directory():
     assert get_metadata_directory() == os.path.join(
-        os.getcwd(), "model_metadata_central", "data"
+        os.getcwd(), "model_metadata", "data"
     )
 
 
 def test_get_models():
-    models = get_models()
+    models = get_metadata_models()
 
     assert len(models) == len(os.listdir(get_metadata_directory()))
 
