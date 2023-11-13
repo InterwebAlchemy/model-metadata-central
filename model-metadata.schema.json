@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/InterwebAlchemy/llm-model-definitions/model.schema.json",
+  "$id": "https://raw.githubusercontent.com/InterwebAlchemy/model-metadata-central/model-metadata.schema.json",
   "title": "Language Model Metadata",
   "description": "A language model metadata defintion for developer tools",
   "type": "object",
@@ -77,9 +77,9 @@
       "description": "Tags for things the model was tuned for (example: function, instruction)",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": ["function", "instruction", "code", "multilingual", "multimodal"]
       },
-      "enum": ["function", "instruction", "code", "multilingual", "multimodal"],
       "uniqueItems": true,
       "minItems": 1
     }

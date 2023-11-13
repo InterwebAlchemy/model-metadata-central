@@ -15,7 +15,10 @@ def load_metadata(model_name: str) -> dict:
 
     metadata = {}
 
-    with open(path, "r") as f:
-        metadata = yaml.safe_load(f)
+    try:
+        with open(path, "r") as f:
+            metadata = yaml.safe_load(f)
 
-    return metadata
+        return metadata
+    except:
+        return None

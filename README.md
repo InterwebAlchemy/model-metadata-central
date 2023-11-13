@@ -30,7 +30,7 @@ Centralized ownership (by an open source foundation) of a tech stack agnostic ut
 
 ### JSON Schema
 
-A [JSON Schema](https://json-schema.org/) definition can be found in [`model.schema.json`](./model.schema.json), and example Model Metadata definitions can be found in the [`/models` directory](./models).
+A [JSON Schema](https://json-schema.org/) definition can be found in [`model-metadata.schema.json`](./model-metadata.schema.json), and example Model Metadata definitions can be found in the [`/models` directory](./models).
 
 This schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
 

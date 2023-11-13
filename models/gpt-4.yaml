@@ -10,7 +10,7 @@ max_tokens: 8191
 cost_per_token:
   input: 0.00003
   output: 0.00006
-knowledge_cutoff: 2021-09-01
+knowledge_cutoff: "2021-09-01"
 token_encoding: cl100k_base
 tuning:
   - function

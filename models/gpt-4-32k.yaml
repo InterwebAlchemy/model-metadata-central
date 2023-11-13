@@ -9,7 +9,7 @@ context_window: 32768
 cost_per_token: 
   input: 0.00006
   output: 0.00012
-knowledge_cutoff: 2021-09-01
+knowledge_cutoff: "2021-09-01"
 token_encoding: cl100k_base
 tuning:
   - function

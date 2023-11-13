@@ -26,3 +26,9 @@ def test_load_metadata():
         and metadata["model_name"] == "GPT-3.5 Turbo"
         and metadata["model_type"] == "chat"
     )
+
+
+def test_undefined_metadata():
+    metadata = load_metadata("unknown-model")
+
+    assert metadata is None

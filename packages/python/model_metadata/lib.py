@@ -26,15 +26,9 @@ def get_metadata() -> dict:
     """
     models = get_models()
 
-    print(models)
-
     metadata = dict()
 
     for model in models:
-        print(model)
         metadata[f"{model}"] = get_model_metadata(model)
 
     return metadata
-
-
-metadata = get_metadata()
