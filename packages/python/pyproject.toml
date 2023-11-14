@@ -6,7 +6,7 @@ authors = [
   "Eric Allen <era@lakera.ai>"
 ]
 license = "MIT"
-readme = "../../README.md"
+readme = "README.md"
 homepage = "https://github.com/InterwebAlchemy/model-metadata-central"
 repository = "https://github.com/InterwebAlchemy/model-metadata-central"
 keywords = ["llm", "language model", "metadata", "openai"]
