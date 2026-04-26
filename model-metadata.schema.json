@@ -82,7 +82,38 @@
       },
       "uniqueItems": true,
       "minItems": 1
+    },
+    "deprecated": {
+      "description": "Whether the model has been deprecated by the provider",
+      "type": "boolean",
+      "default": false
+    },
+    "providers": {
+      "description": "The providers that serve this model and their configuration",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/provider_reference"
+      },
+      "uniqueItems": true,
+      "minItems": 1
     }
   },
-  "required": ["model_id", "model_provider", "model_type", "context_window"]
+  "required": ["model_id", "model_type", "context_window"],
+  "$defs": {
+    "provider_reference": {
+      "type": "object",
+      "description": "A reference to a provider definition",
+      "properties": {
+        "provider_id": {
+          "description": "The identifier matching a provider in providers/",
+          "type": "string"
+        },
+        "model_id_on_provider": {
+          "description": "The model ID as used by this specific provider (may differ from model_id)",
+          "type": "string"
+        }
+      },
+      "required": ["provider_id"]
+    }
+  }
 }

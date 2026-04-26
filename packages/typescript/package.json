@@ -1,0 +1,47 @@
+{
+  "name": "@interwebalchemy/model-metadata",
+  "version": "0.1.0",
+  "description": "Typed TypeScript registry of LLM model metadata (context windows, pricing, providers)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./providers": {
+      "import": "./dist/providers.json",
+      "types": "./dist/providers.d.ts"
+    },
+    "./registry": {
+      "import": "./dist/registry.json",
+      "types": "./dist/registry.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc && node src/build-registry.mjs",
+    "build:registry": "node src/build-registry.mjs",
+    "prepare": "node src/build-registry.mjs",
+    "lint": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "yaml": "3.0.0-0"
+  },
+  "keywords": [
+    "model-metadata",
+    "llm",
+    "openai",
+    "anthropic",
+    "google",
+    "gemini",
+    "deepseek",
+    "context-window",
+    "token-pricing"
+  ]
+}

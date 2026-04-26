@@ -6,3 +6,8 @@ model_type: chat
 context_window: 8192
 tuning:
   - instruction
+providers:
+  - provider_id: mistralai
+    model_id_on_provider: mistral-7b-instruct-0.3
+  - provider_id: openrouter
+    model_id_on_provider: mistralai/mistral-7b-instruct

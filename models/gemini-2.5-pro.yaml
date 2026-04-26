@@ -1,0 +1,16 @@
+model_id: gemini-2.5-pro
+model_name: Gemini 2.5 Pro
+model_provider: google
+model_description: Google's flagship model. Exceptional at long-context tasks, multimodal reasoning, and code generation.
+model_info: https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro
+model_type: chat
+context_window: 1000000
+cost_per_token:
+  input: 0.00000125
+  output: 0.000005
+tuning: [multimodal]
+providers:
+  - provider_id: google
+    model_id_on_provider: gemini-2.5-pro
+  - provider_id: openrouter
+    model_id_on_provider: google/gemini-2.5-pro

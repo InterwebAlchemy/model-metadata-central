@@ -1,0 +1,15 @@
+model_id: gemini-2.0-flash
+model_name: Gemini 2.0 Flash
+model_provider: google
+model_description: Previous-generation Gemini. Good balance of speed, cost, and capability for standard tasks.
+model_info: https://ai.google.dev/gemini-api/models/gemini-2.0-flash
+model_type: chat
+context_window: 128000
+cost_per_token:
+  input: 0.00000010
+  output: 0.00000040
+providers:
+  - provider_id: google
+    model_id_on_provider: gemini-2.0-flash
+  - provider_id: openrouter
+    model_id_on_provider: google/gemini-2.0-flash

@@ -1,0 +1,16 @@
+model_id: claude-opus-4.7
+model_name: Claude Opus 4.7
+model_provider: anthropic
+model_description: Anthropic's most capable model. Exceptional at complex reasoning, coding, creative collaboration, and scientific analysis.
+model_info: https://docs.anthropic.com/en/docs/models/claude-opus-4.7
+model_type: chat
+context_window: 1000000
+cost_per_token:
+  input: 0.000005
+  output: 0.000025
+tuning: [function]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-opus-4.7
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-opus-4.7

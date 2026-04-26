@@ -1,0 +1,15 @@
+model_id: o3
+model_name: o3
+model_provider: openai
+model_description: OpenAI reasoning model. Extended thinking model optimized for complex reasoning, science, and coding. Charges for reasoning tokens.
+model_info: https://platform.openai.com/docs/models/o3
+model_type: chat
+context_window: 200000
+cost_per_token:
+  input: 0.000004
+  output: 0.000016
+providers:
+  - provider_id: openai
+    model_id_on_provider: o3
+  - provider_id: openrouter
+    model_id_on_provider: openai/o3

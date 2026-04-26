@@ -1,0 +1,16 @@
+model_id: gemini-2.5-flash
+model_name: Gemini 2.5 Flash
+model_provider: google
+model_description: Fast, efficient Gemini model. Optimized for high-volume applications with strong reasoning and code performance.
+model_info: https://ai.google.dev/gemini-api/models/gemini-2.5-flash
+model_type: chat
+context_window: 1000000
+cost_per_token:
+  input: 0.000000075
+  output: 0.00000030
+tuning: [multimodal]
+providers:
+  - provider_id: google
+    model_id_on_provider: gemini-2.5-flash
+  - provider_id: openrouter
+    model_id_on_provider: google/gemini-2.5-flash

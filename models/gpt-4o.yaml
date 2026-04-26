@@ -1,0 +1,17 @@
+model_id: gpt-4o
+model_name: GPT-4o
+model_provider: openai
+model_description: GPT-4 Omni — multimodal model with vision, audio, and text. Fast and cost-efficient relative to GPT-4 Turbo.
+model_info: https://platform.openai.com/docs/models/gpt-4o
+model_type: chat
+context_window: 128000
+max_tokens: 32768
+cost_per_token:
+  input: 0.000005
+  output: 0.000015
+tuning: [multimodal]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-4o
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-4o

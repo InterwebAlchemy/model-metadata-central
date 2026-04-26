@@ -1,0 +1,9 @@
+provider_id: deepseek
+name: DeepSeek
+website_url: https://deepseek.com
+api_type: openai_compatible
+base_url: https://api.deepseek.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for DeepSeek V4 and Coder models.

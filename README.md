@@ -66,33 +66,80 @@ This schema defines properties that are relevant to the model and developers who
 - `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, `code`, `multilingual`, and `multimodal`
   - **Example**: `["function", "instruction"]`
   - **Note**: This is helpful when deciding which models are suitable for given tasks
+- `deprecated`: Whether the model has been deprecated by the provider
+  - **Example**: `false`
+  - **Note**: Deprecated models may still work but should be avoided for new integrations
+- `providers`: Which providers serve this model and how to reference it on each
+  - **Example**:
+    ```yaml
+    providers:
+      - provider_id: openai
+        model_id_on_provider: gpt-4o
+      - provider_id: openrouter
+        model_id_on_provider: openai/gpt-4o
+    ```
+  - **Note**: Allows a single model to be accessed via direct provider API or aggregator. Provider definitions live in `/providers`.
 
-#### Example
+### Provider Schema
 
-Here is an example Model Metadata definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
+Provider definitions in [`providers/`](./providers) describe API endpoints and routing. See [`provider.schema.json`](./provider.schema.json).
+
+#### Required Properties
+
+- `provider_id`: Unique lowercase identifier matching the `providers/` filename and used in model `provider_reference`
+- `name`: Human-readable name
+- `api_type`: One of `openai_compatible`, `anthropic`, `openai`, `other`
+- `routing_priority`: `direct` (serves models itself) or `aggregator` (routes to other providers) or `both`
+
+#### Provider Routing
+
+The `routing_priority` field differentiates direct providers (who serve models themselves) from aggregators (who route to other providers):
+
+| `routing_priority` | Provider Examples |
+|---|---|
+| `direct` | OpenAI, Anthropic, DeepSeek, Groq, Mistral, Cloudflare |
+| `aggregator` | OpenRouter |
+
+Ollama, LM Studio, and LocalAI use `direct` but default to localhost with no auth — override `base_url` and `auth_type` in your app config when deploying.
+
+Local providers default to localhost with no auth. Override `base_url` and `auth_type` in your app config when deploying.
 
 ```yaml
-model_id: gpt-3.5-turbo
-model_name: GPT-3.5 Turbo
-model_provider: openai
-model_description: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
-model_info: https://platform.openai.com/docs/models/gpt-3-5
-model_version: latest
-model_type: chat
-context_window: 4097
-max_tokens: 4095
-cost_per_token:
-  input: 0.0000015
-  output: 0.000002
-knowledge_cutoff: 2021-09-01
-token_encoding: cl100k_base
-tuning:
-  - function
+provider_id: openai
+name: OpenAI
+website_url: https://openai.com
+api_type: openai_compatible
+base_url: https://api.openai.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
 ```
+
+### Included Models
+
+33 models across 8 providers:
+
+**OpenAI** — gpt-3.5-turbo, gpt-4, gpt-4o, gpt-4o-mini, gpt-4.5, gpt-5.4-image-2, gpt-5.5, gpt-5.5-pro, o3, o4-mini
+
+**Anthropic** — claude-haiku-4, claude-opus-latest, claude-opus-4.6-fast, claude-opus-4.7, claude-sonnet-4.2
+
+**Google** — gemini-2.0-flash, gemini-2.5-flash, gemini-2.5-pro, gemma-4-26b, gemma-4-31b
+
+**DeepSeek** — deepseek-coder-v4, deepseek-v4-flash, deepseek-v4-pro
+
+**xAI** — grok-4.2, grok-4.2-multi-agent
+
+**Moonshot AI** — kimi-k2.6, kimi-v3
+
+**Qwen** — qwen3.6-flash, qwen3.6-plus
+
+**Other** — mistral-7b-instruct
+
+Full definitions live in [`/models`](./models).
 
 ## Roadmap
 
-**Note**: This project is open to feedback at every stage of rhis roadmap.
+**Note**: This project is open to feedback at every stage of this roadmap.
 
 - [x] Create JSON Schema
 - [x] Generate example model definitions
@@ -107,8 +154,8 @@ tuning:
   - [ ] Rust
   - [ ] Go
   - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
-- [ ] Integrate metadata for more models
-- [ ] Integrate a GitHub Action to generate these packages
+- [x] Integrate metadata for more models
+- [ ] Integrate metadata for more providers (Groq, Cloudflare, Mistral, local runtimes)
 - [ ] Integrate a GitHub Action to publish these packages to NPM, PyPI, etc.
 - [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
 - [ ] Update publishing actions to publish to the AI Engineer Foundation's NPM, PyPI, etc.

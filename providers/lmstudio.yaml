@@ -1,0 +1,9 @@
+provider_id: lmstudio
+name: LM Studio
+website_url: https://lmstudio.ai
+api_type: openai_compatible
+base_url: http://localhost:1234/v1
+auth_type: none
+routing_priority: direct
+status: active
+notes: Local inference GUI and API server for GGUF/GGML models. Similar API to Ollama. Authentication disabled by default.

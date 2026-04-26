@@ -1,0 +1,15 @@
+model_id: o4-mini
+model_name: o4 Mini
+model_provider: openai
+model_description: Lightweight OpenAI reasoning model. Fast and cost-efficient reasoning for simpler tasks.
+model_info: https://platform.openai.com/docs/models/o4-mini
+model_type: chat
+context_window: 100000
+cost_per_token:
+  input: 0.000001
+  output: 0.000004
+providers:
+  - provider_id: openai
+    model_id_on_provider: o4-mini
+  - provider_id: openrouter
+    model_id_on_provider: openai/o4-mini

@@ -1,0 +1,9 @@
+provider_id: localai
+name: LocalAI
+website_url: https://localai.io
+api_type: openai_compatible
+base_url: http://localhost:8080/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Self-hosted inference engine. Supports many open models via ggml/gguf. Often used in Kubernetes/ Docker stacks. Authentication may be bearer token or disabled depending on config.

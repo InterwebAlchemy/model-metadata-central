@@ -14,3 +14,6 @@ knowledge_cutoff: "2021-09-01"
 token_encoding: cl100k_base
 tuning:
   - function
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-4

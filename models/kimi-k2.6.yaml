@@ -1,0 +1,16 @@
+model_id: kimi-k2.6
+model_name: Kimi K2.6
+model_provider: moonshotai
+model_description: Moonshot AI's flagship model. Strong long-context understanding and reasoning at competitive pricing.
+model_info: https://platform.moonshot.ai/docs
+model_type: chat
+context_window: 256000
+cost_per_token:
+  input: 0.00000074
+  output: 0.00000466
+tuning: [function]
+providers:
+  - provider_id: moonshotai
+    model_id_on_provider: kimi-k2.6
+  - provider_id: openrouter
+    model_id_on_provider: moonshotai/kimi-k2.6

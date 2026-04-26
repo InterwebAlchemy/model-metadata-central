@@ -1,0 +1,9 @@
+provider_id: cloudflare
+name: Cloudflare Workers AI
+website_url: https://developers.cloudflare.com/workers-ai
+api_type: openai_compatible
+base_url: https://api.cloudflare.com/client/v4/workers/ai
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Edge inference via Cloudflare Workers. Good for low-latency, geographically distributed deployments. Smaller model selection but excellent free tier.

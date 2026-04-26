@@ -1,0 +1,16 @@
+model_id: deepseek-v4-pro
+model_name: DeepSeek V4 Pro
+model_provider: deepseek
+model_description: DeepSeek's flagship model. Excellent reasoning and code capabilities at a fraction of OpenAI's cost.
+model_info: https://api.deepseek.com
+model_type: chat
+context_window: 1048576
+cost_per_token:
+  input: 0.00000043
+  output: 0.00000087
+tuning: [function]
+providers:
+  - provider_id: deepseek
+    model_id_on_provider: deepseek-chat
+  - provider_id: openrouter
+    model_id_on_provider: deepseek/deepseek-v4-pro

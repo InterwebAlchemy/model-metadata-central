@@ -1,0 +1,15 @@
+model_id: gemma-4-26b-a4b-it
+model_name: Gemma 4 26B
+model_provider: google
+model_description: Google's smaller open-weight instruction-tuned model. Efficient for constrained deployment environments.
+model_info: https://ai.google.dev/gemma
+model_type: chat
+context_window: 262144
+cost_per_token:
+  input: 0.00000006
+  output: 0.00000033
+providers:
+  - provider_id: google
+    model_id_on_provider: gemma-4-26b-a4b-it
+  - provider_id: openrouter
+    model_id_on_provider: google/gemma-4-26b-a4b-it

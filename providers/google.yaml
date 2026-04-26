@@ -1,0 +1,9 @@
+provider_id: google
+name: Google AI
+website_url: https://ai.google
+api_type: openai_compatible
+base_url: https://generativelanguage.googleapis.com/v1beta
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for Gemini, Gemma, and Lyria models via Vertex AI or AI Studio.

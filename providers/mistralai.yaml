@@ -1,0 +1,9 @@
+provider_id: mistralai
+name: Mistral AI
+website_url: https://mistral.ai
+api_type: openai_compatible
+base_url: https://api.mistral.ai/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for Mistral's own models including Mistral Small, Medium, Large, and Codestral.
