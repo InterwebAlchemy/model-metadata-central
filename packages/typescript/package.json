@@ -3,6 +3,10 @@
   "version": "0.2.0",
   "description": "Typed TypeScript registry of LLM model metadata (context windows, pricing, providers)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InterwebAlchemy/model-metadata-central"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
