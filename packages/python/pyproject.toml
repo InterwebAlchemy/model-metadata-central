@@ -1,6 +1,6 @@
 [project]
 name = "model-metadata-central"
-version = "0.1.0"
+version = "0.2.0"
 description = "Typed registry of LLM model metadata for Python — context windows, pricing, provider routing."
 readme = "README.md"
 license = "MIT"

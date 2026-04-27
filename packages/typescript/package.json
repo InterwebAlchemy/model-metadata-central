@@ -1,6 +1,6 @@
 {
   "name": "model-metadata-central",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typed TypeScript registry of LLM model metadata (context windows, pricing, providers)",
   "license": "MIT",
   "type": "module",
@@ -20,7 +20,9 @@
       "types": "./dist/registry.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && node src/build-registry.mjs",
     "build:registry": "node src/build-registry.mjs",
