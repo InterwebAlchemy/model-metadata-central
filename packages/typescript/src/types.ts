@@ -61,3 +61,10 @@ export interface ProviderMetadata {
   status?: ProviderStatus;
   notes?: string;
 }
+
+export class ModelNotFoundError extends Error {
+  constructor(readonly modelId: string) {
+    super(`No metadata found for model: ${modelId}`);
+    this.name = "ModelNotFoundError";
+  }
+}

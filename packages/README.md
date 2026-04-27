@@ -1,23 +1,45 @@
-## Model Metadata Definition Packages
+# Language Packages
 
-This directory contains the underlying source code for the distributed packages that developers can import into their projects to reference the model metadata contained in this repo.
+Pre-compiled registries and typed APIs for consuming model metadata in your project.
 
-### Packages
+## TypeScript
 
-The packages are separated into different directories for each supported language.
+```sh
+npm install @interwebalchemy/model-metadata
+```
 
-#### Python
+[Read the README →](./typescript/README.md)
 
-The Python package is available on the Python Package Index as [`model-metadata`](https://pypi.org/project/model-metadata/).
+## Python
 
-```shell
+```sh
 pip install model-metadata
 ```
 
-**Note**: This hasn't been published yet.
+[Read the README →](./python/README.md)
 
-Documentation for specific usage for this package is available in the [Python package's README](./python/README.md).
+## Build
 
-#### TypeScript
+Both packages compile YAML sources to JSON registries during `prepare`/`prepublish`:
 
-_Coming Soon_
+```sh
+cd packages/typescript && npm install && npm run build
+cd packages/python && poetry install && poetry run python -c "from model_metadata.utils.load_metadata import load_metadata; print(load_metadata('gpt-4o'))"
+```
+
+## Aligning APIs
+
+The TypeScript and Python packages aim to share the same API surface:
+
+| TypeScript | Python |
+|---|---|
+| `getModel(id)` | `get_model(id)` |
+| `getAllModels()` | `get_all_models()` |
+| `getModelsByProvider(id)` | `get_models_by_provider(id)` |
+| `getModelOnProvider(id, providerModelId)` | `get_model_on_provider(id, provider_model_id)` |
+| `getProvider(id)` | `get_provider(id)` |
+| `getAllProviders()` | `get_all_providers()` |
+| `getProviderModelId(modelId, providerId)` | `get_provider_model_id(model_id, provider_id)` |
+| Named exports (`gpt4o`, etc.) | Module constants (`GPT_4_O`, etc.) |
+
+Both packages use the same underlying JSON schema types, pre-compiled from the YAML definitions in the repo root.

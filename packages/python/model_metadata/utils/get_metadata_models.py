@@ -4,7 +4,7 @@ from pathlib import Path
 from model_metadata.utils.get_metadata_directory import get_metadata_directory
 
 
-def get_metadata_models() -> [str]:
+def get_metadata_models() -> list[str]:
     """
     Get all models from central metadata store.
     """

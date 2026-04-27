@@ -1,5 +1,5 @@
 {
-  "name": "@interwebalchemy/model-metadata",
+  "name": "model-metadata-central",
   "version": "0.1.0",
   "description": "Typed TypeScript registry of LLM model metadata (context windows, pricing, providers)",
   "license": "MIT",
@@ -24,7 +24,8 @@
   "scripts": {
     "build": "tsc && node src/build-registry.mjs",
     "build:registry": "node src/build-registry.mjs",
-    "prepare": "node src/build-registry.mjs",
+    "generate": "node ../../scripts/codegen.mjs",
+    "prepare": "npm run generate && npm run build",
     "lint": "tsc --noEmit",
     "test": "vitest"
   },

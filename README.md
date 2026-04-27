@@ -102,7 +102,7 @@ The `routing_priority` field differentiates direct providers (who serve models t
 
 Ollama, LM Studio, and LocalAI use `direct` but default to localhost with no auth — override `base_url` and `auth_type` in your app config when deploying.
 
-Local providers default to localhost with no auth. Override `base_url` and `auth_type` in your app config when deploying.
+#### Example
 
 ```yaml
 provider_id: openai
@@ -137,6 +137,15 @@ status: active
 
 Full definitions live in [`/models`](./models).
 
+### Packages
+
+Language-specific packages wrap the registry with a typed API. See each package for usage examples.
+
+| Package | Status |
+|---|---|
+| [TypeScript](./packages/typescript/) | Alpha |
+| [Python](./packages/python/) | Alpha |
+
 ## Roadmap
 
 **Note**: This project is open to feedback at every stage of this roadmap.
@@ -148,8 +157,8 @@ Full definitions live in [`/models`](./models).
 - [ ] Integrate a GitHub Action to validate Model Metadata definitions against schema
 - [ ] Publish JSON Schema to GitHub Pages
 - [ ] Add guidance for including metadata definitions via git submodule
-- [ ] Generate language-specific packages for importing these definitions into other codebases
-  - [ ] TypeScript
+- [x] Generate language-specific packages for importing these definitions into other codebases
+  - [x] TypeScript
   - [x] Python
   - [ ] Rust
   - [ ] Go
