@@ -12,5 +12,7 @@ tuning: [function]
 providers:
   - provider_id: moonshotai
     model_id_on_provider: kimi-k2.6
+  - provider_id: cloudflare
+    model_id_on_provider: "@cf/moonshotai/kimi-k2.6"
   - provider_id: openrouter
     model_id_on_provider: moonshotai/kimi-k2.6

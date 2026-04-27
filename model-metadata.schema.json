@@ -67,11 +67,9 @@
       "type": "string",
       "format": "date"
     },
-    "token_encoding": {
-      "description": "What encoding the model uses for tokens (example: cl100k_base)",
-      "type": "string",
-      "enum": ["cl100k_base", "p50k_base", "p50k_edit", "r50k_base", "llama", "unknown"],
-      "default": "unknown"
+    "tokenizer": {
+      "description": "Tokenizer family and specific encoding/version used by the model",
+      "$ref": "#/$defs/tokenizer_config"
     },
     "tuning": {
       "description": "Tags for things the model was tuned for (example: function, instruction)",
@@ -114,6 +112,22 @@
         }
       },
       "required": ["provider_id"]
+    },
+    "tokenizer_config": {
+      "type": "object",
+      "description": "Tokenizer family and the specific encoding/version identifier within that family",
+      "properties": {
+        "family": {
+          "description": "Tokenizer library or system (example: tiktoken, tekken, sentencepiece)",
+          "type": "string",
+          "enum": ["tiktoken", "tekken", "sentencepiece", "huggingface", "other", "unknown"]
+        },
+        "name": {
+          "description": "The encoding or version identifier within the family (example: 'cl100k_base' for tiktoken, 'v3' for tekken)",
+          "type": "string"
+        }
+      },
+      "required": ["family"]
     }
   }
 }

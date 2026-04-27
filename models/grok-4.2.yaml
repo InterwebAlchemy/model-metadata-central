@@ -1,4 +1,4 @@
-model_id: grok-4.20
+model_id: grok-4.2
 model_name: Grok 4.2
 model_provider: x-ai
 model_description: xAI's flagship model. Strong reasoning with real-time web access. Known for personality and directness.
@@ -13,4 +13,4 @@ providers:
   - provider_id: x-ai
     model_id_on_provider: grok-4.2
   - provider_id: openrouter
-    model_id_on_provider: x-ai/grok-4.20
+    model_id_on_provider: x-ai/grok-4.2

@@ -2,16 +2,21 @@
 
 // --- Enums ---
 export type Model_type = 'chat' | 'completion' | 'embedding';
-export type Token_encoding = 'cl100k_base' | 'p50k_base' | 'p50k_edit' | 'r50k_base' | 'llama' | 'unknown';
 export type Api_type = 'openai_compatible' | 'anthropic' | 'openai' | 'other';
-export type Auth_type = 'api_key' | 'bearer' | 'oauth' | 'managed';
+export type Auth_type = 'api_key' | 'bearer' | 'oauth' | 'managed' | 'none';
 export type Routing_priority = 'direct' | 'aggregator' | 'both';
 export type Status = 'active' | 'deprecated' | 'inactive';
+export type Family = 'tiktoken' | 'tekken' | 'sentencepiece' | 'huggingface' | 'other' | 'unknown';
 
 // --- $defs ---
 export interface Provider_reference {
   provider_id: string;
   model_id_on_provider?: string;
+}
+
+export interface Tokenizer_config {
+  family: Family;
+  name?: string;
 }
 
 // --- Schema types ---
@@ -27,7 +32,7 @@ export interface ModelMetadata {
   max_tokens?: number;
   cost_per_token?: unknown;
   knowledge_cutoff?: string;
-  token_encoding?: Token_encoding;
+  tokenizer?: Tokenizer_config;
   tuning?: unknown[];
   deprecated?: boolean;
   providers?: unknown[];

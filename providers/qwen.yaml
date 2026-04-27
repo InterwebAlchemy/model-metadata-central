@@ -1,8 +1,8 @@
 provider_id: qwen
 name: Qwen
-website_url: https://qwen.io
+website_url: https://qwen.ai
 api_type: openai_compatible
-base_url: https://dashscope.aliyuncs.com/api/v1
+base_url: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
 auth_type: api_key
 routing_priority: direct
 status: active

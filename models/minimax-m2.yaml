@@ -1,0 +1,17 @@
+model_id: minimax-m2
+model_name: MiniMax M2
+model_provider: minimax
+model_description: MiniMax M2 model for agentic workflows, advanced reasoning, function calling, and real-time streaming.
+model_info: "https://platform.minimax.io/docs/guides/text-generation"
+model_type: chat
+context_window: 204800
+max_tokens: 128000
+cost_per_token:
+  input: 3e-7
+  output: 0.0000012
+tuning: [function, instruction, code, multilingual]
+providers:
+  - provider_id: minimax
+    model_id_on_provider: MiniMax-M2
+  - provider_id: openrouter
+    model_id_on_provider: minimax/minimax-m2

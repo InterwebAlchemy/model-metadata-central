@@ -13,7 +13,7 @@ npm install @interwebalchemy/model-metadata
 ## Python
 
 ```sh
-pip install model-metadata
+pip install model-metadata-central
 ```
 
 [Read the README →](./python/README.md)
@@ -24,7 +24,7 @@ Both packages compile YAML sources to JSON registries during `prepare`/`prepubli
 
 ```sh
 cd packages/typescript && npm install && npm run build
-cd packages/python && poetry install && poetry run python -c "from model_metadata.utils.load_metadata import load_metadata; print(load_metadata('gpt-4o'))"
+cd packages/python && uv run python -c "from model_metadata_central.utils.load_metadata import load_metadata; print(load_metadata('gpt-4o'))"
 ```
 
 ## Aligning APIs

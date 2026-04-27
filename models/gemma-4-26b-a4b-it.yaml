@@ -11,5 +11,7 @@ cost_per_token:
 providers:
   - provider_id: google
     model_id_on_provider: gemma-4-26b-a4b-it
+  - provider_id: cloudflare
+    model_id_on_provider: "@cf/google/gemma-4-26b-a4b-it"
   - provider_id: openrouter
     model_id_on_provider: google/gemma-4-26b-a4b-it

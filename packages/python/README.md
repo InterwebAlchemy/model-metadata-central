@@ -1,9 +1,9 @@
-# model-metadata
+# model-metadata-central
 
 Typed registry of LLM model metadata for Python — context windows, pricing, provider routing.
 
 ```sh
-pip install model-metadata
+pip install model-metadata-central
 ```
 
 ## Usage
@@ -11,7 +11,7 @@ pip install model-metadata
 ### Full registry
 
 ```python
-from model_metadata import get_all_models, get_all_providers
+from model_metadata_central import get_all_models, get_all_providers
 
 models = get_all_models()
 for model in models:
@@ -21,7 +21,7 @@ for model in models:
 ### Look up a single model
 
 ```python
-from model_metadata import get_model
+from model_metadata_central import get_model
 
 model = get_model("gpt-4o")
 if model:
@@ -32,7 +32,7 @@ if model:
 ### Filter by provider
 
 ```python
-from model_metadata import get_models_by_provider
+from model_metadata_central import get_models_by_provider
 
 anthropic = get_models_by_provider("anthropic")
 openrouter = get_models_by_provider("openrouter")
@@ -41,7 +41,7 @@ openrouter = get_models_by_provider("openrouter")
 ### Provider routing
 
 ```python
-from model_metadata import get_provider_model_id, get_provider
+from model_metadata_central import get_provider_model_id, get_provider
 
 # Get the model ID for a specific provider
 openai_id = get_provider_model_id("gpt-4o", "openai")           # "gpt-4o"
@@ -56,7 +56,7 @@ print(provider["auth_type"])    # "api_key"
 ### Named model constants
 
 ```python
-from model_metadata import GPT_4_O, CLAUDE_OPUS_4_7
+from model_metadata_central import GPT_4_O, CLAUDE_OPUS_4_7
 
 # Fully typed dict — bundlers exclude the rest
 print(GPT_4_O["context_window"])
@@ -77,7 +77,7 @@ print(GPT_4_O["context_window"])
 ## Data
 
 - Registry pre-compiled from `models/*.yaml` at install/build time
-- 33 models across 14 providers
+- 74 models across 17 providers
 - Prices are in USD per token
 
 ## Schema

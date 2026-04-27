@@ -1,0 +1,9 @@
+provider_id: nvidia
+name: NVIDIA NIM
+website_url: https://build.nvidia.com
+api_type: openai_compatible
+base_url: https://integrate.api.nvidia.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: NVIDIA NIM API catalog for hosted and deployable NVIDIA/open model inference, including Nemotron.

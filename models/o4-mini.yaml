@@ -8,6 +8,9 @@ context_window: 100000
 cost_per_token:
   input: 0.000001
   output: 0.000004
+tokenizer:
+  family: tiktoken
+  name: o200k_base
 providers:
   - provider_id: openai
     model_id_on_provider: o4-mini

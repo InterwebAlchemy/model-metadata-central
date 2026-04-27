@@ -2,8 +2,8 @@ provider_id: cloudflare
 name: Cloudflare Workers AI
 website_url: https://developers.cloudflare.com/workers-ai
 api_type: openai_compatible
-base_url: https://api.cloudflare.com/client/v4/workers/ai
+base_url: https://api.cloudflare.com/client/v4
 auth_type: api_key
 routing_priority: direct
 status: active
-notes: Edge inference via Cloudflare Workers. Good for low-latency, geographically distributed deployments. Smaller model selection but excellent free tier.
+notes: Edge inference via Cloudflare Workers AI. Account-scoped model routes use /accounts/{account_id}/ai/run/{model}; OpenAI-compatible routes use /accounts/{account_id}/ai/v1.

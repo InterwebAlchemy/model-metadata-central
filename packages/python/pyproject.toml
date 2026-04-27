@@ -1,39 +1,53 @@
-[tool.poetry]
-name = "model_metadata"
+[project]
+name = "model-metadata-central"
 version = "0.1.0"
-description = "Model Metadata Central"
-authors = [
-  "Eric Allen <era@lakera.ai>"
-]
-license = "MIT"
+description = "Typed registry of LLM model metadata for Python — context windows, pricing, provider routing."
 readme = "README.md"
-homepage = "https://github.com/InterwebAlchemy/model-metadata-central"
-repository = "https://github.com/InterwebAlchemy/model-metadata-central"
-keywords = ["llm", "language model", "metadata", "openai"]
-packages = [
-  { include = "model_metadata" }
+license = "MIT"
+authors = [
+    { name = "Eric Allen", email = "era@lakera.ai" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0,<3",
+    "pyyaml>=6.0,<7",
+]
+keywords = ["llm", "language model", "metadata", "openai", "anthropic", "pricing", "context-window"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.8"
-pydantic = "^2.0"
-pyyaml = "^6.0"
-
-[tool.poetry.group.test.dependencies]
-pytest = "^7.4.3"
-
-[tool.poetry.group.dev.dependencies]
-black = "^23.11.0"
-isort = "^5.12.0"
-pre-commit = "^3.5.0"
-jsonschema = "^4.19.2"
+[project.urls]
+Homepage = "https://github.com/InterwebAlchemy/model-metadata-central"
+Repository = "https://github.com/InterwebAlchemy/model-metadata-central"
+Issues = "https://github.com/InterwebAlchemy/model-metadata-central/issues"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["model_metadata_central"]
+
+[dependency-groups]
+dev = [
+    "black>=23.11.0",
+    "isort>=5.12.0",
+    "jsonschema>=4.19.2",
+    "pre-commit>=3.5.0",
+    "pytest>=7.4.3",
+]
 
 [tool.black]
-target-version = ['py311']
+target-version = ["py311"]
 
 [tool.isort]
 profile = "black"

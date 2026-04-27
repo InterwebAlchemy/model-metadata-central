@@ -1,0 +1,20 @@
+model_id: nemotron-3-super-120b-a12b
+model_name: Nemotron 3 Super
+model_provider: nvidia
+model_description: NVIDIA Nemotron 3 Super, an open-weight hybrid MoE model for agentic reasoning, tool use, and long-context workloads.
+model_info: https://docs.api.nvidia.com/nim/reference/nvidia-nemotron-3-super-120b-a12b
+model_type: chat
+context_window: 262144
+max_tokens: 262144
+cost_per_token:
+  input: 2e-7
+  output: 8e-7
+knowledge_cutoff: "2024-04-01"
+tuning: [function, instruction]
+providers:
+  - provider_id: nvidia
+    model_id_on_provider: nvidia/nemotron-3-super-120b-a12b
+  - provider_id: openrouter
+    model_id_on_provider: nvidia/nemotron-3-super-120b-a12b
+  - provider_id: cloudflare
+    model_id_on_provider: "@cf/nvidia/nemotron-3-120b-a12b"

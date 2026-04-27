@@ -9,6 +9,9 @@ cost_per_token:
   input: 0.000010
   output: 0.000030
 tuning: [function]
+tokenizer:
+  family: tiktoken
+  name: o200k_base
 providers:
   - provider_id: openai
     model_id_on_provider: gpt-4.5

@@ -4,67 +4,41 @@ on:
   push:
     tags:
       - "python-v*"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    outputs:
-      version: ${{ steps.version.outputs.version }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Extract version from tag
-        id: version
-        run: echo "version=${GITHUB_REF#refs/tags/python-v}" >> $GITHUB_OUTPUT
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install Poetry
-        run: pip install poetry
-
-      - name: Configure Poetry for PyPI (not TestPyPI)
-        run: poetry config pypi-token.pypi $POETRY_PYPI_TOKEN_PROD
-        env:
-          POETRY_PYPI_TOKEN_PROD: ""
-
-      - name: Install dependencies
-        run: poetry install
+    defaults:
+      run:
         working-directory: packages/python
-
-      - name: Build distribution
-        run: poetry build
-        working-directory: packages/python
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-python-${{ steps.version.outputs.version }}
-          path: packages/python/dist
-          retention-days: 1
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/project/model-metadata-central
+      url: https://pypi.org/p/model-metadata-central
     permissions:
       id-token: write
       contents: read
-
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-python-${{ needs.build.outputs.version }}
-          path: dist
+      - uses: actions/checkout@v4
 
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          trusted-publishing: always
+          enable-cache: true
+          python-version: "3.10"
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Build registry from YAML sources
+        run: uv run python scripts/build_registry.py
+
+      - name: Build
+        run: uv build
+
+      - name: Publish
+        run: uv publish --trusted-publishing always

@@ -61,7 +61,6 @@ function tsFieldType(key, prop, defs) {
 function buildTsInterface(name, schema, enums, defs) {
   const lines = [`export interface ${name} {`];
   for (const [key, prop] of Object.entries(schema.properties ?? {})) {
-    if (prop.$ref) continue;
     const opt = isRequired(schema, key) ? "" : "?";
     lines.push(`  ${key}${opt}: ${tsFieldType(key, prop, defs)};`);
   }
@@ -79,6 +78,11 @@ for (const [key, prop] of Object.entries(modelSchema.properties ?? {})) {
 }
 for (const [key, prop] of Object.entries(providerSchema.properties ?? {})) {
   tsEnumType(key, prop, tsEnums);
+}
+for (const def of Object.values(modelSchema.$defs ?? {})) {
+  for (const [key, prop] of Object.entries(def.properties ?? {})) {
+    tsEnumType(key, prop, tsEnums);
+  }
 }
 
 // Build $defs interfaces
@@ -159,7 +163,7 @@ const pyLines = [
   "",
   "from __future__ import annotations",
   "",
-  "from typing import Any",
+  "from typing import Any, Literal",
   "from pydantic import BaseModel, Field",
   "",
 ];
@@ -179,7 +183,6 @@ const modelReq = modelSchema.required ?? [];
 pyLines.push("class ModelMetadata(BaseModel):");
 pyLines.push('    """Generated from model-metadata.schema.json"""');
 for (const [key, prop] of Object.entries(modelSchema.properties ?? {})) {
-  if (prop.$ref) continue;
   pyLines.push(pyField(key, prop, modelReq));
 }
 
@@ -188,7 +191,6 @@ pyLines.push("");
 pyLines.push("class ProviderMetadata(BaseModel):");
 pyLines.push('    """Generated from provider.schema.json"""');
 for (const [key, prop] of Object.entries(providerSchema.properties ?? {})) {
-  if (prop.$ref) continue;
   pyLines.push(pyField(key, prop, providerReq));
 }
 
@@ -197,7 +199,7 @@ const pyOutput = pyLines.join("\n") + "\n";
 // ─── Write outputs ───────────────────────────────────────────────────────────
 
 const tsOut = path.join(ROOT, "packages/typescript/src/generated/types.ts");
-const pyOut = path.join(ROOT, "packages/python/model_metadata/generated/models.py");
+const pyOut = path.join(ROOT, "packages/python/model_metadata_central/generated/models.py");
 
 fs.writeFileSync(tsOut, tsOutput);
 fs.writeFileSync(pyOut, pyOutput);

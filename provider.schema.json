@@ -32,7 +32,7 @@
     "auth_type": {
       "description": "How authentication is handled",
       "type": "string",
-      "enum": ["api_key", "bearer", "oauth", "managed"]
+      "enum": ["api_key", "bearer", "oauth", "managed", "none"]
     },
     "routing_priority": {
       "description": "Whether this provider routes to other providers (aggregator) or serves models directly",

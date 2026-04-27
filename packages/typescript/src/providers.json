@@ -15,11 +15,11 @@
     "name": "Cloudflare Workers AI",
     "website_url": "https://developers.cloudflare.com/workers-ai",
     "api_type": "openai_compatible",
-    "base_url": "https://api.cloudflare.com/client/v4/workers/ai",
+    "base_url": "https://api.cloudflare.com/client/v4",
     "auth_type": "api_key",
     "routing_priority": "direct",
     "status": "active",
-    "notes": "Edge inference via Cloudflare Workers. Good for low-latency, geographically distributed deployments. Smaller model selection but excellent free tier."
+    "notes": "Edge inference via Cloudflare Workers AI. Account-scoped model routes use /accounts/{account_id}/ai/run/{model}; OpenAI-compatible routes use /accounts/{account_id}/ai/v1."
   },
   {
     "provider_id": "deepseek",
@@ -77,6 +77,17 @@
     "notes": "Self-hosted inference engine. Supports many open models via ggml/gguf. Often used in Kubernetes/ Docker stacks. Authentication may be bearer token or disabled depending on config."
   },
   {
+    "provider_id": "minimax",
+    "name": "MiniMax",
+    "website_url": "https://platform.minimax.io",
+    "api_type": "anthropic",
+    "base_url": "https://api.minimax.io/anthropic",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for MiniMax text models. Anthropic-compatible API is recommended and supports streaming plus interleaved thinking; MiniMax also exposes OpenAI-compatible text APIs."
+  },
+  {
     "provider_id": "mistralai",
     "name": "Mistral AI",
     "website_url": "https://mistral.ai",
@@ -97,6 +108,17 @@
     "routing_priority": "direct",
     "status": "active",
     "notes": "Primary provider for Kimi models."
+  },
+  {
+    "provider_id": "nvidia",
+    "name": "NVIDIA NIM",
+    "website_url": "https://build.nvidia.com",
+    "api_type": "openai_compatible",
+    "base_url": "https://integrate.api.nvidia.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "NVIDIA NIM API catalog for hosted and deployable NVIDIA/open model inference, including Nemotron."
   },
   {
     "provider_id": "ollama",
@@ -134,9 +156,9 @@
   {
     "provider_id": "qwen",
     "name": "Qwen",
-    "website_url": "https://qwen.io",
+    "website_url": "https://qwen.ai",
     "api_type": "openai_compatible",
-    "base_url": "https://dashscope.aliyuncs.com/api/v1",
+    "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
     "auth_type": "api_key",
     "routing_priority": "direct",
     "status": "active",
@@ -152,5 +174,16 @@
     "routing_priority": "direct",
     "status": "active",
     "notes": "Primary provider for Grok models."
+  },
+  {
+    "provider_id": "zai",
+    "name": "Z.AI",
+    "website_url": "https://z.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.z.ai/api/paas/v4",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for GLM models. OpenAI-compatible API endpoint for Z.AI/Zhipu model access."
   }
 ]

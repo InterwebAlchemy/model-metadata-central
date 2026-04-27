@@ -1,0 +1,18 @@
+model_id: claude-sonnet-4-6
+model_name: Claude Sonnet 4.6
+model_provider: anthropic
+model_description: Anthropic's balanced Claude model with strong speed/intelligence tradeoffs, extended thinking, and 1M context.
+model_info: https://docs.anthropic.com/en/docs/about-claude/models/overview
+model_type: chat
+context_window: 1000000
+max_tokens: 64000
+cost_per_token:
+  input: 0.000003
+  output: 0.000015
+knowledge_cutoff: "2025-08-31"
+tuning: [multimodal, function]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-sonnet-4-6
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-sonnet-4.6

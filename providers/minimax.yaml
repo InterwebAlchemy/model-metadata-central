@@ -1,0 +1,9 @@
+provider_id: minimax
+name: MiniMax
+website_url: https://platform.minimax.io
+api_type: anthropic
+base_url: https://api.minimax.io/anthropic
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for MiniMax text models. Anthropic-compatible API is recommended and supports streaming plus interleaved thinking; MiniMax also exposes OpenAI-compatible text APIs.

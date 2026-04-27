@@ -1,4 +1,4 @@
-model_id: grok-4.20-multi-agent
+model_id: grok-4.2-multi-agent
 model_name: Grok 4.2 Multi-Agent
 model_provider: x-ai
 model_description: Grok 4.2 optimized for multi-agent workflows. Enhanced tool use and coordination for parallel task execution.
@@ -12,4 +12,4 @@ providers:
   - provider_id: x-ai
     model_id_on_provider: grok-4.2
   - provider_id: openrouter
-    model_id_on_provider: x-ai/grok-4.20-multi-agent
+    model_id_on_provider: x-ai/grok-4.2-multi-agent
