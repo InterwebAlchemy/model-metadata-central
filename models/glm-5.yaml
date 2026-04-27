@@ -1,0 +1,17 @@
+model_id: glm-5
+model_name: GLM-5
+model_provider: zai
+model_description: Z.AI GLM-5 model for current-generation reasoning and agentic workloads.
+model_info: https://docs.z.ai/guides/overview/pricing
+model_type: chat
+context_window: 204800
+max_tokens: 131072
+cost_per_token:
+  input: 0.000001
+  output: 0.0000032
+tuning: [function, instruction]
+providers:
+  - provider_id: zai
+    model_id_on_provider: glm-5
+  - provider_id: openrouter
+    model_id_on_provider: z-ai/glm-5

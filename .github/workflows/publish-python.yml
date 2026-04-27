@@ -1,0 +1,44 @@
+name: Publish Python Package
+
+on:
+  push:
+    tags:
+      - "python-v*"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/python
+    environment:
+      name: pypi
+      url: https://pypi.org/p/model-metadata-central
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: "3.10"
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Build registry from YAML sources
+        run: uv run python scripts/build_registry.py
+
+      - name: Build
+        run: uv build
+
+      - name: Publish
+        run: uv publish --trusted-publishing always

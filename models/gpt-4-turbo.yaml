@@ -1,0 +1,21 @@
+model_id: gpt-4-turbo
+model_name: GPT-4 Turbo
+model_provider: openai
+model_description: Legacy GPT-4 Turbo model with a 128K context window. Kept for integrations that still route older GPT-4 workloads.
+model_info: https://platform.openai.com/docs/models/gpt-4-turbo
+model_type: chat
+context_window: 128000
+max_tokens: 4096
+cost_per_token:
+  input: 0.00001
+  output: 0.00003
+knowledge_cutoff: "2023-12-01"
+tokenizer:
+  family: tiktoken
+  name: o200k_base
+tuning: [multimodal, function]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-4-turbo
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-4-turbo

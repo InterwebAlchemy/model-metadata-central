@@ -1,0 +1,15 @@
+model_id: claude-haiku-4
+model_name: Claude Haiku 4
+model_provider: anthropic
+model_description: Fast, affordable Claude. Optimized for high-volume, latency-sensitive tasks where quality-per-token matters more than raw capability.
+model_info: https://docs.anthropic.com/en/docs/models/claude-haiku-4
+model_type: chat
+context_window: 200000
+cost_per_token:
+  input: 0.0000008
+  output: 0.000004
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: haiku-4
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-haiku-4

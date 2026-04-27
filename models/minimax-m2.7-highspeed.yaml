@@ -1,0 +1,15 @@
+model_id: minimax-m2.7-highspeed
+model_name: MiniMax M2.7-highspeed
+model_provider: minimax
+model_description: High-speed MiniMax M2.7 variant with the same capability profile and faster output for latency-sensitive workloads.
+model_info: "https://platform.minimax.io/docs/guides/text-generation"
+model_type: chat
+context_window: 204800
+max_tokens: 131072
+cost_per_token:
+  input: 6e-7
+  output: 0.0000024
+tuning: [function, instruction, code, multilingual]
+providers:
+  - provider_id: minimax
+    model_id_on_provider: MiniMax-M2.7-highspeed

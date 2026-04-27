@@ -1,0 +1,9 @@
+provider_id: openai
+name: OpenAI
+website_url: https://openai.com
+api_type: openai_compatible
+base_url: https://api.openai.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: The primary provider for OpenAI models including GPT-4, GPT-5, and o-series.

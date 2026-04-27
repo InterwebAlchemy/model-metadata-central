@@ -1,0 +1,21 @@
+model_id: gpt-4.1
+model_name: GPT-4.1
+model_provider: openai
+model_description: Large-context GPT-4.1 model for coding, instruction following, and multimodal document workflows.
+model_info: https://platform.openai.com/docs/models/gpt-4.1
+model_type: chat
+context_window: 1047576
+max_tokens: 32768
+cost_per_token:
+  input: 0.000002
+  output: 0.000008
+knowledge_cutoff: "2024-04-01"
+tokenizer:
+  family: tiktoken
+  name: o200k_base
+tuning: [multimodal, function]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-4.1
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-4.1

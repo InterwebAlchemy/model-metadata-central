@@ -1,8 +1,15 @@
 model_id: mistral-7b-instruct
 model_name: Mistral 7B Instruct
+model_provider: mistralai
 model_description: Mistral-7B fine-tuned on instruction datasets publicly available on HuggingFace.
 model_info: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1
 model_type: chat
 context_window: 8192
 tuning:
   - instruction
+deprecated: true
+providers:
+  - provider_id: mistralai
+    model_id_on_provider: mistral-7b-instruct-0.3
+  - provider_id: openrouter
+    model_id_on_provider: mistralai/mistral-7b-instruct

@@ -1,0 +1,9 @@
+provider_id: anthropic
+name: Anthropic
+website_url: https://anthropic.com
+api_type: anthropic
+base_url: https://api.anthropic.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for Claude models. Uses Anthropic's own API protocol.

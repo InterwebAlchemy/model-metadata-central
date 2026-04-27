@@ -1,0 +1,16 @@
+model_id: llama-3.3-70b-versatile
+model_name: Llama 3.3 70B Versatile
+model_provider: groq
+model_description: Groq-hosted Llama 3.3 70B model optimized for fast general-purpose chat and tool workloads.
+model_info: https://console.groq.com/docs/models
+model_type: chat
+context_window: 131072
+max_tokens: 32768
+cost_per_token:
+  input: 5.9e-7
+  output: 7.9e-7
+knowledge_cutoff: "2023-12-01"
+tuning: [function, instruction]
+providers:
+  - provider_id: groq
+    model_id_on_provider: llama-3.3-70b-versatile

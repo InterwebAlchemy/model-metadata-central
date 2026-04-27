@@ -2,6 +2,12 @@
 
 A centralized, language-agnostic, open-source approach to storing and sharing model definitions like context windows, cost per token, etc.
 
+**Note**: This project does not strive to be an exhaustive registry of every model, but a registry that I can use in my own projects to provide consistent, sane defaults for model and provider selection for provider and model agnostic projects where the user can configure which models and providers they want to use.
+
+**Want a model added?** [Request a Model](https://github.com/InterwebAlchemy/llm-model-definitions/issues).
+
+For an exhaustive registry, check out [models.dev](https://models.dev).
+
 ## Problem
 
 Nearly every project that wants to incorporate multiple models needs to handle knowledge about the underlying model like context window length.
@@ -9,16 +15,12 @@ Nearly every project that wants to incorporate multiple models needs to handle k
 This leads to the proliferation of essentially the same code repeated across multiple codebases that all need to be updated when new models are released, token costs change, a model is deprecated, etc.
 
 ### Examples
-- [LangChain `base/base_language/count_tokens.ts`](https://github.com/langchain-ai/langchainjs/blob/main/langchain/src/base_language/count_tokens.ts)
-- [LiteLLM `model_prices_and_context_window.json`](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)
-  - **Note**: This was my inspiration for this initiative
-- [AutoGen `token_count_utils.py`](https://github.com/microsoft/autogen/blob/main/autogen/token_count_utils.py)
-- [tokentrim model_map.py](https://github.com/KillianLucas/tokentrim/blob/main/tokentrim/model_map.py)
-	- **Note**: [Open Interpreter](https://github.com/KillianLucas/open-interpreter/) relies on this
-- [AI Research Assistant `sevices/openai/models`](https://github.com/InterwebAlchemy/obsidian-ai-research-assistant/tree/main/src/services/openai/models)
-	- **Note**: This is one of my projects
-- [Mentat `llm_api.py`](https://github.com/AbanteAI/mentat/blob/main/mentat/llm_api.py)
-- [AutoGPT `autogpt/core/resource/model_providers/openai.py`](https://github.com/Significant-Gravitas/AutoGPT/blob/master/autogpts/autogpt/autogpt/core/resource/model_providers/openai.py)
+
+- [LangChain](<[libs/langchain-core/src/language_models/base.ts](https://github.com/langchain-ai/langchainjs/blob/main/libs/langchain-core/src/language_models/base.ts)>)
+- [LiteLLM](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)
+- [AutoGen](https://github.com/microsoft/autogen/blob/main/python/packages/autogen-core/src/autogen_core/models/_model_client.py#L16)
+- [tokentrim](https://github.com/KillianLucas/tokentrim/blob/main/tokentrim/model_map.py)
+- [AI Research Assistant Obsidian Plugin](https://github.com/InterwebAlchemy/obsidian-ai-research-assistant/blob/main/src/services/openai/models/index.ts)
 - [AgentGPT `next/src/types/modelSettings.ts`](https://github.com/reworkd/AgentGPT/blob/main/next/src/types/modelSettings.ts)
 - [MetaGPT `utils/token_counter.py`](https://github.com/geekan/MetaGPT/blob/main/metagpt/utils/token_counter.py)
 
@@ -26,24 +28,24 @@ Have more examples? [Create a Pull Request](https://github.com/InterwebAlchemy/l
 
 ## Proposal
 
-Centralized ownership (by an open source foundation) of a tech stack agnostic utility that defines model information and allows developers to easily import and consume these definitions in their own codebases.
+Centralized, language-agnostic utility that defines model information and allows developers to easily import and consume these definitions in their own codebases.
 
 ### JSON Schema
 
-A [JSON Schema](https://json-schema.org/) definition can be found in [`model-metadata.schema.json`](./model-metadata.schema.json), and example Model Metadata definitions can be found in the [`/models` directory](./models).
+A [JSON Schema](https://json-schema.org/) definition can be found in [`model-metadata.schema.json`](./model-metadata.schema.json), and example Model Metadata definitions can be found in the [`/models` directory](./models). Provider definitions live in [`/providers`](./providers) with their own schema in [`provider.schema.json`](./provider.schema.json).
 
-This schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
+These schema defines properties that are relevant to the model and developers who wish to leverage it in their own codebases.
 
 #### Required Properties
 
 - `model_id`: The identifier of the model that the provider uses
   - **Example**: `gpt-3.5-turbo`
 - `model_name`: The human-friendly name of the model
-	- **Example**: `GPT-3.5 Turbo`
+  - **Example**: `GPT-3.5 Turbo`
 - `model_type`: The type of model (`chat`, `completion`, or `embedding`)
-	- **Example**: `chat`
+  - **Example**: `chat`
 - `context_window`: The maximum number of tokens in the model's context window
-	- **Example**: `4096`
+  - **Example**: `4096`
 
 #### Optional Properties
 
@@ -53,66 +55,182 @@ This schema defines properties that are relevant to the model and developers who
 - `model_version`: The version of the model
   - **Example** `0613`
 - `cost_per_token`: The cost per token in USD
-  - **Example**: ```json {
-    "input": 0.0000015,
-    "output": 0.000002
-  }```
+  - **Example**: `json {
+  "input": 0.0000015,
+  "output": 0.000002
+}`
   - **Note**: supports either a basic number or an object with `input` and `output` numbers to define different costs between input tokens and output tokens
 - `knowledge_cutoff`: The training data cutoff date for the model
   - **Note**: This is helpful when dealing with applications where you may need to know if you should supplement the model's training data with more recent information
-- `token_encoding`: What encoding the model uses for tokens
-  - **Example**: `cl100k_base`
-  - **Note**: This is helpful when using `tiktoken`, `gpt-tokenizer`, etc. or needing to know if a model requires an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
+- `tokenizer`: What type of tokenization the model uses
+  - `family`: The tokenizer family, e.g. `tiktoken` (OpenAI), `tekken` (Mistral), `sentencepiece` (Google), `other`, or `unknown`
+    - **Note**: This is helpful when determining if/how the consuming application can calculate token usage using a standard open source library like `tiktoken` or `gpt-tokenizer`, etc. or an [alternate approach to counting tokens](https://github.com/belladoreai/llama-tokenizer-js)
+  - `name`: The specific tokenizer name or protocol used by the model, e.g. `cl100k_base` (tiktoken), `p50k_base` (tiktoken), `v3` (tekken), etc.
 - `tuning`: The types of tuning that the model has been given in Array format; currently supports `function`, `instruction`, `code`, `multilingual`, and `multimodal`
   - **Example**: `["function", "instruction"]`
   - **Note**: This is helpful when deciding which models are suitable for given tasks
+- `deprecated`: Whether the model has been deprecated by the provider
+  - **Example**: `false`
+  - **Note**: Deprecated models may still work but should be avoided for new integrations
+- `providers`: Which providers serve this model and how to reference it on each
+  - **Example**:
+    ```yaml
+    providers:
+      - provider_id: openai
+        model_id_on_provider: gpt-4o
+      - provider_id: openrouter
+        model_id_on_provider: openai/gpt-4o
+    ```
+  - **Note**: Allows a single model to be accessed via direct provider API or aggregator. Provider definitions live in `/providers`.
+
+### Provider Schema
+
+Provider definitions in [`providers/`](./providers) describe API endpoints and routing. See [`provider.schema.json`](./provider.schema.json).
+
+#### Required Properties
+
+- `provider_id`: Unique lowercase identifier matching the `providers/` filename and used in model `provider_reference`
+- `name`: Human-readable name
+- `api_type`: One of `openai_compatible`, `anthropic`, `openai`, `other`
+- `routing_priority`: `direct` (serves models itself) or `aggregator` (routes to other providers) or `both`
+
+#### Provider Routing
+
+The `routing_priority` field differentiates direct providers (who serve models themselves) from aggregators (who route to other providers):
+
+| `routing_priority` | Provider Examples                                      |
+| ------------------ | ------------------------------------------------------ |
+| `direct`           | OpenAI, Anthropic, DeepSeek, Groq, Mistral, Cloudflare |
+| `aggregator`       | OpenRouter                                             |
+
+Ollama, LM Studio, and LocalAI use `direct` but default to localhost with no auth — override `base_url` and `auth_type` in your app config when deploying.
 
 #### Example
 
-Here is an example Model Metadata definition for [OpenAI's GPT-3.5 Turbo model](https://platform.openai.com/docs/models/gpt-3-5):
-
 ```yaml
-model_id: gpt-3.5-turbo
-model_name: GPT-3.5 Turbo
-model_provider: openai
-model_description: Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.
-model_info: https://platform.openai.com/docs/models/gpt-3-5
-model_version: latest
-model_type: chat
-context_window: 4097
-max_tokens: 4095
-cost_per_token:
-  input: 0.0000015
-  output: 0.000002
-knowledge_cutoff: 2021-09-01
-token_encoding: cl100k_base
-tuning:
-  - function
+provider_id: openai
+name: OpenAI
+website_url: https://openai.com
+api_type: openai_compatible
+base_url: https://api.openai.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
 ```
 
-## Roadmap
+### Included Models
 
-**Note**: This project is open to feedback at every stage of rhis roadmap.
+66 active models across 12 primary model providers (deprecated models exist in [`/models`](./models) but are excluded from this list). Provider definitions cover 17 direct/local/aggregator routes.
 
-- [x] Create JSON Schema
-- [x] Generate example model definitions
-- [x] Discuss schema with [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
-- [x] Rename to `model-metadata-central`
-- [ ] Integrate a GitHub Action to validate Model Metadata definitions against schema
-- [ ] Publish JSON Schema to GitHub Pages
-- [ ] Add guidance for including metadata definitions via git submodule
-- [ ] Generate language-specific packages for importing these definitions into other codebases
-  - [ ] TypeScript
-  - [x] Python
-  - [ ] Rust
-  - [ ] Go
-  - Other languages? Open an [issue](https://github.com/InterwebAlchemy/llm-model-definitions/issues) to request one!
-- [ ] Integrate metadata for more models
-- [ ] Integrate a GitHub Action to generate these packages
-- [ ] Integrate a GitHub Action to publish these packages to NPM, PyPI, etc.
-- [ ] Donate project to [AI Engineer Foundation](https://github.com/AI-Engineer-Foundation/)
-- [ ] Update publishing actions to publish to the AI Engineer Foundation's NPM, PyPI, etc.
-- [ ] Ongoing support, evangelism, and maintenance of the project
-- [ ] **Hopeful**: Generate static GitHub Pages site that lists models, displays their metadata, and allows filtering by properties
-- [ ] **Hopeful**: Get [projects](https://github.com/InterwebAlchemy/llm-model-definitions#examples) to adopt the language-specific packages and extend them as necessary instead of creating their own model definitions
-- [ ] **Aspirational**: Get model providers to adopt the schema definition and update the repo when model metadata changes or new models are released
+**OpenAI**:
+
+- `gpt-4-turbo`
+- `gpt-4.1`
+- `gpt-4.1-mini`
+- `gpt-4.1-nano`
+- `gpt-4.5`
+- `gpt-4o`
+- `gpt-4o-mini`
+- `gpt-5`
+- `gpt-5-mini`
+- `gpt-5-nano`
+- `gpt-5.3-codex`
+- `gpt-5.4`
+- `gpt-5.4-image-2`
+- `gpt-5.4-mini`
+- `gpt-5.4-nano`
+- `gpt-5.4-pro`
+- `gpt-5.5`
+- `gpt-5.5-pro`
+- `o3`
+- `o4-mini`
+
+**Anthropic**:
+
+- `claude-haiku-4`
+- `claude-haiku-4-5`
+- `claude-opus-4-6`
+- `claude-opus-4-6-fast`
+- `claude-opus-4-7`
+- `claude-opus-latest`
+- `claude-sonnet-4-2`
+- `claude-sonnet-4-6`
+
+**Google**:
+
+- `gemini-2.5-flash`
+- `gemini-2.5-pro`
+- `gemma-4-26b-a4b-it`
+- `gemma-4-31b-it`
+
+**DeepSeek**:
+
+- `deepseek-coder-v4`
+- `deepseek-v4-flash`
+- `deepseek-v4-pro`
+
+**xAI**:
+
+- `grok-4.2`
+- `grok-4.2-multi-agent`
+
+**Moonshot AI**:
+
+- `kimi-k2.6`
+- `kimi-v3`
+
+**Mistral AI**:
+
+- `codestral-latest`
+- `mistral-large-2411`
+- `mistral-large-2512`
+- `mistral-large-latest`
+- `mistral-medium-latest`
+- `mistral-nemo`
+- `mistral-small-latest`
+
+**MiniMax**:
+
+- `minimax-m2`
+- `minimax-m2.1`
+- `minimax-m2.1-highspeed`
+- `minimax-m2.5`
+- `minimax-m2.5-highspeed`
+- `minimax-m2.7`
+- `minimax-m2.7-highspeed`
+
+**Z.AI**:
+
+- `glm-4.7`
+- `glm-4.7-flash`
+- `glm-5`
+- `glm-5-turbo`
+- `glm-5.1`
+- `glm-5v-turbo`
+
+**Qwen**:
+
+- `qwen3-32b`
+- `qwen3.6-flash`
+- `qwen3.6-plus`
+
+**Groq**:
+
+- `deepseek-r1-distill-llama-70b`
+- `llama-3.1-8b-instant`
+- `llama-3.3-70b-versatile`
+
+**NVIDIA**:
+
+- `nemotron-3-super-120b-a12b`
+
+Full definitions (including deprecated models) live in [`/models`](./models).
+
+### Packages
+
+Language-specific packages wrap the registry with a typed API. See each package for usage examples.
+
+| Package                              | Status |
+| ------------------------------------ | ------ |
+| [TypeScript](./packages/typescript/) | Alpha  |
+| [Python](./packages/python/)         | Alpha  |

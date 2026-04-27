@@ -1,0 +1,15 @@
+model_id: deepseek-v4-flash
+model_name: DeepSeek V4 Flash
+model_provider: deepseek
+model_description: Fast, efficient DeepSeek variant. Optimized for high-volume applications where latency and cost are critical.
+model_info: https://api.deepseek.com
+model_type: chat
+context_window: 1048576
+cost_per_token:
+  input: 0.00000014
+  output: 0.00000028
+providers:
+  - provider_id: deepseek
+    model_id_on_provider: deepseek-chat
+  - provider_id: openrouter
+    model_id_on_provider: deepseek/deepseek-v4-flash

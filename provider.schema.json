@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/InterwebAlchemy/model-metadata-central/provider.schema.json",
+  "title": "Provider Metadata",
+  "description": "A provider definition for model routing and API configuration",
+  "type": "object",
+  "properties": {
+    "provider_id": {
+      "description": "Unique identifier for the provider (used in model provider_reference)",
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "name": {
+      "description": "Human-readable provider name (example: OpenAI)",
+      "type": "string"
+    },
+    "website_url": {
+      "description": "Link to the provider's website",
+      "type": "string",
+      "format": "uri"
+    },
+    "api_type": {
+      "description": "The type of API the provider exposes",
+      "type": "string",
+      "enum": ["openai_compatible", "anthropic", "openai", "other"]
+    },
+    "base_url": {
+      "description": "The base URL for API requests",
+      "type": "string",
+      "format": "uri"
+    },
+    "auth_type": {
+      "description": "How authentication is handled",
+      "type": "string",
+      "enum": ["api_key", "bearer", "oauth", "managed", "none"]
+    },
+    "routing_priority": {
+      "description": "Whether this provider routes to other providers (aggregator) or serves models directly",
+      "type": "string",
+      "enum": ["direct", "aggregator", "both"]
+    },
+    "status": {
+      "description": "Whether this provider definition is active",
+      "type": "string",
+      "enum": ["active", "deprecated", "inactive"],
+      "default": "active"
+    },
+    "notes": {
+      "description": "Additional notes about the provider",
+      "type": "string"
+    }
+  },
+  "required": ["provider_id", "name", "api_type", "routing_priority"]
+}

@@ -1,0 +1,2111 @@
+[
+  {
+    "model_id": "claude-haiku-4-5",
+    "model_name": "Claude Haiku 4.5 (latest)",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's fast, low-cost Claude 4.5 model with near-frontier intelligence for high-volume work.",
+    "model_info": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+    "model_type": "chat",
+    "context_window": 200000,
+    "max_tokens": 64000,
+    "cost_per_token": {
+      "input": 0.000001,
+      "output": 0.000005
+    },
+    "knowledge_cutoff": "2025-02-28",
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-haiku-4-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-haiku-4.5"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-haiku-4",
+    "model_name": "Claude Haiku 4",
+    "model_provider": "anthropic",
+    "model_description": "Fast, affordable Claude. Optimized for high-volume, latency-sensitive tasks where quality-per-token matters more than raw capability.",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-haiku-4",
+    "model_type": "chat",
+    "context_window": 200000,
+    "cost_per_token": {
+      "input": 8e-7,
+      "output": 0.000004
+    },
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "haiku-4"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-haiku-4"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-4-6-fast",
+    "model_name": "Claude Opus 4.6 (Fast)",
+    "model_provider": "anthropic",
+    "model_description": "High-speed variant of Opus 4.6. Optimized for rapid responses while retaining strong reasoning and capabilities.",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-6",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 0.00003,
+      "output": 0.00015
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-opus-4-6-fast"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-4-6-fast"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-4-6",
+    "model_name": "Claude Opus 4.6",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's previous-generation Opus model with 1M context, retained for downstream compatibility.",
+    "model_info": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 0.000005,
+      "output": 0.000025
+    },
+    "knowledge_cutoff": "2025-05-31",
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-opus-4-6"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-4.6"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-4-7",
+    "model_name": "Claude Opus 4.7",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's most capable model. Exceptional at complex reasoning, coding, creative collaboration, and scientific analysis.",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-7",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 0.000005,
+      "output": 0.000025
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-opus-4-7"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-4-7"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-latest",
+    "model_name": "Claude Opus Latest",
+    "model_provider": "anthropic",
+    "model_description": "Points to the latest stable Opus release. Use when you want the newest Claude without pinning a version.",
+    "model_info": "https://docs.anthropic.com/en/docs/models",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 0.000005,
+      "output": 0.000025
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "opus"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-latest"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-4-2",
+    "model_name": "Claude Sonnet 4.2",
+    "model_provider": "anthropic",
+    "model_description": "Balanced Anthropic model. Strong for coding, analysis, and everyday tasks at a mid-range price point.",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-sonnet-4-2",
+    "model_type": "chat",
+    "context_window": 200000,
+    "cost_per_token": {
+      "input": 0.000003,
+      "output": 0.000015
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-sonnet-4-2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-sonnet-4-2"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-4-6",
+    "model_name": "Claude Sonnet 4.6",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's balanced Claude model with strong speed/intelligence tradeoffs, extended thinking, and 1M context.",
+    "model_info": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 64000,
+    "cost_per_token": {
+      "input": 0.000003,
+      "output": 0.000015
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-sonnet-4-6"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-sonnet-4.6"
+      }
+    ]
+  },
+  {
+    "model_id": "codestral-latest",
+    "model_name": "Codestral (latest)",
+    "model_provider": "mistralai",
+    "model_description": "Mistral's code-specialized model for software engineering and code completion workflows.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 256000,
+    "max_tokens": 4096,
+    "cost_per_token": {
+      "input": 3e-7,
+      "output": 9e-7
+    },
+    "knowledge_cutoff": "2024-10-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "codestral-latest"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/codestral-latest"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-coder-v4",
+    "model_name": "DeepSeek Coder V4",
+    "model_provider": "deepseek",
+    "model_description": "DeepSeek's dedicated code model. Specialized for code generation, completion, and debugging across many languages.",
+    "model_info": "https://api.deepseek.com",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "cost_per_token": {
+      "input": 4.3e-7,
+      "output": 8.7e-7
+    },
+    "tuning": [
+      "code"
+    ],
+    "providers": [
+      {
+        "provider_id": "deepseek",
+        "model_id_on_provider": "deepseek-coder"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "deepseek/deepseek-coder-v4"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-r1-distill-llama-70b",
+    "model_name": "DeepSeek R1 Distill Llama 70B",
+    "model_provider": "groq",
+    "model_description": "Groq-hosted DeepSeek R1 distilled Llama 70B reasoning model.",
+    "model_info": "https://console.groq.com/docs/models",
+    "model_type": "chat",
+    "context_window": 131072,
+    "max_tokens": 8192,
+    "cost_per_token": {
+      "input": 7.5e-7,
+      "output": 9.9e-7
+    },
+    "knowledge_cutoff": "2024-07-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "groq",
+        "model_id_on_provider": "deepseek-r1-distill-llama-70b"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4-flash",
+    "model_name": "DeepSeek V4 Flash",
+    "model_provider": "deepseek",
+    "model_description": "Fast, efficient DeepSeek variant. Optimized for high-volume applications where latency and cost are critical.",
+    "model_info": "https://api.deepseek.com",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "cost_per_token": {
+      "input": 1.4e-7,
+      "output": 2.8e-7
+    },
+    "providers": [
+      {
+        "provider_id": "deepseek",
+        "model_id_on_provider": "deepseek-chat"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "deepseek/deepseek-v4-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4-pro",
+    "model_name": "DeepSeek V4 Pro",
+    "model_provider": "deepseek",
+    "model_description": "DeepSeek's flagship model. Excellent reasoning and code capabilities at a fraction of OpenAI's cost.",
+    "model_info": "https://api.deepseek.com",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "cost_per_token": {
+      "input": 4.3e-7,
+      "output": 8.7e-7
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "deepseek",
+        "model_id_on_provider": "deepseek-chat"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "deepseek/deepseek-v4-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.0-flash",
+    "model_name": "Gemini 2.0 Flash",
+    "model_provider": "google",
+    "model_description": "Previous-generation Gemini. Good balance of speed, cost, and capability for standard tasks.",
+    "model_info": "https://ai.google.dev/gemini-api/models/gemini-2.0-flash",
+    "model_type": "chat",
+    "context_window": 128000,
+    "cost_per_token": {
+      "input": 1e-7,
+      "output": 4e-7
+    },
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-2.0-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-2.0-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.5-flash",
+    "model_name": "Gemini 2.5 Flash",
+    "model_provider": "google",
+    "model_description": "Fast, efficient Gemini model. Optimized for high-volume applications with strong reasoning and code performance.",
+    "model_info": "https://ai.google.dev/gemini-api/models/gemini-2.5-flash",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 7.5e-8,
+      "output": 3e-7
+    },
+    "tuning": [
+      "multimodal"
+    ],
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-2.5-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-2.5-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-2.5-pro",
+    "model_name": "Gemini 2.5 Pro",
+    "model_provider": "google",
+    "model_description": "Google's flagship model. Exceptional at long-context tasks, multimodal reasoning, and code generation.",
+    "model_info": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 0.00000125,
+      "output": 0.000005
+    },
+    "tuning": [
+      "multimodal"
+    ],
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-2.5-pro"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-2.5-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "gemma-4-26b-a4b-it",
+    "model_name": "Gemma 4 26B",
+    "model_provider": "google",
+    "model_description": "Google's smaller open-weight instruction-tuned model. Efficient for constrained deployment environments.",
+    "model_info": "https://ai.google.dev/gemma",
+    "model_type": "chat",
+    "context_window": 262144,
+    "cost_per_token": {
+      "input": 6e-8,
+      "output": 3.3e-7
+    },
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemma-4-26b-a4b-it"
+      },
+      {
+        "provider_id": "cloudflare",
+        "model_id_on_provider": "@cf/google/gemma-4-26b-a4b-it"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemma-4-26b-a4b-it"
+      }
+    ]
+  },
+  {
+    "model_id": "gemma-4-31b-it",
+    "model_name": "Gemma 4 31B",
+    "model_provider": "google",
+    "model_description": "Google's open-weight instruction-tuned model. Strong reasoning in a smaller footprint. Good for fine-tuning and self-hosting.",
+    "model_info": "https://ai.google.dev/gemma",
+    "model_type": "chat",
+    "context_window": 262144,
+    "cost_per_token": {
+      "input": 1.3e-7,
+      "output": 3.8e-7
+    },
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemma-4-31b-it"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemma-4-31b-it"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-4.7-flash",
+    "model_name": "GLM-4.7-Flash",
+    "model_provider": "zai",
+    "model_description": "Fast open-weight GLM model optimized for multilingual dialogue, tool calling, and reasoning.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 200000,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 0,
+      "output": 0
+    },
+    "knowledge_cutoff": "2025-04-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-4.7-flash"
+      },
+      {
+        "provider_id": "cloudflare",
+        "model_id_on_provider": "@cf/zai-org/glm-4.7-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-4.7-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-4.7",
+    "model_name": "GLM-4.7",
+    "model_provider": "zai",
+    "model_description": "Open-weight Z.AI GLM model with strong multilingual, reasoning, and instruction-following capabilities.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 6e-7,
+      "output": 0.0000022
+    },
+    "knowledge_cutoff": "2025-04-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-4.7"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-4.7"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5-turbo",
+    "model_name": "GLM-5-Turbo",
+    "model_provider": "zai",
+    "model_description": "Higher-throughput GLM-5 Turbo model for production Z.AI workloads.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 200000,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 0.0000012,
+      "output": 0.000004
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5-turbo"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5-turbo"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.1",
+    "model_name": "GLM-5.1",
+    "model_provider": "zai",
+    "model_description": "Updated GLM-5.1 model with current Z.AI pricing and long-context support.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 200000,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 0.0000014,
+      "output": 0.0000044
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5.1"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5.1"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5",
+    "model_name": "GLM-5",
+    "model_provider": "zai",
+    "model_description": "Z.AI GLM-5 model for current-generation reasoning and agentic workloads.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 0.000001,
+      "output": 0.0000032
+    },
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5v-turbo",
+    "model_name": "glm-5v-turbo",
+    "model_provider": "zai",
+    "model_description": "Vision-capable GLM-5 Turbo variant for multimodal document, image, and video inputs.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 200000,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 0.0000012,
+      "output": 0.000004
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5v-turbo"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5v-turbo"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-3.5-turbo-16k",
+    "model_name": "GPT-3.5 Turbo 16K",
+    "model_provider": "openai",
+    "model_description": "Deprecated 16K GPT-3.5 Turbo snapshot retained for legacy downstream configurations.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-3.5-turbo-16k-0613",
+    "model_version": "0613",
+    "model_type": "chat",
+    "context_window": 16385,
+    "max_tokens": 4096,
+    "cost_per_token": {
+      "input": 0.000003,
+      "output": 0.000004
+    },
+    "knowledge_cutoff": "2021-09-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "cl100k_base"
+    },
+    "tuning": [
+      "instruction"
+    ],
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-3.5-turbo-16k-0613"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-3.5-turbo-instruct",
+    "model_name": "GPT-3.5 Turbo Instruct",
+    "model_provider": "openai",
+    "model_description": "Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-3-5",
+    "model_version": "latest",
+    "model_type": "completion",
+    "context_window": 4097,
+    "max_tokens": 4095,
+    "cost_per_token": {
+      "input": 0.0000015,
+      "output": 0.000002
+    },
+    "knowledge_cutoff": "2021-09-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "cl100k_base"
+    },
+    "tuning": [
+      "instruction",
+      "function"
+    ],
+    "deprecated": true
+  },
+  {
+    "model_id": "gpt-3.5-turbo",
+    "model_name": "GPT-3.5 Turbo",
+    "model_provider": "openai",
+    "model_description": "Most capable GPT-3.5 model and optimized for chat at 1/10th the cost of text-davinci-003.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-3-5",
+    "model_version": "latest",
+    "model_type": "chat",
+    "context_window": 4097,
+    "max_tokens": 4095,
+    "cost_per_token": {
+      "input": 0.0000015,
+      "output": 0.000002
+    },
+    "knowledge_cutoff": "2021-09-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "cl100k_base"
+    },
+    "tuning": [
+      "function"
+    ],
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-3.5-turbo"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4-32k",
+    "model_name": "GPT-4 32K",
+    "model_provider": "openai",
+    "model_description": "Same capabilities as the standard gpt-4 mode but with 4x the context length.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4",
+    "model_version": "latest",
+    "model_type": "chat",
+    "context_window": 32768,
+    "cost_per_token": {
+      "input": 0.00006,
+      "output": 0.00012
+    },
+    "knowledge_cutoff": "2021-09-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "cl100k_base"
+    },
+    "tuning": [
+      "function"
+    ],
+    "deprecated": true
+  },
+  {
+    "model_id": "gpt-4-turbo",
+    "model_name": "GPT-4 Turbo",
+    "model_provider": "openai",
+    "model_description": "Legacy GPT-4 Turbo model with a 128K context window. Kept for integrations that still route older GPT-4 workloads.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4-turbo",
+    "model_type": "chat",
+    "context_window": 128000,
+    "max_tokens": 4096,
+    "cost_per_token": {
+      "input": 0.00001,
+      "output": 0.00003
+    },
+    "knowledge_cutoff": "2023-12-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4-turbo"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4-turbo"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4.1-mini",
+    "model_name": "GPT-4.1 mini",
+    "model_provider": "openai",
+    "model_description": "Smaller GPT-4.1 variant balancing latency, price, and strong general-purpose capability.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4.1-mini",
+    "model_type": "chat",
+    "context_window": 1047576,
+    "max_tokens": 32768,
+    "cost_per_token": {
+      "input": 4e-7,
+      "output": 0.0000016
+    },
+    "knowledge_cutoff": "2024-04-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4.1-mini"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4.1-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4.1-nano",
+    "model_name": "GPT-4.1 nano",
+    "model_provider": "openai",
+    "model_description": "Lowest-cost GPT-4.1 variant for classification, extraction, and latency-sensitive tasks.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4.1-nano",
+    "model_type": "chat",
+    "context_window": 1047576,
+    "max_tokens": 32768,
+    "cost_per_token": {
+      "input": 1e-7,
+      "output": 4e-7
+    },
+    "knowledge_cutoff": "2024-04-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4.1-nano"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4.1-nano"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4.1",
+    "model_name": "GPT-4.1",
+    "model_provider": "openai",
+    "model_description": "Large-context GPT-4.1 model for coding, instruction following, and multimodal document workflows.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4.1",
+    "model_type": "chat",
+    "context_window": 1047576,
+    "max_tokens": 32768,
+    "cost_per_token": {
+      "input": 0.000002,
+      "output": 0.000008
+    },
+    "knowledge_cutoff": "2024-04-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4.1"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4.1"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4.5",
+    "model_name": "GPT-4.5",
+    "model_provider": "openai",
+    "model_description": "GPT-4 successor with improved reasoning and instruction following. Strong all-around model between GPT-4o and GPT-5 series.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4.5",
+    "model_type": "chat",
+    "context_window": 128000,
+    "cost_per_token": {
+      "input": 0.00001,
+      "output": 0.00003
+    },
+    "tuning": [
+      "function"
+    ],
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4.5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4.5"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4",
+    "model_name": "GPT-4",
+    "model_provider": "openai",
+    "model_description": "More capable than any GPT-3.5 model able to do more complex tasks and optimized for chat.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4",
+    "model_version": "latest",
+    "model_type": "chat",
+    "context_window": 8192,
+    "max_tokens": 8191,
+    "cost_per_token": {
+      "input": 0.00003,
+      "output": 0.00006
+    },
+    "knowledge_cutoff": "2021-09-01",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "cl100k_base"
+    },
+    "tuning": [
+      "function"
+    ],
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4o-mini",
+    "model_name": "GPT-4o Mini",
+    "model_provider": "openai",
+    "model_description": "Smaller, faster, cheaper GPT-4o. Optimized for high-volume, cost-sensitive applications.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4o-mini",
+    "model_type": "chat",
+    "context_window": 128000,
+    "max_tokens": 16384,
+    "cost_per_token": {
+      "input": 1.5e-7,
+      "output": 6e-7
+    },
+    "tuning": [
+      "multimodal"
+    ],
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4o-mini"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4o-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-4o",
+    "model_name": "GPT-4o",
+    "model_provider": "openai",
+    "model_description": "GPT-4 Omni — multimodal model with vision, audio, and text. Fast and cost-efficient relative to GPT-4 Turbo.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-4o",
+    "model_type": "chat",
+    "context_window": 128000,
+    "max_tokens": 32768,
+    "cost_per_token": {
+      "input": 0.000005,
+      "output": 0.000015
+    },
+    "tuning": [
+      "multimodal"
+    ],
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-4o"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-4o"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5-mini",
+    "model_name": "GPT-5 Mini",
+    "model_provider": "openai",
+    "model_description": "Lower-cost GPT-5 variant for high-volume tasks that still benefit from reasoning support.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5-mini",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 2.5e-7,
+      "output": 0.000002
+    },
+    "knowledge_cutoff": "2024-05-30",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5-mini"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5-nano",
+    "model_name": "GPT-5 Nano",
+    "model_provider": "openai",
+    "model_description": "Smallest GPT-5 variant for inexpensive, latency-sensitive automation.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5-nano",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 5e-8,
+      "output": 4e-7
+    },
+    "knowledge_cutoff": "2024-05-30",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5-nano"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5-nano"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.3-codex",
+    "model_name": "GPT-5.3 Codex",
+    "model_provider": "openai",
+    "model_description": "Codex-optimized GPT-5.3 model for coding agents and long-running software engineering tasks.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.3-codex",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 0.00000175,
+      "output": 0.000014
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.3-codex"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.3-codex"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-image-2",
+    "model_name": "GPT-5.4 Image 2",
+    "model_provider": "openai",
+    "model_description": "GPT-5.4 optimized for image understanding and generation. Multimodal model supporting vision tasks.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.4-image-2",
+    "model_type": "chat",
+    "context_window": 272000,
+    "cost_per_token": {
+      "input": 0.000008,
+      "output": 0.000015
+    },
+    "tuning": [
+      "multimodal"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.4-image-2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.4-image-2"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-mini",
+    "model_name": "GPT-5.4 mini",
+    "model_provider": "openai",
+    "model_description": "Fast, cost-efficient GPT-5.4 variant for coding, computer use, and subagent workloads.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.4-mini",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 7.5e-7,
+      "output": 0.0000045
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.4-mini"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.4-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-nano",
+    "model_name": "GPT-5.4 nano",
+    "model_provider": "openai",
+    "model_description": "Lowest-latency GPT-5.4 variant for inexpensive high-volume tasks.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.4-nano",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 2e-7,
+      "output": 0.00000125
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.4-nano"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.4-nano"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4-pro",
+    "model_name": "GPT-5.4 Pro",
+    "model_provider": "openai",
+    "model_description": "High-capability GPT-5.4 Pro model for the hardest reasoning and professional workloads.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.4-pro",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 0.00003,
+      "output": 0.00018
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.4-pro"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.4-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.4",
+    "model_name": "GPT-5.4",
+    "model_provider": "openai",
+    "model_description": "Current OpenAI model for coding and professional work with a 1M token context window.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.4",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 0.0000025,
+      "output": 0.000015
+    },
+    "knowledge_cutoff": "2025-08-31",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.4"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.4"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.5-pro",
+    "model_name": "GPT-5.5 Pro",
+    "model_provider": "openai",
+    "model_description": "Most capable OpenAI model with largest context window. Optimized for complex reasoning, advanced coding, and scientific analysis.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.5-pro",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 1049999,
+    "cost_per_token": {
+      "input": 0.00003,
+      "output": 0.00018
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.5-pro"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.5-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.5",
+    "model_name": "GPT-5.5",
+    "model_provider": "openai",
+    "model_description": "Capable OpenAI model with large context window. Strong for complex tasks at lower cost than Pro.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.5",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 1049999,
+    "cost_per_token": {
+      "input": 0.000005,
+      "output": 0.00003
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.5"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5",
+    "model_name": "GPT-5",
+    "model_provider": "openai",
+    "model_description": "General GPT-5 model for reasoning, coding, and multimodal text/image workflows.",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5",
+    "model_type": "chat",
+    "context_window": 400000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 0.00000125,
+      "output": 0.00001
+    },
+    "knowledge_cutoff": "2024-09-30",
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "tuning": [
+      "multimodal",
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5"
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.2-multi-agent",
+    "model_name": "Grok 4.2 Multi-Agent",
+    "model_provider": "x-ai",
+    "model_description": "Grok 4.2 optimized for multi-agent workflows. Enhanced tool use and coordination for parallel task execution.",
+    "model_info": "https://x.ai/api",
+    "model_type": "chat",
+    "context_window": 2000000,
+    "cost_per_token": {
+      "input": 0.000002,
+      "output": 0.000006
+    },
+    "providers": [
+      {
+        "provider_id": "x-ai",
+        "model_id_on_provider": "grok-4.2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "x-ai/grok-4.2-multi-agent"
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.2",
+    "model_name": "Grok 4.2",
+    "model_provider": "x-ai",
+    "model_description": "xAI's flagship model. Strong reasoning with real-time web access. Known for personality and directness.",
+    "model_info": "https://x.ai/api",
+    "model_type": "chat",
+    "context_window": 2000000,
+    "cost_per_token": {
+      "input": 0.000002,
+      "output": 0.000006
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "x-ai",
+        "model_id_on_provider": "grok-4.2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "x-ai/grok-4.2"
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k2.6",
+    "model_name": "Kimi K2.6",
+    "model_provider": "moonshotai",
+    "model_description": "Moonshot AI's flagship model. Strong long-context understanding and reasoning at competitive pricing.",
+    "model_info": "https://platform.moonshot.ai/docs",
+    "model_type": "chat",
+    "context_window": 256000,
+    "cost_per_token": {
+      "input": 7.4e-7,
+      "output": 0.00000466
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "moonshotai",
+        "model_id_on_provider": "kimi-k2.6"
+      },
+      {
+        "provider_id": "cloudflare",
+        "model_id_on_provider": "@cf/moonshotai/kimi-k2.6"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "moonshotai/kimi-k2.6"
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-v3",
+    "model_name": "Kimi V3",
+    "model_provider": "moonshotai",
+    "model_description": "Mid-range Moonshot model. Good balance of capability and cost for standard tasks.",
+    "model_info": "https://platform.moonshot.ai/docs",
+    "model_type": "chat",
+    "context_window": 256000,
+    "cost_per_token": {
+      "input": 2e-7,
+      "output": 0.000001
+    },
+    "providers": [
+      {
+        "provider_id": "moonshotai",
+        "model_id_on_provider": "kimi-v3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "moonshotai/kimi-v3"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.1-8b-instant",
+    "model_name": "Llama 3.1 8B Instant",
+    "model_provider": "groq",
+    "model_description": "Groq-hosted Llama 3.1 8B model for very low-latency, low-cost chat and automation.",
+    "model_info": "https://console.groq.com/docs/models",
+    "model_type": "chat",
+    "context_window": 131072,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 5e-8,
+      "output": 8e-8
+    },
+    "knowledge_cutoff": "2023-12-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "groq",
+        "model_id_on_provider": "llama-3.1-8b-instant"
+      }
+    ]
+  },
+  {
+    "model_id": "llama-3.3-70b-versatile",
+    "model_name": "Llama 3.3 70B Versatile",
+    "model_provider": "groq",
+    "model_description": "Groq-hosted Llama 3.3 70B model optimized for fast general-purpose chat and tool workloads.",
+    "model_info": "https://console.groq.com/docs/models",
+    "model_type": "chat",
+    "context_window": 131072,
+    "max_tokens": 32768,
+    "cost_per_token": {
+      "input": 5.9e-7,
+      "output": 7.9e-7
+    },
+    "knowledge_cutoff": "2023-12-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "groq",
+        "model_id_on_provider": "llama-3.3-70b-versatile"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.1-highspeed",
+    "model_name": "MiniMax M2.1-highspeed",
+    "model_provider": "minimax",
+    "model_description": "High-speed MiniMax M2.1 variant for faster multilingual programming and agent workflows.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 6e-7,
+      "output": 0.0000024
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.1-highspeed"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.1",
+    "model_name": "MiniMax M2.1",
+    "model_provider": "minimax",
+    "model_description": "MiniMax M2.1 model with strong multilingual programming and enhanced coding experience.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 3e-7,
+      "output": 0.0000012
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.1"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "minimax/minimax-m2.1"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.5-highspeed",
+    "model_name": "MiniMax M2.5-highspeed",
+    "model_provider": "minimax",
+    "model_description": "High-speed MiniMax M2.5 variant for lower-latency coding and agent workloads.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 6e-7,
+      "output": 0.0000024
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.5-highspeed"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.5",
+    "model_name": "MiniMax M2.5",
+    "model_provider": "minimax",
+    "model_description": "MiniMax M2.5 model for complex programming, agent, and productivity tasks.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 3e-7,
+      "output": 0.0000012
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "minimax/minimax-m2.5"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.7-highspeed",
+    "model_name": "MiniMax M2.7-highspeed",
+    "model_provider": "minimax",
+    "model_description": "High-speed MiniMax M2.7 variant with the same capability profile and faster output for latency-sensitive workloads.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 6e-7,
+      "output": 0.0000024
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.7-highspeed"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2.7",
+    "model_name": "MiniMax M2.7",
+    "model_provider": "minimax",
+    "model_description": "Beginning the journey of recursive self-improvement. Strong for programming, tool calling, search, office productivity, and complex agent workflows.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 131072,
+    "cost_per_token": {
+      "input": 3e-7,
+      "output": 0.0000012
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2.7"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "minimax/minimax-m2.7"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m2",
+    "model_name": "MiniMax M2",
+    "model_provider": "minimax",
+    "model_description": "MiniMax M2 model for agentic workflows, advanced reasoning, function calling, and real-time streaming.",
+    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_type": "chat",
+    "context_window": 204800,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 3e-7,
+      "output": 0.0000012
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "minimax/minimax-m2"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-7b-instruct",
+    "model_name": "Mistral 7B Instruct",
+    "model_provider": "mistralai",
+    "model_description": "Mistral-7B fine-tuned on instruction datasets publicly available on HuggingFace.",
+    "model_info": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1",
+    "model_type": "chat",
+    "context_window": 8192,
+    "tuning": [
+      "instruction"
+    ],
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-7b-instruct-0.3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-7b-instruct"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-7b",
+    "model_name": "Mistral 7B",
+    "model_provider": "mistralai",
+    "model_description": "Mistral-7B-v0.1 is a small yet powerful model adaptable to many use-cases.",
+    "model_info": "https://mistral.ai/news/announcing-mistral-7b/",
+    "model_type": "chat",
+    "context_window": 8192,
+    "cost_per_token": 0,
+    "deprecated": true,
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "open-mistral-7b"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-7b"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large-2411",
+    "model_name": "Mistral Large 2.1",
+    "model_provider": "mistralai",
+    "model_description": "Versioned Mistral Large 2.1 model retained for integrations pinned to the 24.11 release.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 131072,
+    "max_tokens": 16384,
+    "cost_per_token": {
+      "input": 0.000002,
+      "output": 0.000006
+    },
+    "knowledge_cutoff": "2024-11-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-large-2411"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-large-2411"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large-2512",
+    "model_name": "Mistral Large 3",
+    "model_provider": "mistralai",
+    "model_description": "Mistral Large 3 versioned model with long context and strong multimodal/coding capabilities.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 262144,
+    "cost_per_token": {
+      "input": 5e-7,
+      "output": 0.0000015
+    },
+    "knowledge_cutoff": "2024-11-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "multimodal",
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-large-2512"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-large-2512"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-large-latest",
+    "model_name": "Mistral Large (latest)",
+    "model_provider": "mistralai",
+    "model_description": "Mistral's current flagship alias for high-quality reasoning, coding, and multimodal workloads.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 262144,
+    "cost_per_token": {
+      "input": 5e-7,
+      "output": 0.0000015
+    },
+    "knowledge_cutoff": "2024-11-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "multimodal",
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-large-latest"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-large-latest"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-medium-latest",
+    "model_name": "Mistral Medium (latest)",
+    "model_provider": "mistralai",
+    "model_description": "Mistral's balanced mid-tier model for reasoning, coding, and multimodal workflows.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 128000,
+    "max_tokens": 16384,
+    "cost_per_token": {
+      "input": 4e-7,
+      "output": 0.000002
+    },
+    "knowledge_cutoff": "2025-05-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "multimodal",
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-medium-latest"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-medium-latest"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-nemo",
+    "model_name": "Mistral Nemo",
+    "model_provider": "mistralai",
+    "model_description": "Open-weight Mistral Nemo model, useful for local or low-cost multilingual deployments.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 128000,
+    "max_tokens": 128000,
+    "cost_per_token": {
+      "input": 1.5e-7,
+      "output": 1.5e-7
+    },
+    "knowledge_cutoff": "2024-07-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-nemo"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-nemo"
+      }
+    ]
+  },
+  {
+    "model_id": "mistral-small-latest",
+    "model_name": "Mistral Small (latest)",
+    "model_provider": "mistralai",
+    "model_description": "Mistral's efficient small model alias for low-cost general-purpose and agentic workloads.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 256000,
+    "max_tokens": 256000,
+    "cost_per_token": {
+      "input": 1.5e-7,
+      "output": 6e-7
+    },
+    "knowledge_cutoff": "2025-06-01",
+    "tokenizer": {
+      "family": "tekken"
+    },
+    "tuning": [
+      "multimodal",
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-small-latest"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-small-latest"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-super-120b-a12b",
+    "model_name": "Nemotron 3 Super",
+    "model_provider": "nvidia",
+    "model_description": "NVIDIA Nemotron 3 Super, an open-weight hybrid MoE model for agentic reasoning, tool use, and long-context workloads.",
+    "model_info": "https://docs.api.nvidia.com/nim/reference/nvidia-nemotron-3-super-120b-a12b",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 262144,
+    "cost_per_token": {
+      "input": 2e-7,
+      "output": 8e-7
+    },
+    "knowledge_cutoff": "2024-04-01",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "nvidia",
+        "model_id_on_provider": "nvidia/nemotron-3-super-120b-a12b"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "nvidia/nemotron-3-super-120b-a12b"
+      },
+      {
+        "provider_id": "cloudflare",
+        "model_id_on_provider": "@cf/nvidia/nemotron-3-120b-a12b"
+      }
+    ]
+  },
+  {
+    "model_id": "o3",
+    "model_name": "o3",
+    "model_provider": "openai",
+    "model_description": "OpenAI reasoning model. Extended thinking model optimized for complex reasoning, science, and coding. Charges for reasoning tokens.",
+    "model_info": "https://platform.openai.com/docs/models/o3",
+    "model_type": "chat",
+    "context_window": 200000,
+    "cost_per_token": {
+      "input": 0.000004,
+      "output": 0.000016
+    },
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "o3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/o3"
+      }
+    ]
+  },
+  {
+    "model_id": "o4-mini",
+    "model_name": "o4 Mini",
+    "model_provider": "openai",
+    "model_description": "Lightweight OpenAI reasoning model. Fast and cost-efficient reasoning for simpler tasks.",
+    "model_info": "https://platform.openai.com/docs/models/o4-mini",
+    "model_type": "chat",
+    "context_window": 100000,
+    "cost_per_token": {
+      "input": 0.000001,
+      "output": 0.000004
+    },
+    "tokenizer": {
+      "family": "tiktoken",
+      "name": "o200k_base"
+    },
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "o4-mini"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/o4-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3-32b",
+    "model_name": "Qwen3 32B",
+    "model_provider": "qwen",
+    "model_description": "Groq-hosted Qwen3 32B open-weight model for reasoning, code, and multilingual work.",
+    "model_info": "https://console.groq.com/docs/models",
+    "model_type": "chat",
+    "context_window": 131072,
+    "max_tokens": 40960,
+    "cost_per_token": {
+      "input": 2.9e-7,
+      "output": 5.9e-7
+    },
+    "knowledge_cutoff": "2024-11-08",
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "providers": [
+      {
+        "provider_id": "groq",
+        "model_id_on_provider": "qwen/qwen3-32b"
+      },
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3-32b"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3-32b"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.6-flash",
+    "model_name": "Qwen 3.6 Flash",
+    "model_provider": "qwen",
+    "model_description": "Fast, efficient Qwen variant. Optimized for high-volume applications.",
+    "model_info": "https://qwen.io/docs",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 1e-7,
+      "output": 4e-7
+    },
+    "providers": [
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3.6-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.6-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.6-plus",
+    "model_name": "Qwen 3.6 Plus",
+    "model_provider": "qwen",
+    "model_description": "Alibaba's flagship model. Strong multilingual and reasoning capabilities with large context support.",
+    "model_info": "https://qwen.io/docs",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "cost_per_token": {
+      "input": 3.3e-7,
+      "output": 0.00000195
+    },
+    "tuning": [
+      "function"
+    ],
+    "providers": [
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3.6-plus"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.6-plus"
+      }
+    ]
+  }
+]

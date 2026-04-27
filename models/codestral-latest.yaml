@@ -1,0 +1,20 @@
+model_id: codestral-latest
+model_name: Codestral (latest)
+model_provider: mistralai
+model_description: Mistral's code-specialized model for software engineering and code completion workflows.
+model_info: https://docs.mistral.ai/getting-started/models/models_overview/
+model_type: chat
+context_window: 256000
+max_tokens: 4096
+cost_per_token:
+  input: 3e-7
+  output: 9e-7
+knowledge_cutoff: "2024-10-01"
+tokenizer:
+  family: tekken
+tuning: [function, instruction]
+providers:
+  - provider_id: mistralai
+    model_id_on_provider: codestral-latest
+  - provider_id: openrouter
+    model_id_on_provider: mistralai/codestral-latest

@@ -1,0 +1,9 @@
+provider_id: zai
+name: Z.AI
+website_url: https://z.ai
+api_type: openai_compatible
+base_url: https://api.z.ai/api/paas/v4
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for GLM models. OpenAI-compatible API endpoint for Z.AI/Zhipu model access.

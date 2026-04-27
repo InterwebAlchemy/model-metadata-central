@@ -1,0 +1,21 @@
+model_id: gpt-5.4-nano
+model_name: GPT-5.4 nano
+model_provider: openai
+model_description: Lowest-latency GPT-5.4 variant for inexpensive high-volume tasks.
+model_info: https://platform.openai.com/docs/models/gpt-5.4-nano
+model_type: chat
+context_window: 400000
+max_tokens: 128000
+cost_per_token:
+  input: 2e-7
+  output: 0.00000125
+knowledge_cutoff: "2025-08-31"
+tokenizer:
+  family: tiktoken
+  name: o200k_base
+tuning: [multimodal, function]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-5.4-nano
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-5.4-nano

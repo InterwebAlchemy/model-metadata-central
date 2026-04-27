@@ -1,0 +1,16 @@
+model_id: deepseek-r1-distill-llama-70b
+model_name: DeepSeek R1 Distill Llama 70B
+model_provider: groq
+model_description: Groq-hosted DeepSeek R1 distilled Llama 70B reasoning model.
+model_info: https://console.groq.com/docs/models
+model_type: chat
+context_window: 131072
+max_tokens: 8192
+cost_per_token:
+  input: 7.5e-7
+  output: 9.9e-7
+knowledge_cutoff: "2024-07-01"
+tuning: [function, instruction]
+providers:
+  - provider_id: groq
+    model_id_on_provider: deepseek-r1-distill-llama-70b

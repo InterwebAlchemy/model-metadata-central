@@ -1,0 +1,17 @@
+model_id: gpt-5.5-pro
+model_name: GPT-5.5 Pro
+model_provider: openai
+model_description: Most capable OpenAI model with largest context window. Optimized for complex reasoning, advanced coding, and scientific analysis.
+model_info: https://platform.openai.com/docs/models/gpt-5.5-pro
+model_type: chat
+context_window: 1050000
+max_tokens: 1049999
+cost_per_token:
+  input: 0.000030
+  output: 0.000180
+tuning: [function]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-5.5-pro
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-5.5-pro

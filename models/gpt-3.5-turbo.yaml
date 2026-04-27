@@ -11,5 +11,11 @@ cost_per_token:
   input: 0.0000015
   output: 0.000002
 knowledge_cutoff: "2021-09-01"
-token_encoding: cl100k_base
+tokenizer:
+  family: tiktoken
+  name: cl100k_base
 tuning: [function]
+deprecated: true
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-3.5-turbo

@@ -1,0 +1,189 @@
+[
+  {
+    "provider_id": "anthropic",
+    "name": "Anthropic",
+    "website_url": "https://anthropic.com",
+    "api_type": "anthropic",
+    "base_url": "https://api.anthropic.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Claude models. Uses Anthropic's own API protocol."
+  },
+  {
+    "provider_id": "cloudflare",
+    "name": "Cloudflare Workers AI",
+    "website_url": "https://developers.cloudflare.com/workers-ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.cloudflare.com/client/v4",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Edge inference via Cloudflare Workers AI. Account-scoped model routes use /accounts/{account_id}/ai/run/{model}; OpenAI-compatible routes use /accounts/{account_id}/ai/v1."
+  },
+  {
+    "provider_id": "deepseek",
+    "name": "DeepSeek",
+    "website_url": "https://deepseek.com",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.deepseek.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for DeepSeek V4 and Coder models."
+  },
+  {
+    "provider_id": "google",
+    "name": "Google AI",
+    "website_url": "https://ai.google",
+    "api_type": "openai_compatible",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Gemini, Gemma, and Lyria models via Vertex AI or AI Studio."
+  },
+  {
+    "provider_id": "groq",
+    "name": "Groq",
+    "website_url": "https://console.groq.com",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.groq.com/openai/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "High-speed inference provider. Good for latency-sensitive applications. Popular for Llama and Mixtral models."
+  },
+  {
+    "provider_id": "lmstudio",
+    "name": "LM Studio",
+    "website_url": "https://lmstudio.ai",
+    "api_type": "openai_compatible",
+    "base_url": "http://localhost:1234/v1",
+    "auth_type": "none",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Local inference GUI and API server for GGUF/GGML models. Similar API to Ollama. Authentication disabled by default."
+  },
+  {
+    "provider_id": "localai",
+    "name": "LocalAI",
+    "website_url": "https://localai.io",
+    "api_type": "openai_compatible",
+    "base_url": "http://localhost:8080/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Self-hosted inference engine. Supports many open models via ggml/gguf. Often used in Kubernetes/ Docker stacks. Authentication may be bearer token or disabled depending on config."
+  },
+  {
+    "provider_id": "minimax",
+    "name": "MiniMax",
+    "website_url": "https://platform.minimax.io",
+    "api_type": "anthropic",
+    "base_url": "https://api.minimax.io/anthropic",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for MiniMax text models. Anthropic-compatible API is recommended and supports streaming plus interleaved thinking; MiniMax also exposes OpenAI-compatible text APIs."
+  },
+  {
+    "provider_id": "mistralai",
+    "name": "Mistral AI",
+    "website_url": "https://mistral.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.mistral.ai/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Mistral's own models including Mistral Small, Medium, Large, and Codestral."
+  },
+  {
+    "provider_id": "moonshotai",
+    "name": "Moonshot AI",
+    "website_url": "https://moonshot.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.moonshotai.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Kimi models."
+  },
+  {
+    "provider_id": "nvidia",
+    "name": "NVIDIA NIM",
+    "website_url": "https://build.nvidia.com",
+    "api_type": "openai_compatible",
+    "base_url": "https://integrate.api.nvidia.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "NVIDIA NIM API catalog for hosted and deployable NVIDIA/open model inference, including Nemotron."
+  },
+  {
+    "provider_id": "ollama",
+    "name": "Ollama",
+    "website_url": "https://ollama.com",
+    "api_type": "openai_compatible",
+    "base_url": "http://localhost:11434/v1",
+    "auth_type": "none",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Local inference runtime for macOS, Linux, and Windows. Serves quantized GGUF models. Authentication disabled by default; configure .env/ollama for credentials in production."
+  },
+  {
+    "provider_id": "openai",
+    "name": "OpenAI",
+    "website_url": "https://openai.com",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.openai.com/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "The primary provider for OpenAI models including GPT-4, GPT-5, and o-series."
+  },
+  {
+    "provider_id": "openrouter",
+    "name": "OpenRouter",
+    "website_url": "https://openrouter.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://openrouter.ai/api/v1",
+    "auth_type": "api_key",
+    "routing_priority": "aggregator",
+    "status": "active",
+    "notes": "Aggregator that routes to multiple providers. Useful for model comparison and failover. Access models from OpenAI, Anthropic, Google, DeepSeek and more via a unified API."
+  },
+  {
+    "provider_id": "qwen",
+    "name": "Qwen",
+    "website_url": "https://qwen.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Qwen models via Alibaba Cloud DashScope."
+  },
+  {
+    "provider_id": "x-ai",
+    "name": "xAI",
+    "website_url": "https://x.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.x.ai/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for Grok models."
+  },
+  {
+    "provider_id": "zai",
+    "name": "Z.AI",
+    "website_url": "https://z.ai",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.z.ai/api/paas/v4",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "Primary provider for GLM models. OpenAI-compatible API endpoint for Z.AI/Zhipu model access."
+  }
+]

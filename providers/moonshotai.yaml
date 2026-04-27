@@ -1,0 +1,9 @@
+provider_id: moonshotai
+name: Moonshot AI
+website_url: https://moonshot.ai
+api_type: openai_compatible
+base_url: https://api.moonshotai.com/v1
+auth_type: api_key
+routing_priority: direct
+status: active
+notes: Primary provider for Kimi models.
