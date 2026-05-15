@@ -35,6 +35,7 @@ export interface ModelMetadata {
   tokenizer?: Tokenizer_config;
   tuning?: unknown[];
   deprecated?: boolean;
+  meta_model?: boolean;
   providers?: unknown[];
 }
 

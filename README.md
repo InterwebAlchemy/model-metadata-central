@@ -82,6 +82,7 @@ These schema defines properties that are relevant to the model and developers wh
         model_id_on_provider: openai/gpt-4o
     ```
   - **Note**: Allows a single model to be accessed via direct provider API or aggregator. Provider definitions live in `/providers`.
+- `meta_model`: If the model is a meta model, like [OpenRouter's Auto Router](https://openrouter.ai/openrouter/auto), this field indicates that the model may have special treatment for context, tokenization, and cost
 
 ### Provider Schema
 
@@ -223,6 +224,10 @@ status: active
 **NVIDIA**:
 
 - `nemotron-3-super-120b-a12b`
+
+**OpenRouter**:
+
+- `auto`
 
 Full definitions (including deprecated models) live in [`/models`](./models).
 

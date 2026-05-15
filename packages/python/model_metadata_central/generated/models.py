@@ -29,6 +29,7 @@ class ModelMetadata(BaseModel):
     tokenizer: Tokenizer_config | None = None
     tuning: list | None = None
     deprecated: bool | None = None
+    meta_model: bool | None = None
     providers: list | None = None
 
 class ProviderMetadata(BaseModel):

@@ -86,6 +86,11 @@
       "type": "boolean",
       "default": false
     },
+    "meta_model": {
+      "description": "Whether this entry describes a meta-model (e.g. a router) whose effective context window, pricing, tokenizer, and knowledge cutoff are inherited from whichever underlying model handles a given request. Consumers should treat the declared values as best-effort upper bounds, not guarantees.",
+      "type": "boolean",
+      "default": false
+    },
     "providers": {
       "description": "The providers that serve this model and their configuration",
       "type": "array",

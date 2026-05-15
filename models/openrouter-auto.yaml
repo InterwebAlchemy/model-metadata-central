@@ -1,0 +1,12 @@
+model_id: openrouter-auto
+model_name: Auto Router
+model_provider: openrouter
+model_description: Meta-model that analyzes the prompt and routes each request to one of dozens of underlying models (Anthropic, OpenAI, Google, DeepSeek, and others), optimizing for output quality. Effective context window, pricing, knowledge cutoff, and tokenizer all track whichever model is selected; the response's `model` field reports the actual choice.
+model_info: https://openrouter.ai/openrouter/auto
+model_type: chat
+context_window: 2000000
+meta_model: true
+tuning: [function, instruction, multimodal]
+providers:
+  - provider_id: openrouter
+    model_id_on_provider: openrouter/auto
