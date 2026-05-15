@@ -1,11 +1,11 @@
-# @interwebalchemy/model-metadata
+# model-metadata-central
 
 Typed registry of LLM model metadata — context windows, pricing, provider routing — for TypeScript/Node.js projects.
 
 ## Install
 
 ```sh
-npm install @interwebalchemy/model-metadata
+npm install model-metadata-central
 ```
 
 ## Usage
@@ -13,11 +13,11 @@ npm install @interwebalchemy/model-metadata
 ### Full registry
 
 ```ts
-import { getAllModels, getAllProviders } from "@interwebalchemy/model-metadata";
+import { getAllModels, getAllProviders } from "model-metadata-central";
 
 // Populate a model selector dropdown
 const models = getAllModels();
-const modelOptions = models.map(m => ({
+const modelOptions = models.map((m) => ({
   value: m.model_id,
   label: m.model_name,
   contextWindow: m.context_window,
@@ -28,19 +28,19 @@ const modelOptions = models.map(m => ({
 ### Look up a single model
 
 ```ts
-import { getModel } from "@interwebalchemy/model-metadata";
+import { getModel } from "model-metadata-central";
 
 const model = getModel("gpt-4o");
 if (model) {
-  console.log(model.context_window);   // 128000
-  console.log(model.cost_per_token);   // { input: 0.000005, output: 0.000015 }
+  console.log(model.context_window); // 128000
+  console.log(model.cost_per_token); // { input: 0.000005, output: 0.000015 }
 }
 ```
 
 ### Filter by provider
 
 ```ts
-import { getModelsByProvider } from "@interwebalchemy/model-metadata";
+import { getModelsByProvider } from "model-metadata-central";
 
 const anthropicModels = getModelsByProvider("anthropic");
 const openrouterModels = getModelsByProvider("openrouter");
@@ -49,16 +49,16 @@ const openrouterModels = getModelsByProvider("openrouter");
 ### Provider routing
 
 ```ts
-import { getProviderModelId, getProvider } from "@interwebalchemy/model-metadata";
+import { getProviderModelId, getProvider } from "model-metadata-central";
 
 // Get the model ID for a specific provider
-const openaiId = getProviderModelId("gpt-4o", "openai");        // "gpt-4o"
+const openaiId = getProviderModelId("gpt-4o", "openai"); // "gpt-4o"
 const openrouterId = getProviderModelId("gpt-4o", "openrouter"); // "openai/gpt-4o"
 
 // Get provider config (base URL, auth type, etc.)
 const provider = getProvider("openai");
-console.log(provider.base_url);     // "https://api.openai.com/v1"
-console.log(provider.auth_type);    // "api_key"
+console.log(provider.base_url); // "https://api.openai.com/v1"
+console.log(provider.auth_type); // "api_key"
 ```
 
 ### Tree-shakeable named exports
@@ -66,7 +66,7 @@ console.log(provider.auth_type);    // "api_key"
 Import only the models you need — bundlers will exclude the rest.
 
 ```ts
-import { gpt4o, claudeOpus47 } from "@interwebalchemy/model-metadata";
+import { gpt4o, claudeOpus47 } from "model-metadata-central";
 
 // gpt4o and claudeOpus47 are fully typed ModelMetadata objects
 // The full registry + helpers are excluded from the bundle
@@ -77,7 +77,7 @@ import { gpt4o, claudeOpus47 } from "@interwebalchemy/model-metadata";
 All types are exported for your own data structures:
 
 ```ts
-import type { ModelMetadata, ProviderMetadata, CostPerToken } from "@interwebalchemy/model-metadata";
+import type { ModelMetadata, ProviderMetadata, CostPerToken } from "model-metadata-central";
 
 function logCost(model: ModelMetadata) {
   if (model.cost_per_token) {
@@ -89,15 +89,15 @@ function logCost(model: ModelMetadata) {
 
 ## API
 
-| Function | Returns | Description |
-|---|---|---|
-| `getModel(id)` | `ModelMetadata \| undefined` | Lookup by model_id |
-| `getAllModels()` | `readonly ModelMetadata[]` | All models |
-| `getModelsByProvider(providerId)` | `readonly ModelMetadata[]` | Filter by provider |
-| `getModelOnProvider(providerId, providerModelId?)` | `ModelMetadata \| undefined` | Find model on a specific provider |
-| `getProvider(id)` | `ProviderMetadata \| undefined` | Provider config |
-| `getAllProviders()` | `readonly ProviderMetadata[]` | All providers |
-| `getProviderModelId(modelId, providerId)` | `string \| undefined` | Provider-specific model ID |
+| Function                                           | Returns                         | Description                       |
+| -------------------------------------------------- | ------------------------------- | --------------------------------- |
+| `getModel(id)`                                     | `ModelMetadata \| undefined`    | Lookup by model_id                |
+| `getAllModels()`                                   | `readonly ModelMetadata[]`      | All models                        |
+| `getModelsByProvider(providerId)`                  | `readonly ModelMetadata[]`      | Filter by provider                |
+| `getModelOnProvider(providerId, providerModelId?)` | `ModelMetadata \| undefined`    | Find model on a specific provider |
+| `getProvider(id)`                                  | `ProviderMetadata \| undefined` | Provider config                   |
+| `getAllProviders()`                                | `readonly ProviderMetadata[]`   | All providers                     |
+| `getProviderModelId(modelId, providerId)`          | `string \| undefined`           | Provider-specific model ID        |
 
 ## Data
 

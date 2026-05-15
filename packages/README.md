@@ -5,7 +5,7 @@ Pre-compiled registries and typed APIs for consuming model metadata in your proj
 ## TypeScript
 
 ```sh
-npm install @interwebalchemy/model-metadata
+npm install model-metadata-central
 ```
 
 [Read the README →](./typescript/README.md)
@@ -31,15 +31,15 @@ cd packages/python && uv run python -c "from model_metadata_central.utils.load_m
 
 The TypeScript and Python packages aim to share the same API surface:
 
-| TypeScript | Python |
-|---|---|
-| `getModel(id)` | `get_model(id)` |
-| `getAllModels()` | `get_all_models()` |
-| `getModelsByProvider(id)` | `get_models_by_provider(id)` |
+| TypeScript                                | Python                                         |
+| ----------------------------------------- | ---------------------------------------------- |
+| `getModel(id)`                            | `get_model(id)`                                |
+| `getAllModels()`                          | `get_all_models()`                             |
+| `getModelsByProvider(id)`                 | `get_models_by_provider(id)`                   |
 | `getModelOnProvider(id, providerModelId)` | `get_model_on_provider(id, provider_model_id)` |
-| `getProvider(id)` | `get_provider(id)` |
-| `getAllProviders()` | `get_all_providers()` |
+| `getProvider(id)`                         | `get_provider(id)`                             |
+| `getAllProviders()`                       | `get_all_providers()`                          |
 | `getProviderModelId(modelId, providerId)` | `get_provider_model_id(model_id, provider_id)` |
-| Named exports (`gpt4o`, etc.) | Module constants (`GPT_4_O`, etc.) |
+| Named exports (`gpt4o`, etc.)             | Module constants (`GPT_4_O`, etc.)             |
 
 Both packages use the same underlying JSON schema types, pre-compiled from the YAML definitions in the repo root.
