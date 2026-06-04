@@ -6,13 +6,16 @@ model_info: https://docs.anthropic.com/en/docs/about-claude/models/overview
 model_type: chat
 context_window: 1000000
 max_tokens: 64000
-cost_per_token:
-  input: 0.000003
-  output: 0.000015
+cost_per_million_tokens:
+  input: 3
+  output: 15
 knowledge_cutoff: "2025-08-31"
 tuning: [multimodal, function]
+input_type: [text, image]
+output_type: [text]
 providers:
   - provider_id: anthropic
     model_id_on_provider: claude-sonnet-4-6
   - provider_id: openrouter
     model_id_on_provider: anthropic/claude-sonnet-4.6
+    model_info: https://openrouter.ai/anthropic/claude-sonnet-4.6

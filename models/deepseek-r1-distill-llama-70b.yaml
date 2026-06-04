@@ -6,11 +6,13 @@ model_info: https://console.groq.com/docs/models
 model_type: chat
 context_window: 131072
 max_tokens: 8192
-cost_per_token:
-  input: 7.5e-7
-  output: 9.9e-7
+cost_per_million_tokens:
+  input: 0.75
+  output: 0.99
 knowledge_cutoff: "2024-07-01"
 tuning: [function, instruction]
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: groq
     model_id_on_provider: deepseek-r1-distill-llama-70b

@@ -1,0 +1,30 @@
+model_id: qwen3.7-plus
+model_name: Qwen 3.6 Plus
+model_provider: qwen
+model_description: |
+  Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output,
+  building on the series' text capabilities with a comprehensive upgrade to its vision-language abilities while retaining
+  full-stack, agent-level intelligence for coding, tool use, and productivity workflows. Its distinguishing trait is
+  multi-modal interactive hybrid agent capability: it can perceive real-world scenes, read screens and interact with GUIs,
+  generate code from visual references, and perform end-to-end navigation within mobile apps.
+model_info: https://openrouter.ai/qwen/qwen3.7-plus
+model_type: chat
+context_window: 1000000
+max_tokens: 65536
+cost_per_million_tokens:
+  input: 0.4
+  output: 1.6
+tuning: [function, structured]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: qwen
+    model_id_on_provider: qwen3.7-plus
+  - provider_id: openrouter
+    model_id_on_provider: qwen/qwen3.7-plus
+    cost_per_million_tokens:
+      input: 0.4
+      cached_input: 0.08
+      cache_write_input: 0.5
+      output: 1.6
+    model_info: https://openrouter.ai/qwen/qwen3.7-plus

@@ -85,16 +85,14 @@ export function getProviderModelId(
 // --- Named re-exports for tree-shaking ---
 // Individual model objects — bundlers can dead-code-eliminate unused ones.
 // Kept in sync with models/*.yaml. Usage: import { gpt4o } from 'model-metadata-central';
-export const claudeHaiku4 = getModel("claude-haiku-4");
 export const claudeHaiku45 = getModel("claude-haiku-4-5");
 export const claudeOpus46 = getModel("claude-opus-4-6");
 export const claudeOpus46Fast = getModel("claude-opus-4-6-fast");
 export const claudeOpus47 = getModel("claude-opus-4-7");
 export const claudeOpusLatest = getModel("claude-opus-latest");
-export const claudeSonnet42 = getModel("claude-sonnet-4-2");
 export const claudeSonnet46 = getModel("claude-sonnet-4-6");
+export const claudinioEssential = getModel("claudinio-essential");
 export const codestralLatest = getModel("codestral-latest");
-export const deepseekCoderV4 = getModel("deepseek-coder-v4");
 export const deepseekR1DistillLlama70b = getModel("deepseek-r1-distill-llama-70b");
 export const deepseekV4Flash = getModel("deepseek-v4-flash");
 export const deepseekV4Pro = getModel("deepseek-v4-pro");
@@ -132,19 +130,18 @@ export const gpt54Nano = getModel("gpt-5.4-nano");
 export const gpt54Pro = getModel("gpt-5.4-pro");
 export const gpt55 = getModel("gpt-5.5");
 export const gpt55Pro = getModel("gpt-5.5-pro");
-export const grok42 = getModel("grok-4.2");
-export const grok42MultiAgent = getModel("grok-4.2-multi-agent");
+export const grok420 = getModel("grok-4.20");
+export const grok420MultiAgent = getModel("grok-4.20-multi-agent");
 export const kimiK26 = getModel("kimi-k2.6");
-export const kimiV3 = getModel("kimi-v3");
 export const llama318bInstant = getModel("llama-3.1-8b-instant");
 export const llama3370bVersatile = getModel("llama-3.3-70b-versatile");
 export const minimaxM2 = getModel("minimax-m2");
 export const minimaxM21 = getModel("minimax-m2.1");
-export const minimaxM21Highspeed = getModel("minimax-m2.1-highspeed");
 export const minimaxM25 = getModel("minimax-m2.5");
 export const minimaxM25Highspeed = getModel("minimax-m2.5-highspeed");
 export const minimaxM27 = getModel("minimax-m2.7");
 export const minimaxM27Highspeed = getModel("minimax-m2.7-highspeed");
+export const minimaxM3 = getModel("minimax-m3");
 export const mistral7b = getModel("mistral-7b");
 export const mistral7bInstruct = getModel("mistral-7b-instruct");
 export const mistralLarge2411 = getModel("mistral-large-2411");
@@ -159,6 +156,7 @@ export const o4Mini = getModel("o4-mini");
 export const qwen332b = getModel("qwen3-32b");
 export const qwen36Flash = getModel("qwen3.6-flash");
 export const qwen36Plus = getModel("qwen3.6-plus");
+export const qwen37Plus = getModel("qwen3.7-plus");
 
 // Re-export types
 export type {
@@ -172,5 +170,7 @@ export type {
   AuthType,
   RoutingPriority,
   ProviderStatus,
-  CostPerToken,
+  Modality,
+  TokenCostValue,
+  TokenCosts,
 } from "./types.js";

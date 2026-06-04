@@ -6,12 +6,15 @@ model_info: https://docs.z.ai/guides/overview/pricing
 model_type: chat
 context_window: 200000
 max_tokens: 131072
-cost_per_token:
-  input: 0.0000012
-  output: 0.000004
+cost_per_million_tokens:
+  input: 1.2
+  output: 4
 tuning: [multimodal, function]
+input_type: [text, image, video]
+output_type: [text]
 providers:
   - provider_id: zai
     model_id_on_provider: glm-5v-turbo
   - provider_id: openrouter
     model_id_on_provider: z-ai/glm-5v-turbo
+    model_info: https://openrouter.ai/z-ai/glm-5v-turbo

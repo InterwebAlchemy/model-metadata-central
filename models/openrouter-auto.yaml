@@ -7,6 +7,9 @@ model_type: chat
 context_window: 2000000
 meta_model: true
 tuning: [function, instruction, multimodal]
+input_type: [text, image, audio, video]
+output_type: [text]
 providers:
   - provider_id: openrouter
     model_id_on_provider: openrouter/auto
+    model_info: https://openrouter.ai/openrouter/auto

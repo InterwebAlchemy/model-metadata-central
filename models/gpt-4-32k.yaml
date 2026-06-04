@@ -6,9 +6,9 @@ model_info: https://platform.openai.com/docs/models/gpt-4
 model_version: latest
 model_type: chat
 context_window: 32768
-cost_per_token: 
-  input: 0.00006
-  output: 0.00012
+cost_per_million_tokens:
+  input: 60
+  output: 120
 knowledge_cutoff: "2021-09-01"
 tokenizer:
   family: tiktoken
@@ -16,3 +16,6 @@ tokenizer:
 tuning:
   - function
 deprecated: true
+
+input_type: [text]
+output_type: [text]

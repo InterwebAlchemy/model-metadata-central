@@ -11,6 +11,17 @@
     "notes": "Primary provider for Claude models. Uses Anthropic's own API protocol."
   },
   {
+    "provider_id": "claudinio",
+    "name": "Claudin.io",
+    "website_url": "https://claudin.io",
+    "api_type": "openai_compatible",
+    "base_url": "https://api.claudin.io/v1",
+    "auth_type": "api_key",
+    "routing_priority": "direct",
+    "status": "active",
+    "notes": "API proxy with fixed subscription and intelligent per-hour protection for coding agents. Claudinio runs a unified model optimized for coding agents."
+  },
+  {
     "provider_id": "cloudflare",
     "name": "Cloudflare Workers AI",
     "website_url": "https://developers.cloudflare.com/workers-ai",

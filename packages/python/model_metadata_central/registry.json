@@ -8,14 +8,21 @@
     "model_type": "chat",
     "context_window": 200000,
     "max_tokens": 64000,
-    "cost_per_token": {
-      "input": 1e-06,
-      "output": 5e-06
+    "cost_per_million_tokens": {
+      "input": 1,
+      "output": 5
     },
     "knowledge_cutoff": "2025-02-28",
     "tuning": [
       "multimodal",
       "function"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -24,30 +31,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-haiku-4.5"
-      }
-    ]
-  },
-  {
-    "model_id": "claude-haiku-4",
-    "model_name": "Claude Haiku 4",
-    "model_provider": "anthropic",
-    "model_description": "Fast, affordable Claude. Optimized for high-volume, latency-sensitive tasks where quality-per-token matters more than raw capability.",
-    "model_info": "https://docs.anthropic.com/en/docs/models/claude-haiku-4",
-    "model_type": "chat",
-    "context_window": 200000,
-    "cost_per_token": {
-      "input": 8e-07,
-      "output": 4e-06
-    },
-    "providers": [
-      {
-        "provider_id": "anthropic",
-        "model_id_on_provider": "haiku-4"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-haiku-4"
+        "model_id_on_provider": "anthropic/claude-haiku-4.5",
+        "model_info": "https://openrouter.ai/anthropic/claude-haiku-4.5"
       }
     ]
   },
@@ -59,21 +44,25 @@
     "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-6",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 3e-05,
-      "output": 0.00015
+    "cost_per_million_tokens": {
+      "input": 30,
+      "output": 150
     },
     "tuning": [
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
-        "provider_id": "anthropic",
-        "model_id_on_provider": "claude-opus-4-6-fast"
-      },
-      {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-opus-4-6-fast"
+        "model_id_on_provider": "anthropic/claude-opus-4.6-fast",
+        "model_info": "https://openrouter.ai/anthropic/claude-opus-4.6-fast"
       }
     ]
   },
@@ -86,14 +75,21 @@
     "model_type": "chat",
     "context_window": 1000000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 5e-06,
-      "output": 2.5e-05
+    "cost_per_million_tokens": {
+      "input": 5,
+      "output": 25
     },
     "knowledge_cutoff": "2025-05-31",
     "tuning": [
       "multimodal",
       "function"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -102,7 +98,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-opus-4.6"
+        "model_id_on_provider": "anthropic/claude-opus-4.6",
+        "model_info": "https://openrouter.ai/anthropic/claude-opus-4.6"
       }
     ]
   },
@@ -114,12 +111,19 @@
     "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-7",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 5e-06,
-      "output": 2.5e-05
+    "cost_per_million_tokens": {
+      "input": 5,
+      "output": 25
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -128,7 +132,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-opus-4-7"
+        "model_id_on_provider": "anthropic/claude-opus-4.7",
+        "model_info": "https://openrouter.ai/anthropic/claude-opus-4.7"
       }
     ]
   },
@@ -140,47 +145,25 @@
     "model_info": "https://docs.anthropic.com/en/docs/models",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 5e-06,
-      "output": 2.5e-05
+    "cost_per_million_tokens": {
+      "input": 5,
+      "output": 25
     },
     "tuning": [
       "function"
     ],
-    "providers": [
-      {
-        "provider_id": "anthropic",
-        "model_id_on_provider": "opus"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-opus-latest"
-      }
-    ]
-  },
-  {
-    "model_id": "claude-sonnet-4-2",
-    "model_name": "Claude Sonnet 4.2",
-    "model_provider": "anthropic",
-    "model_description": "Balanced Anthropic model. Strong for coding, analysis, and everyday tasks at a mid-range price point.",
-    "model_info": "https://docs.anthropic.com/en/docs/models/claude-sonnet-4-2",
-    "model_type": "chat",
-    "context_window": 200000,
-    "cost_per_token": {
-      "input": 3e-06,
-      "output": 1.5e-05
-    },
-    "tuning": [
-      "function"
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
-        "provider_id": "anthropic",
-        "model_id_on_provider": "claude-sonnet-4-2"
-      },
-      {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-sonnet-4-2"
+        "model_id_on_provider": "~anthropic/claude-opus-latest",
+        "model_info": "https://openrouter.ai/~anthropic/claude-opus-latest"
       }
     ]
   },
@@ -193,14 +176,21 @@
     "model_type": "chat",
     "context_window": 1000000,
     "max_tokens": 64000,
-    "cost_per_token": {
-      "input": 3e-06,
-      "output": 1.5e-05
+    "cost_per_million_tokens": {
+      "input": 3,
+      "output": 15
     },
     "knowledge_cutoff": "2025-08-31",
     "tuning": [
       "multimodal",
       "function"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -209,7 +199,44 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "anthropic/claude-sonnet-4.6"
+        "model_id_on_provider": "anthropic/claude-sonnet-4.6",
+        "model_info": "https://openrouter.ai/anthropic/claude-sonnet-4.6"
+      }
+    ]
+  },
+  {
+    "model_id": "claudinio-essential",
+    "model_name": "Claudinio Essential",
+    "model_provider": "claudinio",
+    "model_description": "Claudinio runs a unified model optimized for coding agents. All plans access the same high-performance model \u2014 the\ndifference is the hourly protection level, tuned for each developer profile.\n",
+    "model_info": "https://claudin.io/",
+    "model_type": "chat",
+    "context_window": 256000,
+    "max_tokens": 64000,
+    "cost_per_million_tokens": {
+      "input": 0.5,
+      "output": 20
+    },
+    "knowledge_cutoff": "2026-05-01",
+    "tuning": [
+      "multimodal",
+      "function",
+      "code",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "claudinio",
+        "model_id_on_provider": "claudinio-essential"
       }
     ]
   },
@@ -222,9 +249,9 @@
     "model_type": "chat",
     "context_window": 256000,
     "max_tokens": 4096,
-    "cost_per_token": {
-      "input": "3e-7",
-      "output": "9e-7"
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "output": 0.9
     },
     "knowledge_cutoff": "2024-10-01",
     "tokenizer": {
@@ -234,40 +261,16 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "codestral-latest"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/codestral-latest"
-      }
-    ]
-  },
-  {
-    "model_id": "deepseek-coder-v4",
-    "model_name": "DeepSeek Coder V4",
-    "model_provider": "deepseek",
-    "model_description": "DeepSeek's dedicated code model. Specialized for code generation, completion, and debugging across many languages.",
-    "model_info": "https://api.deepseek.com",
-    "model_type": "chat",
-    "context_window": 1048576,
-    "cost_per_token": {
-      "input": 4.3e-07,
-      "output": 8.7e-07
-    },
-    "tuning": [
-      "code"
-    ],
-    "providers": [
-      {
-        "provider_id": "deepseek",
-        "model_id_on_provider": "deepseek-coder"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "deepseek/deepseek-coder-v4"
       }
     ]
   },
@@ -280,14 +283,20 @@
     "model_type": "chat",
     "context_window": 131072,
     "max_tokens": 8192,
-    "cost_per_token": {
-      "input": 7.5e-07,
-      "output": 9.9e-07
+    "cost_per_million_tokens": {
+      "input": 0.75,
+      "output": 0.99
     },
     "knowledge_cutoff": "2024-07-01",
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -304,10 +313,16 @@
     "model_info": "https://api.deepseek.com",
     "model_type": "chat",
     "context_window": 1048576,
-    "cost_per_token": {
-      "input": 1.4e-07,
-      "output": 2.8e-07
+    "cost_per_million_tokens": {
+      "input": 0.14,
+      "output": 0.28
     },
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "deepseek",
@@ -315,7 +330,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "deepseek/deepseek-v4-flash"
+        "model_id_on_provider": "deepseek/deepseek-v4-flash",
+        "model_info": "https://openrouter.ai/deepseek/deepseek-v4-flash"
       }
     ]
   },
@@ -327,12 +343,18 @@
     "model_info": "https://api.deepseek.com",
     "model_type": "chat",
     "context_window": 1048576,
-    "cost_per_token": {
-      "input": 4.3e-07,
-      "output": 8.7e-07
+    "cost_per_million_tokens": {
+      "input": 0.43,
+      "output": 0.87
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -341,7 +363,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "deepseek/deepseek-v4-pro"
+        "model_id_on_provider": "deepseek/deepseek-v4-pro",
+        "model_info": "https://openrouter.ai/deepseek/deepseek-v4-pro"
       }
     ]
   },
@@ -353,19 +376,24 @@
     "model_info": "https://ai.google.dev/gemini-api/models/gemini-2.0-flash",
     "model_type": "chat",
     "context_window": 128000,
-    "cost_per_token": {
-      "input": 1e-07,
-      "output": 4e-07
+    "cost_per_million_tokens": {
+      "input": 0.1,
+      "output": 0.4
     },
     "deprecated": true,
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "google",
         "model_id_on_provider": "gemini-2.0-flash"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "google/gemini-2.0-flash"
       }
     ]
   },
@@ -377,12 +405,21 @@
     "model_info": "https://ai.google.dev/gemini-api/models/gemini-2.5-flash",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 7.5e-08,
-      "output": 3e-07
+    "cost_per_million_tokens": {
+      "input": 0.075,
+      "output": 0.3
     },
     "tuning": [
       "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -391,7 +428,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "google/gemini-2.5-flash"
+        "model_id_on_provider": "google/gemini-2.5-flash",
+        "model_info": "https://openrouter.ai/google/gemini-2.5-flash"
       }
     ]
   },
@@ -403,12 +441,21 @@
     "model_info": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 1.25e-06,
-      "output": 5e-06
+    "cost_per_million_tokens": {
+      "input": 1.25,
+      "output": 5
     },
     "tuning": [
       "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -417,7 +464,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "google/gemini-2.5-pro"
+        "model_id_on_provider": "google/gemini-2.5-pro",
+        "model_info": "https://openrouter.ai/google/gemini-2.5-pro"
       }
     ]
   },
@@ -429,10 +477,16 @@
     "model_info": "https://ai.google.dev/gemma",
     "model_type": "chat",
     "context_window": 262144,
-    "cost_per_token": {
-      "input": 6e-08,
-      "output": 3.3e-07
+    "cost_per_million_tokens": {
+      "input": 0.06,
+      "output": 0.33
     },
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "google",
@@ -444,7 +498,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "google/gemma-4-26b-a4b-it"
+        "model_id_on_provider": "google/gemma-4-26b-a4b-it",
+        "model_info": "https://openrouter.ai/google/gemma-4-26b-a4b-it"
       }
     ]
   },
@@ -456,10 +511,16 @@
     "model_info": "https://ai.google.dev/gemma",
     "model_type": "chat",
     "context_window": 262144,
-    "cost_per_token": {
-      "input": 1.3e-07,
-      "output": 3.8e-07
+    "cost_per_million_tokens": {
+      "input": 0.13,
+      "output": 0.38
     },
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "google",
@@ -467,7 +528,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "google/gemma-4-31b-it"
+        "model_id_on_provider": "google/gemma-4-31b-it",
+        "model_info": "https://openrouter.ai/google/gemma-4-31b-it"
       }
     ]
   },
@@ -480,7 +542,7 @@
     "model_type": "chat",
     "context_window": 200000,
     "max_tokens": 131072,
-    "cost_per_token": {
+    "cost_per_million_tokens": {
       "input": 0,
       "output": 0
     },
@@ -488,6 +550,12 @@
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -500,7 +568,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-4.7-flash"
+        "model_id_on_provider": "z-ai/glm-4.7-flash",
+        "model_info": "https://openrouter.ai/z-ai/glm-4.7-flash"
       }
     ]
   },
@@ -513,14 +582,20 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "6e-7",
-      "output": 2.2e-06
+    "cost_per_million_tokens": {
+      "input": 0.6,
+      "output": 2.2
     },
     "knowledge_cutoff": "2025-04-01",
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -529,7 +604,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-4.7"
+        "model_id_on_provider": "z-ai/glm-4.7",
+        "model_info": "https://openrouter.ai/z-ai/glm-4.7"
       }
     ]
   },
@@ -542,12 +618,18 @@
     "model_type": "chat",
     "context_window": 200000,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": 1.2e-06,
-      "output": 4e-06
+    "cost_per_million_tokens": {
+      "input": 1.2,
+      "output": 4
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -556,7 +638,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-5-turbo"
+        "model_id_on_provider": "z-ai/glm-5-turbo",
+        "model_info": "https://openrouter.ai/z-ai/glm-5-turbo"
       }
     ]
   },
@@ -569,12 +652,18 @@
     "model_type": "chat",
     "context_window": 200000,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": 1.4e-06,
-      "output": 4.4e-06
+    "cost_per_million_tokens": {
+      "input": 1.4,
+      "output": 4.4
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -583,7 +672,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-5.1"
+        "model_id_on_provider": "z-ai/glm-5.1",
+        "model_info": "https://openrouter.ai/z-ai/glm-5.1"
       }
     ]
   },
@@ -596,13 +686,19 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": 1e-06,
-      "output": 3.2e-06
+    "cost_per_million_tokens": {
+      "input": 1,
+      "output": 3.2
     },
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -611,7 +707,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-5"
+        "model_id_on_provider": "z-ai/glm-5",
+        "model_info": "https://openrouter.ai/z-ai/glm-5"
       }
     ]
   },
@@ -624,13 +721,21 @@
     "model_type": "chat",
     "context_window": 200000,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": 1.2e-06,
-      "output": 4e-06
+    "cost_per_million_tokens": {
+      "input": 1.2,
+      "output": 4
     },
     "tuning": [
       "multimodal",
       "function"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -639,7 +744,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "z-ai/glm-5v-turbo"
+        "model_id_on_provider": "z-ai/glm-5v-turbo",
+        "model_info": "https://openrouter.ai/z-ai/glm-5v-turbo"
       }
     ]
   },
@@ -653,9 +759,9 @@
     "model_type": "chat",
     "context_window": 16385,
     "max_tokens": 4096,
-    "cost_per_token": {
-      "input": 3e-06,
-      "output": 4e-06
+    "cost_per_million_tokens": {
+      "input": 3,
+      "output": 4
     },
     "knowledge_cutoff": "2021-09-01",
     "tokenizer": {
@@ -666,6 +772,12 @@
       "instruction"
     ],
     "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -683,9 +795,9 @@
     "model_type": "completion",
     "context_window": 4097,
     "max_tokens": 4095,
-    "cost_per_token": {
-      "input": 1.5e-06,
-      "output": 2e-06
+    "cost_per_million_tokens": {
+      "input": 1.5,
+      "output": 2
     },
     "knowledge_cutoff": "2021-09-01",
     "tokenizer": {
@@ -696,7 +808,13 @@
       "instruction",
       "function"
     ],
-    "deprecated": true
+    "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ]
   },
   {
     "model_id": "gpt-3.5-turbo",
@@ -708,9 +826,9 @@
     "model_type": "chat",
     "context_window": 4097,
     "max_tokens": 4095,
-    "cost_per_token": {
-      "input": 1.5e-06,
-      "output": 2e-06
+    "cost_per_million_tokens": {
+      "input": 1.5,
+      "output": 2
     },
     "knowledge_cutoff": "2021-09-01",
     "tokenizer": {
@@ -721,6 +839,12 @@
       "function"
     ],
     "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -737,9 +861,9 @@
     "model_version": "latest",
     "model_type": "chat",
     "context_window": 32768,
-    "cost_per_token": {
-      "input": 6e-05,
-      "output": 0.00012
+    "cost_per_million_tokens": {
+      "input": 60,
+      "output": 120
     },
     "knowledge_cutoff": "2021-09-01",
     "tokenizer": {
@@ -749,7 +873,13 @@
     "tuning": [
       "function"
     ],
-    "deprecated": true
+    "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ]
   },
   {
     "model_id": "gpt-4-turbo",
@@ -760,9 +890,9 @@
     "model_type": "chat",
     "context_window": 128000,
     "max_tokens": 4096,
-    "cost_per_token": {
-      "input": 1e-05,
-      "output": 3e-05
+    "cost_per_million_tokens": {
+      "input": 10,
+      "output": 30
     },
     "knowledge_cutoff": "2023-12-01",
     "tokenizer": {
@@ -773,6 +903,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -780,7 +917,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4-turbo"
+        "model_id_on_provider": "openai/gpt-4-turbo",
+        "model_info": "https://openrouter.ai/openai/gpt-4-turbo"
       }
     ]
   },
@@ -793,9 +931,9 @@
     "model_type": "chat",
     "context_window": 1047576,
     "max_tokens": 32768,
-    "cost_per_token": {
-      "input": "4e-7",
-      "output": 1.6e-06
+    "cost_per_million_tokens": {
+      "input": 0.4,
+      "output": 1.6
     },
     "knowledge_cutoff": "2024-04-01",
     "tokenizer": {
@@ -806,6 +944,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -813,7 +958,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4.1-mini"
+        "model_id_on_provider": "openai/gpt-4.1-mini",
+        "model_info": "https://openrouter.ai/openai/gpt-4.1-mini"
       }
     ]
   },
@@ -826,9 +972,9 @@
     "model_type": "chat",
     "context_window": 1047576,
     "max_tokens": 32768,
-    "cost_per_token": {
-      "input": "1e-7",
-      "output": "4e-7"
+    "cost_per_million_tokens": {
+      "input": 0.1,
+      "output": 0.4
     },
     "knowledge_cutoff": "2024-04-01",
     "tokenizer": {
@@ -839,6 +985,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -846,7 +999,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4.1-nano"
+        "model_id_on_provider": "openai/gpt-4.1-nano",
+        "model_info": "https://openrouter.ai/openai/gpt-4.1-nano"
       }
     ]
   },
@@ -859,9 +1013,9 @@
     "model_type": "chat",
     "context_window": 1047576,
     "max_tokens": 32768,
-    "cost_per_token": {
-      "input": 2e-06,
-      "output": 8e-06
+    "cost_per_million_tokens": {
+      "input": 2,
+      "output": 8
     },
     "knowledge_cutoff": "2024-04-01",
     "tokenizer": {
@@ -872,6 +1026,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -879,7 +1040,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4.1"
+        "model_id_on_provider": "openai/gpt-4.1",
+        "model_info": "https://openrouter.ai/openai/gpt-4.1"
       }
     ]
   },
@@ -891,9 +1053,9 @@
     "model_info": "https://platform.openai.com/docs/models/gpt-4.5",
     "model_type": "chat",
     "context_window": 128000,
-    "cost_per_token": {
-      "input": 1e-05,
-      "output": 3e-05
+    "cost_per_million_tokens": {
+      "input": 10,
+      "output": 30
     },
     "tuning": [
       "function"
@@ -902,14 +1064,18 @@
       "family": "tiktoken",
       "name": "o200k_base"
     },
+    "deprecated": true,
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
         "model_id_on_provider": "gpt-4.5"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4.5"
       }
     ]
   },
@@ -923,9 +1089,9 @@
     "model_type": "chat",
     "context_window": 8192,
     "max_tokens": 8191,
-    "cost_per_token": {
-      "input": 3e-05,
-      "output": 6e-05
+    "cost_per_million_tokens": {
+      "input": 30,
+      "output": 60
     },
     "knowledge_cutoff": "2021-09-01",
     "tokenizer": {
@@ -936,6 +1102,12 @@
       "function"
     ],
     "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -952,9 +1124,9 @@
     "model_type": "chat",
     "context_window": 128000,
     "max_tokens": 16384,
-    "cost_per_token": {
-      "input": 1.5e-07,
-      "output": 6e-07
+    "cost_per_million_tokens": {
+      "input": 0.15,
+      "output": 0.6
     },
     "tuning": [
       "multimodal"
@@ -963,6 +1135,13 @@
       "family": "tiktoken",
       "name": "o200k_base"
     },
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -970,7 +1149,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4o-mini"
+        "model_id_on_provider": "openai/gpt-4o-mini",
+        "model_info": "https://openrouter.ai/openai/gpt-4o-mini"
       }
     ]
   },
@@ -983,9 +1163,9 @@
     "model_type": "chat",
     "context_window": 128000,
     "max_tokens": 32768,
-    "cost_per_token": {
-      "input": 5e-06,
-      "output": 1.5e-05
+    "cost_per_million_tokens": {
+      "input": 5,
+      "output": 15
     },
     "tuning": [
       "multimodal"
@@ -994,6 +1174,14 @@
       "family": "tiktoken",
       "name": "o200k_base"
     },
+    "input_type": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1001,7 +1189,12 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-4o"
+        "model_id_on_provider": "openai/gpt-4o",
+        "cost_per_million_tokens": {
+          "input": 2.5,
+          "output": 10
+        },
+        "model_info": "https://openrouter.ai/openai/gpt-4o"
       }
     ]
   },
@@ -1014,9 +1207,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 2.5e-07,
-      "output": 2e-06
+    "cost_per_million_tokens": {
+      "input": 0.25,
+      "output": 2
     },
     "knowledge_cutoff": "2024-05-30",
     "tokenizer": {
@@ -1027,6 +1220,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1034,7 +1234,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5-mini"
+        "model_id_on_provider": "openai/gpt-5-mini",
+        "model_info": "https://openrouter.ai/openai/gpt-5-mini"
       }
     ]
   },
@@ -1047,9 +1248,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": "5e-8",
-      "output": "4e-7"
+    "cost_per_million_tokens": {
+      "input": 0.05,
+      "output": 0.4
     },
     "knowledge_cutoff": "2024-05-30",
     "tokenizer": {
@@ -1060,6 +1261,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1067,7 +1275,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5-nano"
+        "model_id_on_provider": "openai/gpt-5-nano",
+        "model_info": "https://openrouter.ai/openai/gpt-5-nano"
       }
     ]
   },
@@ -1080,9 +1289,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 1.75e-06,
-      "output": 1.4e-05
+    "cost_per_million_tokens": {
+      "input": 1.75,
+      "output": 14
     },
     "knowledge_cutoff": "2025-08-31",
     "tokenizer": {
@@ -1093,6 +1302,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1100,7 +1316,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.3-codex"
+        "model_id_on_provider": "openai/gpt-5.3-codex",
+        "model_info": "https://openrouter.ai/openai/gpt-5.3-codex"
       }
     ]
   },
@@ -1112,12 +1329,20 @@
     "model_info": "https://platform.openai.com/docs/models/gpt-5.4-image-2",
     "model_type": "chat",
     "context_window": 272000,
-    "cost_per_token": {
-      "input": 8e-06,
-      "output": 1.5e-05
+    "cost_per_million_tokens": {
+      "input": 8,
+      "output": 15
     },
     "tuning": [
       "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text",
+      "image"
     ],
     "providers": [
       {
@@ -1126,7 +1351,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.4-image-2"
+        "model_id_on_provider": "openai/gpt-5.4-image-2",
+        "model_info": "https://openrouter.ai/openai/gpt-5.4-image-2"
       }
     ]
   },
@@ -1139,9 +1365,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 7.5e-07,
-      "output": 4.5e-06
+    "cost_per_million_tokens": {
+      "input": 0.75,
+      "output": 4.5
     },
     "knowledge_cutoff": "2025-08-31",
     "tokenizer": {
@@ -1152,6 +1378,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1159,7 +1392,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.4-mini"
+        "model_id_on_provider": "openai/gpt-5.4-mini",
+        "model_info": "https://openrouter.ai/openai/gpt-5.4-mini"
       }
     ]
   },
@@ -1172,9 +1406,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": "2e-7",
-      "output": 1.25e-06
+    "cost_per_million_tokens": {
+      "input": 0.2,
+      "output": 1.25
     },
     "knowledge_cutoff": "2025-08-31",
     "tokenizer": {
@@ -1185,6 +1419,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1192,7 +1433,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.4-nano"
+        "model_id_on_provider": "openai/gpt-5.4-nano",
+        "model_info": "https://openrouter.ai/openai/gpt-5.4-nano"
       }
     ]
   },
@@ -1205,9 +1447,9 @@
     "model_type": "chat",
     "context_window": 1050000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 3e-05,
-      "output": 0.00018
+    "cost_per_million_tokens": {
+      "input": 30,
+      "output": 180
     },
     "knowledge_cutoff": "2025-08-31",
     "tokenizer": {
@@ -1218,6 +1460,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1225,7 +1474,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.4-pro"
+        "model_id_on_provider": "openai/gpt-5.4-pro",
+        "model_info": "https://openrouter.ai/openai/gpt-5.4-pro"
       }
     ]
   },
@@ -1238,9 +1488,9 @@
     "model_type": "chat",
     "context_window": 1050000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 2.5e-06,
-      "output": 1.5e-05
+    "cost_per_million_tokens": {
+      "input": 2.5,
+      "output": 15
     },
     "knowledge_cutoff": "2025-08-31",
     "tokenizer": {
@@ -1251,6 +1501,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1258,7 +1515,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.4"
+        "model_id_on_provider": "openai/gpt-5.4",
+        "model_info": "https://openrouter.ai/openai/gpt-5.4"
       }
     ]
   },
@@ -1271,12 +1529,18 @@
     "model_type": "chat",
     "context_window": 1050000,
     "max_tokens": 1049999,
-    "cost_per_token": {
-      "input": 3e-05,
-      "output": 0.00018
+    "cost_per_million_tokens": {
+      "input": 30,
+      "output": 180
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1285,7 +1549,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.5-pro"
+        "model_id_on_provider": "openai/gpt-5.5-pro",
+        "model_info": "https://openrouter.ai/openai/gpt-5.5-pro"
       }
     ]
   },
@@ -1298,12 +1563,18 @@
     "model_type": "chat",
     "context_window": 1050000,
     "max_tokens": 1049999,
-    "cost_per_token": {
-      "input": 5e-06,
-      "output": 3e-05
+    "cost_per_million_tokens": {
+      "input": 5,
+      "output": 30
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1312,7 +1583,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5.5"
+        "model_id_on_provider": "openai/gpt-5.5",
+        "model_info": "https://openrouter.ai/openai/gpt-5.5"
       }
     ]
   },
@@ -1325,9 +1597,9 @@
     "model_type": "chat",
     "context_window": 400000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 1.25e-06,
-      "output": 1e-05
+    "cost_per_million_tokens": {
+      "input": 1.25,
+      "output": 10
     },
     "knowledge_cutoff": "2024-09-30",
     "tokenizer": {
@@ -1338,6 +1610,13 @@
       "multimodal",
       "function"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1345,56 +1624,90 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/gpt-5"
+        "model_id_on_provider": "openai/gpt-5",
+        "model_info": "https://openrouter.ai/openai/gpt-5"
       }
     ]
   },
   {
-    "model_id": "grok-4.2-multi-agent",
-    "model_name": "Grok 4.2 Multi-Agent",
+    "model_id": "grok-4.20-multi-agent",
+    "model_name": "Grok 4.20 Multi-Agent",
     "model_provider": "x-ai",
-    "model_description": "Grok 4.2 optimized for multi-agent workflows. Enhanced tool use and coordination for parallel task execution.",
+    "model_description": "Grok 4.20 optimized for multi-agent workflows. Enhanced coordination for parallel task execution.",
     "model_info": "https://x.ai/api",
     "model_type": "chat",
     "context_window": 2000000,
-    "cost_per_token": {
-      "input": 2e-06,
-      "output": 6e-06
+    "max_tokens": 30000,
+    "cost_per_million_tokens": {
+      "input": 1.25,
+      "cached_input": 0.2,
+      "output": 2.5
     },
+    "tuning": [
+      "reasoning",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "other"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "x-ai",
-        "model_id_on_provider": "grok-4.2"
+        "model_id_on_provider": "grok-4.20-multi-agent-0309"
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "x-ai/grok-4.2-multi-agent"
+        "model_id_on_provider": "x-ai/grok-4.20-multi-agent",
+        "cost_per_million_tokens": {
+          "input": 2,
+          "cached_input": 0.2,
+          "output": 6
+        },
+        "model_info": "https://openrouter.ai/x-ai/grok-4.20-multi-agent"
       }
     ]
   },
   {
-    "model_id": "grok-4.2",
-    "model_name": "Grok 4.2",
+    "model_id": "grok-4.20",
+    "model_name": "Grok 4.20",
     "model_provider": "x-ai",
     "model_description": "xAI's flagship model. Strong reasoning with real-time web access. Known for personality and directness.",
     "model_info": "https://x.ai/api",
     "model_type": "chat",
     "context_window": 2000000,
-    "cost_per_token": {
-      "input": 2e-06,
-      "output": 6e-06
+    "max_tokens": 30000,
+    "cost_per_million_tokens": {
+      "input": 1.25,
+      "cached_input": 0.2,
+      "output": 2.5
     },
     "tuning": [
-      "function"
+      "function",
+      "reasoning",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "other"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
         "provider_id": "x-ai",
-        "model_id_on_provider": "grok-4.2"
+        "model_id_on_provider": "grok-4.20-0309-reasoning"
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "x-ai/grok-4.2"
+        "model_id_on_provider": "x-ai/grok-4.20",
+        "model_info": "https://openrouter.ai/x-ai/grok-4.20"
       }
     ]
   },
@@ -1406,12 +1719,18 @@
     "model_info": "https://platform.moonshot.ai/docs",
     "model_type": "chat",
     "context_window": 256000,
-    "cost_per_token": {
-      "input": 7.4e-07,
-      "output": 4.66e-06
+    "cost_per_million_tokens": {
+      "input": 0.74,
+      "output": 4.66
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1424,30 +1743,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "moonshotai/kimi-k2.6"
-      }
-    ]
-  },
-  {
-    "model_id": "kimi-v3",
-    "model_name": "Kimi V3",
-    "model_provider": "moonshotai",
-    "model_description": "Mid-range Moonshot model. Good balance of capability and cost for standard tasks.",
-    "model_info": "https://platform.moonshot.ai/docs",
-    "model_type": "chat",
-    "context_window": 256000,
-    "cost_per_token": {
-      "input": 2e-07,
-      "output": 1e-06
-    },
-    "providers": [
-      {
-        "provider_id": "moonshotai",
-        "model_id_on_provider": "kimi-v3"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "moonshotai/kimi-v3"
+        "model_id_on_provider": "moonshotai/kimi-k2.6",
+        "model_info": "https://openrouter.ai/moonshotai/kimi-k2.6"
       }
     ]
   },
@@ -1460,14 +1757,20 @@
     "model_type": "chat",
     "context_window": 131072,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "5e-8",
-      "output": "8e-8"
+    "cost_per_million_tokens": {
+      "input": 0.05,
+      "output": 0.08
     },
     "knowledge_cutoff": "2023-12-01",
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1485,45 +1788,25 @@
     "model_type": "chat",
     "context_window": 131072,
     "max_tokens": 32768,
-    "cost_per_token": {
-      "input": 5.9e-07,
-      "output": 7.9e-07
+    "cost_per_million_tokens": {
+      "input": 0.59,
+      "output": 0.79
     },
     "knowledge_cutoff": "2023-12-01",
     "tuning": [
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "groq",
         "model_id_on_provider": "llama-3.3-70b-versatile"
-      }
-    ]
-  },
-  {
-    "model_id": "minimax-m2.1-highspeed",
-    "model_name": "MiniMax M2.1-highspeed",
-    "model_provider": "minimax",
-    "model_description": "High-speed MiniMax M2.1 variant for faster multilingual programming and agent workflows.",
-    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
-    "model_type": "chat",
-    "context_window": 204800,
-    "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "6e-7",
-      "output": 2.4e-06
-    },
-    "tuning": [
-      "function",
-      "instruction",
-      "code",
-      "multilingual"
-    ],
-    "providers": [
-      {
-        "provider_id": "minimax",
-        "model_id_on_provider": "MiniMax-M2.1-highspeed"
       }
     ]
   },
@@ -1536,15 +1819,21 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "3e-7",
-      "output": 1.2e-06
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "output": 1.2
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1553,7 +1842,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "minimax/minimax-m2.1"
+        "model_id_on_provider": "minimax/minimax-m2.1",
+        "model_info": "https://openrouter.ai/minimax/minimax-m2.1"
       }
     ]
   },
@@ -1566,15 +1856,21 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "6e-7",
-      "output": 2.4e-06
+    "cost_per_million_tokens": {
+      "input": 0.6,
+      "output": 2.4
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1588,19 +1884,25 @@
     "model_name": "MiniMax M2.5",
     "model_provider": "minimax",
     "model_description": "MiniMax M2.5 model for complex programming, agent, and productivity tasks.",
-    "model_info": "https://platform.minimax.io/docs/guides/text-generation",
+    "model_info": "https://www.minimax.io/models/text",
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "3e-7",
-      "output": 1.2e-06
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "output": 1.2
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1609,7 +1911,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "minimax/minimax-m2.5"
+        "model_id_on_provider": "minimax/minimax-m2.5",
+        "model_info": "https://openrouter.ai/minimax/minimax-m2.5"
       }
     ]
   },
@@ -1622,15 +1925,21 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "6e-7",
-      "output": 2.4e-06
+    "cost_per_million_tokens": {
+      "input": 0.6,
+      "output": 2.4
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1648,15 +1957,21 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 131072,
-    "cost_per_token": {
-      "input": "3e-7",
-      "output": 1.2e-06
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "output": 1.2
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1665,7 +1980,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "minimax/minimax-m2.7"
+        "model_id_on_provider": "minimax/minimax-m2.7",
+        "model_info": "https://openrouter.ai/minimax/minimax-m2.7"
       }
     ]
   },
@@ -1678,15 +1994,21 @@
     "model_type": "chat",
     "context_window": 204800,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": "3e-7",
-      "output": 1.2e-06
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "output": 1.2
     },
     "tuning": [
       "function",
       "instruction",
       "code",
       "multilingual"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1695,7 +2017,52 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "minimax/minimax-m2"
+        "model_id_on_provider": "minimax/minimax-m2",
+        "model_info": "https://openrouter.ai/minimax/minimax-m2"
+      }
+    ]
+  },
+  {
+    "model_id": "minimax-m3",
+    "model_name": "MiniMax M3",
+    "model_provider": "minimax",
+    "model_description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for\nlong-horizon agentic work, coding, and tool use. It is built on MiniMax Sparse Attention (MSA), which replaces full attention with KV-block selection to cut per-token\ncompute at long context \u2014 roughly 1/20 the cost of the previous generation at 1M tokens, with substantially faster prefill and decode while retaining quality across\nmost tasks.\n",
+    "model_info": "https://www.minimax.io/models/text/m3",
+    "model_type": "chat",
+    "context_window": 512000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 0.6,
+      "output": 2.4
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "code",
+      "multilingual"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "minimax",
+        "model_id_on_provider": "MiniMax-M3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "minimax/minimax-m3",
+        "cost_per_million_tokens": {
+          "input": 0.3,
+          "cached_input": 0.06,
+          "output": 1.2
+        },
+        "model_info": "https://openrouter.ai/minimax/minimax-m3"
       }
     ]
   },
@@ -1711,14 +2078,16 @@
       "instruction"
     ],
     "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "mistral-7b-instruct-0.3"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-7b-instruct"
       }
     ]
   },
@@ -1730,16 +2099,21 @@
     "model_info": "https://mistral.ai/news/announcing-mistral-7b/",
     "model_type": "chat",
     "context_window": 8192,
-    "cost_per_token": 0,
+    "cost_per_million_tokens": {
+      "input": 0,
+      "output": 0
+    },
     "deprecated": true,
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "open-mistral-7b"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-7b"
       }
     ]
   },
@@ -1752,9 +2126,9 @@
     "model_type": "chat",
     "context_window": 131072,
     "max_tokens": 16384,
-    "cost_per_token": {
-      "input": 2e-06,
-      "output": 6e-06
+    "cost_per_million_tokens": {
+      "input": 2,
+      "output": 6
     },
     "knowledge_cutoff": "2024-11-01",
     "tokenizer": {
@@ -1764,14 +2138,16 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "mistral-large-2411"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-large-2411"
       }
     ]
   },
@@ -1784,9 +2160,9 @@
     "model_type": "chat",
     "context_window": 262144,
     "max_tokens": 262144,
-    "cost_per_token": {
-      "input": "5e-7",
-      "output": 1.5e-06
+    "cost_per_million_tokens": {
+      "input": 0.5,
+      "output": 1.5
     },
     "knowledge_cutoff": "2024-11-01",
     "tokenizer": {
@@ -1797,6 +2173,13 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
@@ -1804,7 +2187,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-large-2512"
+        "model_id_on_provider": "mistralai/mistral-large-2512",
+        "model_info": "https://openrouter.ai/mistralai/mistral-large-2512"
       }
     ]
   },
@@ -1817,9 +2201,9 @@
     "model_type": "chat",
     "context_window": 262144,
     "max_tokens": 262144,
-    "cost_per_token": {
-      "input": "5e-7",
-      "output": 1.5e-06
+    "cost_per_million_tokens": {
+      "input": 0.5,
+      "output": 1.5
     },
     "knowledge_cutoff": "2024-11-01",
     "tokenizer": {
@@ -1830,14 +2214,17 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "mistral-large-latest"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-large-latest"
       }
     ]
   },
@@ -1850,9 +2237,9 @@
     "model_type": "chat",
     "context_window": 128000,
     "max_tokens": 16384,
-    "cost_per_token": {
-      "input": "4e-7",
-      "output": 2e-06
+    "cost_per_million_tokens": {
+      "input": 0.4,
+      "output": 2
     },
     "knowledge_cutoff": "2025-05-01",
     "tokenizer": {
@@ -1863,14 +2250,17 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "mistral-medium-latest"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-medium-latest"
       }
     ]
   },
@@ -1883,9 +2273,9 @@
     "model_type": "chat",
     "context_window": 128000,
     "max_tokens": 128000,
-    "cost_per_token": {
-      "input": 1.5e-07,
-      "output": 1.5e-07
+    "cost_per_million_tokens": {
+      "input": 0.15,
+      "output": 0.15
     },
     "knowledge_cutoff": "2024-07-01",
     "tokenizer": {
@@ -1895,6 +2285,12 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
@@ -1902,7 +2298,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-nemo"
+        "model_id_on_provider": "mistralai/mistral-nemo",
+        "model_info": "https://openrouter.ai/mistralai/mistral-nemo"
       }
     ]
   },
@@ -1915,9 +2312,9 @@
     "model_type": "chat",
     "context_window": 256000,
     "max_tokens": 256000,
-    "cost_per_token": {
-      "input": 1.5e-07,
-      "output": "6e-7"
+    "cost_per_million_tokens": {
+      "input": 0.15,
+      "output": 0.6
     },
     "knowledge_cutoff": "2025-06-01",
     "tokenizer": {
@@ -1928,14 +2325,17 @@
       "function",
       "instruction"
     ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "mistralai",
         "model_id_on_provider": "mistral-small-latest"
-      },
-      {
-        "provider_id": "openrouter",
-        "model_id_on_provider": "mistralai/mistral-small-latest"
       }
     ]
   },
@@ -1948,14 +2348,20 @@
     "model_type": "chat",
     "context_window": 262144,
     "max_tokens": 262144,
-    "cost_per_token": {
-      "input": "2e-7",
-      "output": "8e-7"
+    "cost_per_million_tokens": {
+      "input": 0.2,
+      "output": 0.8
     },
     "knowledge_cutoff": "2024-04-01",
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -1964,7 +2370,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "nvidia/nemotron-3-super-120b-a12b"
+        "model_id_on_provider": "nvidia/nemotron-3-super-120b-a12b",
+        "model_info": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b"
       },
       {
         "provider_id": "cloudflare",
@@ -1980,14 +2387,21 @@
     "model_info": "https://platform.openai.com/docs/models/o3",
     "model_type": "chat",
     "context_window": 200000,
-    "cost_per_token": {
-      "input": 4e-06,
-      "output": 1.6e-05
+    "cost_per_million_tokens": {
+      "input": 4,
+      "output": 16
     },
     "tokenizer": {
       "family": "tiktoken",
       "name": "o200k_base"
     },
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -1995,7 +2409,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/o3"
+        "model_id_on_provider": "openai/o3",
+        "model_info": "https://openrouter.ai/openai/o3"
       }
     ]
   },
@@ -2007,14 +2422,21 @@
     "model_info": "https://platform.openai.com/docs/models/o4-mini",
     "model_type": "chat",
     "context_window": 100000,
-    "cost_per_token": {
-      "input": 1e-06,
-      "output": 4e-06
+    "cost_per_million_tokens": {
+      "input": 1,
+      "output": 4
     },
     "tokenizer": {
       "family": "tiktoken",
       "name": "o200k_base"
     },
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "openai",
@@ -2022,7 +2444,39 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "openai/o4-mini"
+        "model_id_on_provider": "openai/o4-mini",
+        "model_info": "https://openrouter.ai/openai/o4-mini"
+      }
+    ]
+  },
+  {
+    "model_id": "openrouter-auto",
+    "model_name": "Auto Router",
+    "model_provider": "openrouter",
+    "model_description": "Meta-model that analyzes the prompt and routes each request to one of dozens of underlying models (Anthropic, OpenAI, Google, DeepSeek, and others), optimizing for output quality. Effective context window, pricing, knowledge cutoff, and tokenizer all track whichever model is selected; the response's `model` field reports the actual choice.",
+    "model_info": "https://openrouter.ai/openrouter/auto",
+    "model_type": "chat",
+    "context_window": 2000000,
+    "meta_model": true,
+    "tuning": [
+      "function",
+      "instruction",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openrouter/auto",
+        "model_info": "https://openrouter.ai/openrouter/auto"
       }
     ]
   },
@@ -2031,18 +2485,24 @@
     "model_name": "Qwen3 32B",
     "model_provider": "qwen",
     "model_description": "Groq-hosted Qwen3 32B open-weight model for reasoning, code, and multilingual work.",
-    "model_info": "https://console.groq.com/docs/models",
+    "model_info": "https://openrouter.ai/qwen/qwen3-32b",
     "model_type": "chat",
     "context_window": 131072,
     "max_tokens": 40960,
-    "cost_per_token": {
-      "input": 2.9e-07,
-      "output": 5.9e-07
+    "cost_per_million_tokens": {
+      "input": 0.29,
+      "output": 0.59
     },
     "knowledge_cutoff": "2024-11-08",
     "tuning": [
       "function",
       "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -2055,7 +2515,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "qwen/qwen3-32b"
+        "model_id_on_provider": "qwen/qwen3-32b",
+        "model_info": "https://openrouter.ai/qwen/qwen3-32b"
       }
     ]
   },
@@ -2064,13 +2525,19 @@
     "model_name": "Qwen 3.6 Flash",
     "model_provider": "qwen",
     "model_description": "Fast, efficient Qwen variant. Optimized for high-volume applications.",
-    "model_info": "https://qwen.io/docs",
+    "model_info": "https://openrouter.ai/qwen/qwen3.6-flash",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 1e-07,
-      "output": 4e-07
+    "cost_per_million_tokens": {
+      "input": 0.1,
+      "output": 0.4
     },
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
     "providers": [
       {
         "provider_id": "qwen",
@@ -2078,7 +2545,8 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "qwen/qwen3.6-flash"
+        "model_id_on_provider": "qwen/qwen3.6-flash",
+        "model_info": "https://openrouter.ai/qwen/qwen3.6-flash"
       }
     ]
   },
@@ -2087,15 +2555,21 @@
     "model_name": "Qwen 3.6 Plus",
     "model_provider": "qwen",
     "model_description": "Alibaba's flagship model. Strong multilingual and reasoning capabilities with large context support.",
-    "model_info": "https://qwen.io/docs",
+    "model_info": "https://openrouter.ai/qwen/qwen3.6-plus",
     "model_type": "chat",
     "context_window": 1000000,
-    "cost_per_token": {
-      "input": 3.3e-07,
-      "output": 1.95e-06
+    "cost_per_million_tokens": {
+      "input": 0.33,
+      "output": 1.95
     },
     "tuning": [
       "function"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
     ],
     "providers": [
       {
@@ -2104,7 +2578,50 @@
       },
       {
         "provider_id": "openrouter",
-        "model_id_on_provider": "qwen/qwen3.6-plus"
+        "model_id_on_provider": "qwen/qwen3.6-plus",
+        "model_info": "https://openrouter.ai/qwen/qwen3.6-plus"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.7-plus",
+    "model_name": "Qwen 3.6 Plus",
+    "model_provider": "qwen",
+    "model_description": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output,\nbuilding on the series' text capabilities with a comprehensive upgrade to its vision-language abilities while retaining\nfull-stack, agent-level intelligence for coding, tool use, and productivity workflows. Its distinguishing trait is\nmulti-modal interactive hybrid agent capability: it can perceive real-world scenes, read screens and interact with GUIs,\ngenerate code from visual references, and perform end-to-end navigation within mobile apps.\n",
+    "model_info": "https://openrouter.ai/qwen/qwen3.7-plus",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 65536,
+    "cost_per_million_tokens": {
+      "input": 0.4,
+      "output": 1.6
+    },
+    "tuning": [
+      "function",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3.7-plus"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.7-plus",
+        "cost_per_million_tokens": {
+          "input": 0.4,
+          "cached_input": 0.08,
+          "cache_write_input": 0.5,
+          "output": 1.6
+        },
+        "model_info": "https://openrouter.ai/qwen/qwen3.7-plus"
       }
     ]
   }

@@ -5,14 +5,17 @@ model_description: OpenAI reasoning model. Extended thinking model optimized for
 model_info: https://platform.openai.com/docs/models/o3
 model_type: chat
 context_window: 200000
-cost_per_token:
-  input: 0.000004
-  output: 0.000016
+cost_per_million_tokens:
+  input: 4
+  output: 16
 tokenizer:
   family: tiktoken
   name: o200k_base
+input_type: [text, image]
+output_type: [text]
 providers:
   - provider_id: openai
     model_id_on_provider: o3
   - provider_id: openrouter
     model_id_on_provider: openai/o3
+    model_info: https://openrouter.ai/openai/o3

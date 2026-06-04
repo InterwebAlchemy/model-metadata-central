@@ -1,0 +1,21 @@
+model_id: grok-4.20
+model_name: Grok 4.20
+model_provider: x-ai
+model_description: xAI's flagship model. Strong reasoning with real-time web access. Known for personality and directness.
+model_info: https://x.ai/api
+model_type: chat
+context_window: 2000000
+max_tokens: 30000
+cost_per_million_tokens:
+  input: 1.25
+  cached_input: 0.2
+  output: 2.5
+tuning: [function, reasoning, multimodal]
+input_type: [text, image, other]
+output_type: [text]
+providers:
+  - provider_id: x-ai
+    model_id_on_provider: grok-4.20-0309-reasoning
+  - provider_id: openrouter
+    model_id_on_provider: x-ai/grok-4.20
+    model_info: https://openrouter.ai/x-ai/grok-4.20

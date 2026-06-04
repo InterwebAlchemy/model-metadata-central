@@ -5,15 +5,16 @@ model_description: GPT-4 successor with improved reasoning and instruction follo
 model_info: https://platform.openai.com/docs/models/gpt-4.5
 model_type: chat
 context_window: 128000
-cost_per_token:
-  input: 0.000010
-  output: 0.000030
+cost_per_million_tokens:
+  input: 10
+  output: 30
 tuning: [function]
 tokenizer:
   family: tiktoken
   name: o200k_base
+deprecated: true
+input_type: [text, image]
+output_type: [text]
 providers:
   - provider_id: openai
     model_id_on_provider: gpt-4.5
-  - provider_id: openrouter
-    model_id_on_provider: openai/gpt-4.5

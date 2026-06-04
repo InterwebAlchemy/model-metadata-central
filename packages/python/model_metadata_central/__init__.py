@@ -34,9 +34,7 @@ __all__ = [
     "O4_MINI",
     "CLAUDE_OPUS_4_7",
     "CLAUDE_OPUS_4_6_FAST",
-    "CLAUDE_SONNET_4_2",
     "CLAUDE_OPUS_LATEST",
-    "CLAUDE_HAIKU_4",
     "GEMINI_2_5_PRO",
     "GEMINI_2_5_FLASH",
     "GEMINI_2_0_FLASH",
@@ -44,11 +42,12 @@ __all__ = [
     "GEMMA_4_26B_A4B_IT",
     "DEEPSEEK_V4_PRO",
     "DEEPSEEK_V4_FLASH",
-    "DEEPSEEK_CODER_V4",
-    "GROK_4_2",
-    "GROK_4_2_MULTI_AGENT",
+    "GROK_4_20",
+    "GROK_4_20_MULTI_AGENT",
     "KIMI_K2_6",
-    "KIMI_V3",
+    "CLAUDINIO_ESSENTIAL",
+    "MINIMAX_M3",
+    "QWEN_3_7_PLUS",
     "QWEN_3_6_PLUS",
     "QWEN_3_6_FLASH",
     "MISTRAL_7B",
@@ -70,9 +69,7 @@ O3 = get_model("o3")
 O4_MINI = get_model("o4-mini")
 CLAUDE_OPUS_4_7 = get_model("claude-opus-4-7")
 CLAUDE_OPUS_4_6_FAST = get_model("claude-opus-4-6-fast")
-CLAUDE_SONNET_4_2 = get_model("claude-sonnet-4-2")
 CLAUDE_OPUS_LATEST = get_model("claude-opus-latest")
-CLAUDE_HAIKU_4 = get_model("claude-haiku-4")
 GEMINI_2_5_PRO = get_model("gemini-2.5-pro")
 GEMINI_2_5_FLASH = get_model("gemini-2.5-flash")
 GEMINI_2_0_FLASH = get_model("gemini-2.0-flash")
@@ -80,11 +77,12 @@ GEMMA_4_31B_IT = get_model("gemma-4-31b-it")
 GEMMA_4_26B_A4B_IT = get_model("gemma-4-26b-a4b-it")
 DEEPSEEK_V4_PRO = get_model("deepseek-v4-pro")
 DEEPSEEK_V4_FLASH = get_model("deepseek-v4-flash")
-DEEPSEEK_CODER_V4 = get_model("deepseek-coder-v4")
-GROK_4_2 = get_model("grok-4.2")
-GROK_4_2_MULTI_AGENT = get_model("grok-4.2-multi-agent")
+GROK_4_20 = get_model("grok-4.20")
+GROK_4_20_MULTI_AGENT = get_model("grok-4.20-multi-agent")
 KIMI_K2_6 = get_model("kimi-k2.6")
-KIMI_V3 = get_model("kimi-v3")
+CLAUDINIO_ESSENTIAL = get_model("claudinio-essential")
+MINIMAX_M3 = get_model("minimax-m3")
+QWEN_3_7_PLUS = get_model("qwen3.7-plus")
 QWEN_3_6_PLUS = get_model("qwen3.6-plus")
 QWEN_3_6_FLASH = get_model("qwen3.6-flash")
 MISTRAL_7B = get_model("mistral-7b")

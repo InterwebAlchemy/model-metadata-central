@@ -26,7 +26,7 @@ from model_metadata_central import get_model
 model = get_model("gpt-4o")
 if model:
     print(model["context_window"])          # 128000
-    print(model["cost_per_token"])          # {"input": 0.000005, "output": 0.000015}
+    print(model["cost_per_million_tokens"]) # {"input": 5, "output": 15}
 ```
 
 ### Filter by provider
@@ -77,8 +77,8 @@ print(GPT_4_O["context_window"])
 ## Data
 
 - Registry pre-compiled from `models/*.yaml` at install/build time
-- 74 models across 17 providers
-- Prices are in USD per token
+- 73 models across 18 providers
+- Prices are in USD per 1,000,000 tokens
 
 ## Schema
 
