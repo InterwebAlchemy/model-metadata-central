@@ -6,15 +6,15 @@ model_info: https://docs.mistral.ai/getting-started/models/models_overview/
 model_type: chat
 context_window: 131072
 max_tokens: 16384
-cost_per_token:
-  input: 0.000002
-  output: 0.000006
+cost_per_million_tokens:
+  input: 2
+  output: 6
 knowledge_cutoff: "2024-11-01"
 tokenizer:
   family: tekken
 tuning: [function, instruction]
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: mistralai
     model_id_on_provider: mistral-large-2411
-  - provider_id: openrouter
-    model_id_on_provider: mistralai/mistral-large-2411

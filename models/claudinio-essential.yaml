@@ -1,0 +1,20 @@
+model_id: claudinio-essential
+model_name: Claudinio Essential
+model_provider: claudinio
+model_description: |
+  Claudinio runs a unified model optimized for coding agents. All plans access the same high-performance model — the
+  difference is the hourly protection level, tuned for each developer profile.
+model_info: https://claudin.io/
+model_type: chat
+context_window: 256000
+max_tokens: 64000
+cost_per_million_tokens:
+  input: 0.5
+  output: 20
+knowledge_cutoff: "2026-05-01"
+tuning: [multimodal, function, code, reasoning]
+input_type: [text, image, audio, video]
+output_type: [text]
+providers:
+  - provider_id: claudinio
+    model_id_on_provider: claudinio-essential

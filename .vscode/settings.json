@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "./model-metadata.schema.json": "models/*.yaml",
+    "./provider.schema.json": "providers/*.yaml"
+  }
+}

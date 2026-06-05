@@ -21,7 +21,7 @@ const modelOptions = models.map((m) => ({
   value: m.model_id,
   label: m.model_name,
   contextWindow: m.context_window,
-  pricePerMillion: m.cost_per_token,
+  pricePerMillion: m.cost_per_million_tokens,
 }));
 ```
 
@@ -33,7 +33,7 @@ import { getModel } from "model-metadata-central";
 const model = getModel("gpt-4o");
 if (model) {
   console.log(model.context_window); // 128000
-  console.log(model.cost_per_token); // { input: 0.000005, output: 0.000015 }
+  console.log(model.cost_per_million_tokens); // { input: 5, output: 15 }
 }
 ```
 
@@ -77,12 +77,12 @@ import { gpt4o, claudeOpus47 } from "model-metadata-central";
 All types are exported for your own data structures:
 
 ```ts
-import type { ModelMetadata, ProviderMetadata, CostPerToken } from "model-metadata-central";
+import type { ModelMetadata, ProviderMetadata, TokenCosts } from "model-metadata-central";
 
 function logCost(model: ModelMetadata) {
-  if (model.cost_per_token) {
-    const cost = model.cost_per_token as CostPerToken;
-    console.log(`$${cost.input * 1_000_000} per 1M input tokens`);
+  if (model.cost_per_million_tokens) {
+    const cost = model.cost_per_million_tokens as TokenCosts;
+    console.log(`$${cost.input} per 1M input tokens`);
   }
 }
 ```
@@ -102,8 +102,8 @@ function logCost(model: ModelMetadata) {
 ## Data
 
 - Registry compiled from `/models/*.yaml` and `/providers/*.yaml` at build time
-- 33 models across 14 providers
-- Prices are in USD per token
+- 73 models across 18 providers
+- Prices are in USD per 1,000,000 tokens
 
 ## Schema
 

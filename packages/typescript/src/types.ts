@@ -4,7 +4,16 @@
 
 export type ModelType = "chat" | "completion" | "embedding";
 
-export type Tuning = "function" | "instruction" | "code" | "multilingual" | "multimodal";
+export type Tuning =
+  | "function"
+  | "instruction"
+  | "code"
+  | "multilingual"
+  | "multimodal"
+  | "structured"
+  | "reasoning";
+
+export type Modality = "text" | "image" | "audio" | "video" | "other";
 
 export type TokenEncoding =
   | "cl100k_base"
@@ -25,11 +34,17 @@ export type ProviderStatus = "active" | "deprecated" | "inactive";
 export interface ProviderReference {
   provider_id: string;
   model_id_on_provider?: string;
+  model_info?: string;
+  cost_per_million_tokens?: TokenCosts;
 }
 
-export interface CostPerToken {
-  input: number;
-  output: number;
+export type TokenCostValue = number | Partial<Record<Modality, number>>;
+
+export interface TokenCosts {
+  input?: TokenCostValue;
+  cached_input?: TokenCostValue;
+  cache_write_input?: TokenCostValue;
+  output?: TokenCostValue;
 }
 
 export interface ModelMetadata {
@@ -42,11 +57,17 @@ export interface ModelMetadata {
   model_type: ModelType;
   context_window: number;
   max_tokens?: number;
-  cost_per_token?: CostPerToken | number;
+  cost_per_million_tokens?: TokenCosts;
   knowledge_cutoff?: string;
-  token_encoding?: TokenEncoding;
+  tokenizer?: {
+    family: "tiktoken" | "tekken" | "sentencepiece" | "huggingface" | "other" | "unknown";
+    name?: string;
+  };
   tuning?: Tuning[];
+  input_type?: Modality[];
+  output_type?: Modality[];
   deprecated?: boolean;
+  meta_model?: boolean;
   providers?: ProviderReference[];
 }
 

@@ -6,11 +6,13 @@ model_info: https://console.groq.com/docs/models
 model_type: chat
 context_window: 131072
 max_tokens: 32768
-cost_per_token:
-  input: 5.9e-7
-  output: 7.9e-7
+cost_per_million_tokens:
+  input: 0.59
+  output: 0.79
 knowledge_cutoff: "2023-12-01"
 tuning: [function, instruction]
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: groq
     model_id_on_provider: llama-3.3-70b-versatile

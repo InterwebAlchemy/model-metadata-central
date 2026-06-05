@@ -6,16 +6,19 @@ model_info: https://platform.openai.com/docs/models/gpt-4.1
 model_type: chat
 context_window: 1047576
 max_tokens: 32768
-cost_per_token:
-  input: 0.000002
-  output: 0.000008
+cost_per_million_tokens:
+  input: 2
+  output: 8
 knowledge_cutoff: "2024-04-01"
 tokenizer:
   family: tiktoken
   name: o200k_base
 tuning: [multimodal, function]
+input_type: [text, image]
+output_type: [text]
 providers:
   - provider_id: openai
     model_id_on_provider: gpt-4.1
   - provider_id: openrouter
     model_id_on_provider: openai/gpt-4.1
+    model_info: https://openrouter.ai/openai/gpt-4.1

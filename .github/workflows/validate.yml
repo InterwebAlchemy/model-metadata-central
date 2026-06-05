@@ -16,22 +16,17 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Configure npm release age gate
+        run: echo "NPM_CONFIG_BEFORE=$(date -u -d '7 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_ENV"
+
+      - name: Install validation dependencies
+        run: npm ci
+
       - name: Validate models YAML against schema
-        run: |
-          npm install ajv ajv-cli
-          npx ajv validate \
-            -s model-metadata.schema.json \
-            -d "models/*.yaml" \
-            --spec=draft2020 \
-            --all-errors || exit 1
+        run: npm run validate:models
 
       - name: Validate providers YAML against schema
-        run: |
-          npx ajv validate \
-            -s provider.schema.json \
-            -d "providers/*.yaml" \
-            --spec=draft2020 \
-            --all-errors || exit 1
+        run: npm run validate:providers
 
   codegen:
     runs-on: ubuntu-latest
@@ -48,7 +43,7 @@ jobs:
       - name: Check for changes
         run: |
           git diff --exit-code packages/typescript/src/generated/
-          git diff --exit-code packages/python/model_metadata/generated/
+          git diff --exit-code packages/python/model_metadata_central/generated/
 
   typescript:
     runs-on: ubuntu-latest
@@ -62,6 +57,9 @@ jobs:
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
+
+      - name: Configure npm release age gate
+        run: echo "NPM_CONFIG_BEFORE=$(date -u -d '7 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_ENV"
 
       - name: Install deps and type-check
         run: npm ci && npm run lint
@@ -81,7 +79,7 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Build registry from YAML sources
         run: uv run python scripts/build_registry.py
@@ -89,7 +87,7 @@ jobs:
       - name: Type-check generated models
         run: |
           uv run python -c "
-          from model_metadata.generated.models import ModelMetadata, ProviderMetadata
+          from model_metadata_central.generated.models import ModelMetadata, ProviderMetadata
           m = ModelMetadata.model_validate({
               'model_id': 'test',
               'model_type': 'chat',

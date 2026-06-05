@@ -5,11 +5,26 @@ from __future__ import annotations
 from typing import Any, Literal
 from pydantic import BaseModel, Field
 
-class Provider_reference(BaseModel):
+class ProviderReference(BaseModel):
     provider_id: str
     model_id_on_provider: str | None = None
+    model_info: str | None = None
+    cost_per_million_tokens: TokenCosts | None = None
 
-class Tokenizer_config(BaseModel):
+class TokenCosts(BaseModel):
+    input: Any | None = None
+    cached_input: Any | None = None
+    cache_write_input: Any | None = None
+    output: Any | None = None
+
+class ModalityCosts(BaseModel):
+    text: float | None = None
+    image: float | None = None
+    audio: float | None = None
+    video: float | None = None
+    other: float | None = None
+
+class TokenizerConfig(BaseModel):
     family: Literal['tiktoken', 'tekken', 'sentencepiece', 'huggingface', 'other', 'unknown']
     name: str | None = None
 
@@ -22,12 +37,14 @@ class ModelMetadata(BaseModel):
     model_info: str | None = None
     model_version: str | None = None
     model_type: Literal['chat', 'completion', 'embedding']
-    context_window: float
-    max_tokens: float | None = None
-    cost_per_token: Any | None = None
+    context_window: int
+    max_tokens: int | None = None
+    cost_per_million_tokens: TokenCosts | None = None
     knowledge_cutoff: str | None = None
-    tokenizer: Tokenizer_config | None = None
+    tokenizer: TokenizerConfig | None = None
     tuning: list | None = None
+    input_type: list | None = None
+    output_type: list | None = None
     deprecated: bool | None = None
     meta_model: bool | None = None
     providers: list | None = None

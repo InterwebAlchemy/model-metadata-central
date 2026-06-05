@@ -1,6 +1,6 @@
 # Model Metadata Central
 
-A centralized, language-agnostic, open-source approach to storing and sharing model definitions like context windows, cost per token, etc.
+A centralized, language-agnostic, open-source approach to storing and sharing model definitions like context windows, token pricing, providers, and modality support.
 
 **Note**: This project does not strive to be an exhaustive registry of every model, but a registry that I can use in my own projects to provide consistent, sane defaults for model and provider selection for provider and model agnostic projects where the user can configure which models and providers they want to use.
 
@@ -54,12 +54,12 @@ These schema defines properties that are relevant to the model and developers wh
 - `model_description`: A human-friendly description of the model
 - `model_version`: The version of the model
   - **Example** `0613`
-- `cost_per_token`: The cost per token in USD
+- `cost_per_million_tokens`: The token cost in USD per 1,000,000 tokens
   - **Example**: `json {
-  "input": 0.0000015,
-  "output": 0.000002
+  "input": 1.5,
+  "output": 2
 }`
-  - **Note**: supports either a basic number or an object with `input` and `output` numbers to define different costs between input tokens and output tokens
+  - **Note**: supports `input`, `cached_input`, `cache_write_input`, and `output`. Each value may be a number or a modality map such as `{ "text": 1.5, "audio": 10 }`.
 - `knowledge_cutoff`: The training data cutoff date for the model
   - **Note**: This is helpful when dealing with applications where you may need to know if you should supplement the model's training data with more recent information
 - `tokenizer`: What type of tokenization the model uses
@@ -80,9 +80,17 @@ These schema defines properties that are relevant to the model and developers wh
         model_id_on_provider: gpt-4o
       - provider_id: openrouter
         model_id_on_provider: openai/gpt-4o
+        model_info: https://openrouter.ai/openai/gpt-4o
+        cost_per_million_tokens:
+          input: 2.5
+          output: 10
     ```
-  - **Note**: Allows a single model to be accessed via direct provider API or aggregator. Provider definitions live in `/providers`.
+  - **Note**: Allows a single model to be accessed via direct provider API or aggregator, with provider-specific model IDs, info links, and pricing overrides. Provider definitions live in `/providers`.
 - `meta_model`: If the model is a meta model, like [OpenRouter's Auto Router](https://openrouter.ai/openrouter/auto), this field indicates that the model may have special treatment for context, tokenization, and cost
+
+### YAML Editor Hints
+
+This repo includes `.vscode/settings.json` schema associations for `models/*.yaml` and `providers/*.yaml`. In VS Code with a YAML language server, those associations provide key completion, validation, and hover descriptions from the JSON Schemas.
 
 ### Provider Schema
 
@@ -121,7 +129,7 @@ status: active
 
 ### Included Models
 
-66 active models across 12 primary model providers (deprecated models exist in [`/models`](./models) but are excluded from this list). Provider definitions cover 17 direct/local/aggregator routes.
+73 model definitions across direct, local, and aggregator providers. Provider definitions cover 18 direct/local/aggregator routes.
 
 **OpenAI**:
 
@@ -148,13 +156,11 @@ status: active
 
 **Anthropic**:
 
-- `claude-haiku-4`
 - `claude-haiku-4-5`
 - `claude-opus-4-6`
 - `claude-opus-4-6-fast`
 - `claude-opus-4-7`
 - `claude-opus-latest`
-- `claude-sonnet-4-2`
 - `claude-sonnet-4-6`
 
 **Google**:
@@ -166,19 +172,17 @@ status: active
 
 **DeepSeek**:
 
-- `deepseek-coder-v4`
 - `deepseek-v4-flash`
 - `deepseek-v4-pro`
 
 **xAI**:
 
-- `grok-4.2`
-- `grok-4.2-multi-agent`
+- `grok-4.20`
+- `grok-4.20-multi-agent`
 
 **Moonshot AI**:
 
 - `kimi-k2.6`
-- `kimi-v3`
 
 **Mistral AI**:
 
@@ -194,11 +198,11 @@ status: active
 
 - `minimax-m2`
 - `minimax-m2.1`
-- `minimax-m2.1-highspeed`
 - `minimax-m2.5`
 - `minimax-m2.5-highspeed`
 - `minimax-m2.7`
 - `minimax-m2.7-highspeed`
+- `minimax-m3`
 
 **Z.AI**:
 
@@ -214,6 +218,11 @@ status: active
 - `qwen3-32b`
 - `qwen3.6-flash`
 - `qwen3.6-plus`
+- `qwen3.7-plus`
+
+**Claudinio**:
+
+- `claudinio-essential`
 
 **Groq**:
 

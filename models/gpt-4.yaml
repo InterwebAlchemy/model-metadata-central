@@ -7,9 +7,9 @@ model_version: latest
 model_type: chat
 context_window: 8192
 max_tokens: 8191
-cost_per_token:
-  input: 0.00003
-  output: 0.00006
+cost_per_million_tokens:
+  input: 30
+  output: 60
 knowledge_cutoff: "2021-09-01"
 tokenizer:
   family: tiktoken
@@ -17,6 +17,8 @@ tokenizer:
 tuning:
   - function
 deprecated: true
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: openai
     model_id_on_provider: gpt-4

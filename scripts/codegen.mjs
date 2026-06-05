@@ -39,21 +39,31 @@ function isRequired(schema, key) {
 
 function tsEnumType(key, prop, enums) {
   if (prop.enum) {
-    enums.set(upperFirst(key), prop.enum);
+    enums.set(toPascalCase(key), prop.enum);
+  }
+  if (prop.items?.enum) {
+    enums.set(toPascalCase(key), prop.items.enum);
   }
 }
 
 function tsFieldType(key, prop, defs) {
   if (prop.$ref) {
     const ref = prop.$ref.replace("#/$defs/", "");
-    return upperFirst(ref);
+    return toPascalCase(ref);
+  }
+  if (prop.oneOf || prop.anyOf) {
+    const variants = prop.oneOf ?? prop.anyOf;
+    return variants.map((variant) => tsFieldType(key, variant, defs)).join(" | ");
   }
   if (prop.type === "string") {
-    return prop.enum ? upperFirst(key) : "string";
+    return prop.enum ? toPascalCase(key) : "string";
   }
   if (prop.type === "number" || prop.type === "integer") return "number";
   if (prop.type === "boolean") return "boolean";
-  if (prop.type === "array") return "unknown[]";
+  if (prop.type === "array") {
+    const itemType = prop.items ? tsFieldType(key, prop.items, defs) : "unknown";
+    return `${itemType}[]`;
+  }
   if (prop.type === "object") return "Record<string, unknown>";
   return "unknown";
 }
@@ -80,6 +90,7 @@ for (const [key, prop] of Object.entries(providerSchema.properties ?? {})) {
   tsEnumType(key, prop, tsEnums);
 }
 for (const def of Object.values(modelSchema.$defs ?? {})) {
+  tsEnumType("", def, tsEnums);
   for (const [key, prop] of Object.entries(def.properties ?? {})) {
     tsEnumType(key, prop, tsEnums);
   }
@@ -87,7 +98,11 @@ for (const def of Object.values(modelSchema.$defs ?? {})) {
 
 // Build $defs interfaces
 for (const [name, def] of Object.entries(modelSchema.$defs ?? {})) {
-  const tsName = upperFirst(name);
+  const tsName = toPascalCase(name);
+  if (!def.properties && (def.oneOf || def.anyOf)) {
+    tsDefs.set(tsName, `export type ${tsName} = ${tsFieldType(name, def, tsDefs)};`);
+    continue;
+  }
   const lines = [`export interface ${tsName} {`];
   for (const [key, prop] of Object.entries(def.properties ?? {})) {
     const opt = def.required?.includes(key) ? "" : "?";
@@ -130,17 +145,24 @@ function pyField(key, prop, required) {
   let ann;
 
   if (prop.$ref) {
-    ann = upperFirst(prop.$ref.replace("#/$defs/", ""));
+    const ref = prop.$ref.replace("#/$defs/", "");
+    ann = ref === "token_cost_value" ? "Any" : toPascalCase(ref);
+  } else if (prop.oneOf || prop.anyOf) {
+    const variants = prop.oneOf ?? prop.anyOf;
+    ann = variants.map((variant) => pyFieldType(key, variant)).join(" | ");
   } else if (prop.type === "string") {
     ann = prop.enum
       ? "Literal[" + prop.enum.map((v) => `'${v}'`).join(", ") + "]"
       : "str";
-  } else if (prop.type === "number" || prop.type === "integer") {
+  } else if (prop.type === "number") {
     ann = "float";
+  } else if (prop.type === "integer") {
+    ann = "int";
   } else if (prop.type === "boolean") {
     ann = "bool";
   } else if (prop.type === "array") {
-    ann = "list";
+    const itemAnn = prop.items ? pyFieldType(key, prop.items) : "Any";
+    ann = `list[${itemAnn}]`;
   } else if (prop.type === "object") {
     ann = "dict";
   } else {
@@ -158,6 +180,31 @@ function pyField(key, prop, required) {
   }
 }
 
+function pyFieldType(key, prop) {
+  if (prop.$ref) {
+    const ref = prop.$ref.replace("#/$defs/", "");
+    return ref === "token_cost_value" ? "Any" : toPascalCase(ref);
+  }
+  if (prop.oneOf || prop.anyOf) {
+    const variants = prop.oneOf ?? prop.anyOf;
+    return variants.map((variant) => pyFieldType(key, variant)).join(" | ");
+  }
+  if (prop.type === "string") {
+    return prop.enum
+      ? "Literal[" + prop.enum.map((v) => `'${v}'`).join(", ") + "]"
+      : "str";
+  }
+  if (prop.type === "number") return "float";
+  if (prop.type === "integer") return "int";
+  if (prop.type === "boolean") return "bool";
+  if (prop.type === "array") {
+    const itemAnn = prop.items ? pyFieldType(key, prop.items) : "Any";
+    return `list[${itemAnn}]`;
+  }
+  if (prop.type === "object") return "dict";
+  return "Any";
+}
+
 const pyLines = [
   "# Generated from JSON Schema — do not edit manually",
   "",
@@ -170,7 +217,10 @@ const pyLines = [
 
 // $defs first (e.g. ProviderReference)
 for (const [name, def] of Object.entries(modelSchema.$defs ?? {})) {
-  const className = upperFirst(name);
+  if (!def.properties) {
+    continue;
+  }
+  const className = toPascalCase(name);
   pyLines.push(`class ${className}(BaseModel):`);
   const req = def.required ?? [];
   for (const [k, v] of Object.entries(def.properties ?? {})) {

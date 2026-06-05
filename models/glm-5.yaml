@@ -6,12 +6,15 @@ model_info: https://docs.z.ai/guides/overview/pricing
 model_type: chat
 context_window: 204800
 max_tokens: 131072
-cost_per_token:
-  input: 0.000001
-  output: 0.0000032
+cost_per_million_tokens:
+  input: 1
+  output: 3.2
 tuning: [function, instruction]
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: zai
     model_id_on_provider: glm-5
   - provider_id: openrouter
     model_id_on_provider: z-ai/glm-5
+    model_info: https://openrouter.ai/z-ai/glm-5

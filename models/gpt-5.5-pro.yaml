@@ -6,12 +6,15 @@ model_info: https://platform.openai.com/docs/models/gpt-5.5-pro
 model_type: chat
 context_window: 1050000
 max_tokens: 1049999
-cost_per_token:
-  input: 0.000030
-  output: 0.000180
+cost_per_million_tokens:
+  input: 30
+  output: 180
 tuning: [function]
+input_type: [text]
+output_type: [text]
 providers:
   - provider_id: openai
     model_id_on_provider: gpt-5.5-pro
   - provider_id: openrouter
     model_id_on_provider: openai/gpt-5.5-pro
+    model_info: https://openrouter.ai/openai/gpt-5.5-pro
