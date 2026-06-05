@@ -16,9 +16,6 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Configure npm release age gate
-        run: echo "NPM_CONFIG_BEFORE=$(date -u -d '7 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_ENV"
-
       - name: Install validation dependencies
         run: npm ci
 
@@ -57,9 +54,6 @@ jobs:
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
-
-      - name: Configure npm release age gate
-        run: echo "NPM_CONFIG_BEFORE=$(date -u -d '7 days ago' +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_ENV"
 
       - name: Install deps and type-check
         run: npm ci && npm run lint
