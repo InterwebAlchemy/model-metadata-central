@@ -1,7 +1,19 @@
 {
   "name": "model-metadata-central",
   "private": true,
+  "packageManager": "npm@11.16.0",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=11.16.0"
+  },
   "scripts": {
-    "generate": "node scripts/codegen.mjs"
+    "generate": "node scripts/codegen.mjs",
+    "validate:models": "node scripts/validate-yaml-schema.mjs model-metadata.schema.json models",
+    "validate:providers": "node scripts/validate-yaml-schema.mjs provider.schema.json providers"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "3.0.0-0"
   }
 }
