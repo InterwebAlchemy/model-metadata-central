@@ -1,0 +1,24 @@
+model_id: qwen3.8-flash
+model_name: Qwen 3.8 Flash
+model_provider: qwen
+model_description: |
+  Fast, low-cost tier of the Qwen 3.8 family. Keeps the 1M-token context window and multimodal text, image,
+  and video input of Qwen 3.8 Max at a small fraction of the cost.
+model_info: https://openrouter.ai/qwen/qwen3.8-flash
+model_type: chat
+context_window: 1000000
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 0.15
+  cached_input: 0.016
+  cache_write_input: 0.2
+  output: 0.47
+tuning: [function, multimodal, structured]
+input_type: [text, image, video]
+output_type: [text]
+providers:
+  - provider_id: qwen
+    model_id_on_provider: qwen3.8-flash
+  - provider_id: openrouter
+    model_id_on_provider: qwen/qwen3.8-flash
+    model_info: https://openrouter.ai/qwen/qwen3.8-flash

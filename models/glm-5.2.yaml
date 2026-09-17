@@ -1,0 +1,21 @@
+model_id: glm-5.2
+model_name: GLM-5.2
+model_provider: zai
+model_description: Z.AI's GLM-5.2 model, the base that GLM-5.3 is post-trained from. Long-context text model aimed at coding and agentic work.
+model_info: https://docs.z.ai/guides/overview/pricing
+model_type: chat
+context_window: 1048576
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 1.4
+  cached_input: 0.14
+  output: 4.4
+tuning: [function, code]
+input_type: [text]
+output_type: [text]
+providers:
+  - provider_id: zai
+    model_id_on_provider: glm-5.2
+  - provider_id: openrouter
+    model_id_on_provider: z-ai/glm-5.2
+    model_info: https://openrouter.ai/z-ai/glm-5.2

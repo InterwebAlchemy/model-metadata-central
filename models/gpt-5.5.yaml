@@ -5,10 +5,12 @@ model_description: Capable OpenAI model with large context window. Strong for co
 model_info: https://platform.openai.com/docs/models/gpt-5.5
 model_type: chat
 context_window: 1050000
-max_tokens: 1049999
+max_tokens: 128000
 cost_per_million_tokens:
   input: 5
+  cached_input: 0.5
   output: 30
+knowledge_cutoff: "2025-12-01"
 tuning: [function]
 input_type: [text]
 output_type: [text]

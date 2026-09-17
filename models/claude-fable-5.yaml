@@ -1,0 +1,25 @@
+model_id: claude-fable-5
+model_name: Claude Fable 5
+model_provider: anthropic
+model_description: |
+  Predecessor to Claude Fable 5.1 in the same tier and at the same per-token price, still served. Thinking
+  is always on; effort is tunable from low through max. Unlike 5.1 it still accepts forced tool choice and does not run the
+  preserved-thinking history check. Cache reads are priced higher than on 5.1.
+model_info: https://docs.anthropic.com/en/docs/models/claude-fable-5
+model_type: chat
+context_window: 1000000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 10
+  cached_input: 1
+  cache_write_input: 12.5
+  output: 50
+tuning: [function, reasoning]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-fable-5
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-fable-5
+    model_info: https://openrouter.ai/anthropic/claude-fable-5

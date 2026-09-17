@@ -1,0 +1,31 @@
+model_id: gpt-6-astra
+model_name: GPT-6 Astra
+model_provider: openai
+model_description: |
+  OpenAI's flagship model and the first of the GPT-6 generation, released September 2026. Accepts text and
+  image input with text output, supports tool calling and the full Responses API tool set, and exposes effort levels from
+  low through max. Prompts beyond 272K input tokens reprice the entire request — 2x input and cache rates, 1.5x output —
+  not just the overflow.
+model_info: https://platform.openai.com/docs/models/gpt-6-astra
+model_type: chat
+context_window: 1050000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 10
+  cached_input: 1
+  output: 50
+knowledge_cutoff: "2026-04-30"
+tuning: [function, reasoning, structured]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-6-astra
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-6-astra
+    cost_per_million_tokens:
+      input: 10
+      cached_input: 1
+      cache_write_input: 12.5
+      output: 50
+    model_info: https://openrouter.ai/openai/gpt-6-astra

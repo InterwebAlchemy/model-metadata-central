@@ -1,0 +1,21 @@
+model_id: qwen3.8-2.4t-a95b
+model_name: Qwen 3.8 2.4T A95B
+model_provider: qwen
+model_description: |
+  Open-weights release of the Qwen 3.8 Max architecture: a 2.4-trillion-parameter mixture of experts with
+  95B active parameters. Text-only, in contrast to the multimodal hosted Max endpoint.
+model_info: https://openrouter.ai/qwen/qwen3.8-2.4t-a95b
+model_type: chat
+context_window: 1048576
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 2
+  cached_input: 0.25
+  output: 6
+tuning: [function, reasoning, code]
+input_type: [text]
+output_type: [text]
+providers:
+  - provider_id: openrouter
+    model_id_on_provider: qwen/qwen3.8-2.4t-a95b
+    model_info: https://openrouter.ai/qwen/qwen3.8-2.4t-a95b

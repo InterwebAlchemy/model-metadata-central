@@ -1,0 +1,20 @@
+model_id: mistral-medium-3-5
+model_name: Mistral Medium 3.5
+model_provider: mistralai
+model_description: Mistral's current medium-tier model, with a 256K-token context window and text, image, and document input.
+model_info: https://docs.mistral.ai/getting-started/models/models_overview/
+model_type: chat
+context_window: 262144
+max_tokens: 209715
+cost_per_million_tokens:
+  input: 1.5
+  output: 7.5
+tuning: [function, multilingual, multimodal]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: mistralai
+    model_id_on_provider: mistral-medium-3.5
+  - provider_id: openrouter
+    model_id_on_provider: mistralai/mistral-medium-3-5
+    model_info: https://openrouter.ai/mistralai/mistral-medium-3-5

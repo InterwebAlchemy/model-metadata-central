@@ -1,5 +1,81 @@
 [
   {
+    "model_id": "claude-fable-5-1",
+    "model_name": "Claude Fable 5.1",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's most capable widely released model, aimed at demanding reasoning and long-horizon agentic\nwork. Thinking is always on and cannot be disabled; the raw chain of thought is never returned. Forced tool choice\n(any/tool) returns a 400, thinking blocks are bound to the producing model, and editing earlier turns invalidates them\n(\"preserved thinking\"). Requires 30-day data retention.\n",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-fable-5-1",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 10,
+      "cached_input": 0.25,
+      "cache_write_input": 12.5,
+      "output": 50
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-fable-5-1"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-fable-5.1",
+        "model_info": "https://openrouter.ai/anthropic/claude-fable-5.1"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-fable-5",
+    "model_name": "Claude Fable 5",
+    "model_provider": "anthropic",
+    "model_description": "Predecessor to Claude Fable 5.1 in the same tier and at the same per-token price, still served. Thinking\nis always on; effort is tunable from low through max. Unlike 5.1 it still accepts forced tool choice and does not run the\npreserved-thinking history check. Cache reads are priced higher than on 5.1.\n",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-fable-5",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 10,
+      "cached_input": 1,
+      "cache_write_input": 12.5,
+      "output": 50
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-fable-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-fable-5",
+        "model_info": "https://openrouter.ai/anthropic/claude-fable-5"
+      }
+    ]
+  },
+  {
     "model_id": "claude-haiku-4-5",
     "model_name": "Claude Haiku 4.5 (latest)",
     "model_provider": "anthropic",
@@ -40,7 +116,7 @@
     "model_id": "claude-opus-4-6-fast",
     "model_name": "Claude Opus 4.6 (Fast)",
     "model_provider": "anthropic",
-    "model_description": "High-speed variant of Opus 4.6. Optimized for rapid responses while retaining strong reasoning and capabilities.",
+    "model_description": "High-speed variant of Opus 4.6, optimized for rapid responses while retaining strong reasoning and capabilities.\nRetired: fast mode is no longer offered on Opus 4.6 or 4.7 and is now limited to Claude Opus 5 and Opus 4.8,\nwhich serve it at $10/$50 per million tokens rather than the rates below.\n",
     "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-6",
     "model_type": "chat",
     "context_window": 1000000,
@@ -58,6 +134,7 @@
     "output_type": [
       "text"
     ],
+    "deprecated": true,
     "providers": [
       {
         "provider_id": "openrouter",
@@ -138,6 +215,82 @@
     ]
   },
   {
+    "model_id": "claude-opus-4-8",
+    "model_name": "Claude Opus 4.8",
+    "model_provider": "anthropic",
+    "model_description": "Opus-tier model preceding Claude Opus 5, with the same request surface as Opus 4.7. Adaptive thinking\nmust be requested explicitly \u2014 omitting the thinking parameter runs without it. Supports fast mode, task budgets, and\nmid-conversation system messages.\n",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-4-8",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 5,
+      "cached_input": 0.5,
+      "cache_write_input": 6.25,
+      "output": 25
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-opus-4-8"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-4.8",
+        "model_info": "https://openrouter.ai/anthropic/claude-opus-4.8"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-opus-5",
+    "model_name": "Claude Opus 5",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's flagship Opus-tier model. Adaptive thinking is on by default (omitting the thinking parameter\nruns it), and effort is tunable from low through max. Supports a 1M-token context window, 128K max output, task budgets,\nmid-conversation system messages, and fast mode. budget_tokens and assistant prefill are removed and return a 400.\n",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-opus-5",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 5,
+      "cached_input": 0.5,
+      "cache_write_input": 6.25,
+      "output": 25
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-opus-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-opus-5",
+        "model_info": "https://openrouter.ai/anthropic/claude-opus-5"
+      }
+    ]
+  },
+  {
     "model_id": "claude-opus-latest",
     "model_name": "Claude Opus Latest",
     "model_provider": "anthropic",
@@ -201,6 +354,44 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "anthropic/claude-sonnet-4.6",
         "model_info": "https://openrouter.ai/anthropic/claude-sonnet-4.6"
+      }
+    ]
+  },
+  {
+    "model_id": "claude-sonnet-5",
+    "model_name": "Claude Sonnet 5",
+    "model_provider": "anthropic",
+    "model_description": "Anthropic's balanced mid-tier model: Opus-family context and output limits at a lower price. Adaptive\nthinking with effort levels low through max, 1M-token context, and 128K max output. Does not support mid-conversation\nsystem messages; budget_tokens and assistant prefill are removed.\n",
+    "model_info": "https://docs.anthropic.com/en/docs/models/claude-sonnet-5",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.2,
+      "cache_write_input": 2.5,
+      "output": 10
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "anthropic",
+        "model_id_on_provider": "claude-sonnet-5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "anthropic/claude-sonnet-5",
+        "model_info": "https://openrouter.ai/anthropic/claude-sonnet-5"
       }
     ]
   },
@@ -336,6 +527,43 @@
     ]
   },
   {
+    "model_id": "deepseek-v4-pro-0813",
+    "model_name": "DeepSeek V4 Pro (0813)",
+    "model_provider": "deepseek",
+    "model_description": "August 2026 snapshot of DeepSeek V4 Pro, priced well below the original V4 Pro release with the same 1M-token context window.",
+    "model_info": "https://api-docs.deepseek.com/quick_start/pricing",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 384000,
+    "cost_per_million_tokens": {
+      "input": 0.66,
+      "cached_input": 0.022,
+      "output": 1.98
+    },
+    "tuning": [
+      "function",
+      "code",
+      "reasoning"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "deepseek",
+        "model_id_on_provider": "deepseek-v4-pro-0813"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "deepseek/deepseek-v4-pro-0813",
+        "model_info": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813"
+      }
+    ]
+  },
+  {
     "model_id": "deepseek-v4-pro",
     "model_name": "DeepSeek V4 Pro",
     "model_provider": "deepseek",
@@ -365,6 +593,44 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "deepseek/deepseek-v4-pro",
         "model_info": "https://openrouter.ai/deepseek/deepseek-v4-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "deepseek-v4.1-flash",
+    "model_name": "DeepSeek V4.1 Flash",
+    "model_provider": "deepseek",
+    "model_description": "Current DeepSeek Flash-tier model, adding image input over the V4 Flash line. 1M-token context window\nwith a 384K output limit and an unusually cheap cache-read rate.\n",
+    "model_info": "https://api-docs.deepseek.com/quick_start/pricing",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 384000,
+    "cost_per_million_tokens": {
+      "input": 0.15,
+      "cached_input": 0.003,
+      "output": 0.6
+    },
+    "tuning": [
+      "function",
+      "code",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "deepseek",
+        "model_id_on_provider": "deepseek-v4.1-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "deepseek/deepseek-v4.1-flash",
+        "model_info": "https://openrouter.ai/deepseek/deepseek-v4.1-flash"
       }
     ]
   },
@@ -466,6 +732,125 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "google/gemini-2.5-pro",
         "model_info": "https://openrouter.ai/google/gemini-2.5-pro"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.5-flash-lite",
+    "model_name": "Gemini 3.5 Flash Lite",
+    "model_provider": "google",
+    "model_description": "Cheapest current Gemini tier, keeping the full 1M-token context window and multimodal input at a fraction of Flash pricing.",
+    "model_info": "https://ai.google.dev/gemini-api/docs/models",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 65536,
+    "cost_per_million_tokens": {
+      "input": 0.3,
+      "cached_input": 0.03,
+      "output": 2.5
+    },
+    "tuning": [
+      "function",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-3.5-flash-lite"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-3.5-flash-lite",
+        "model_info": "https://openrouter.ai/google/gemini-3.5-flash-lite"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.7-flash",
+    "model_name": "Gemini 3.7 Flash",
+    "model_provider": "google",
+    "model_description": "Previous Flash-tier Gemini release, still served. Same context window, output limit, modalities, and pricing as Gemini 3.8 Flash.",
+    "model_info": "https://ai.google.dev/gemini-api/docs/models",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 65536,
+    "cost_per_million_tokens": {
+      "input": 0.75,
+      "cached_input": 0.075,
+      "output": 3.75
+    },
+    "tuning": [
+      "function",
+      "multimodal",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-3.7-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-3.7-flash",
+        "model_info": "https://openrouter.ai/google/gemini-3.7-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "gemini-3.8-flash",
+    "model_name": "Gemini 3.8 Flash",
+    "model_provider": "google",
+    "model_description": "Google's current Flash-tier Gemini model. Natively multimodal \u2014 text, image, audio, video, and document\ninput with text output \u2014 with a 1M-token context window and 64K max output.\n",
+    "model_info": "https://ai.google.dev/gemini-api/docs/models",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 65536,
+    "cost_per_million_tokens": {
+      "input": 0.75,
+      "cached_input": 0.075,
+      "output": 3.75
+    },
+    "tuning": [
+      "function",
+      "multimodal",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "audio",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "google",
+        "model_id_on_provider": "gemini-3.8-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "google/gemini-3.8-flash",
+        "model_info": "https://openrouter.ai/google/gemini-3.8-flash"
       }
     ]
   },
@@ -674,6 +1059,118 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "z-ai/glm-5.1",
         "model_info": "https://openrouter.ai/z-ai/glm-5.1"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.2",
+    "model_name": "GLM-5.2",
+    "model_provider": "zai",
+    "model_description": "Z.AI's GLM-5.2 model, the base that GLM-5.3 is post-trained from. Long-context text model aimed at coding and agentic work.",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 1.4,
+      "cached_input": 0.14,
+      "output": 4.4
+    },
+    "tuning": [
+      "function",
+      "code"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5.2"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5.2",
+        "model_info": "https://openrouter.ai/z-ai/glm-5.2"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.3-flash",
+    "model_name": "GLM-5.3 Flash",
+    "model_provider": "zai",
+    "model_description": "Fast, low-cost variant of GLM-5.3 with the largest context window in the family. Unlike the full GLM-5.3\nit accepts image and video input alongside text, at roughly one fifteenth the input cost.\n",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 1310720,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 0.09,
+      "cached_input": 0.018,
+      "output": 0.3
+    },
+    "tuning": [
+      "function",
+      "code",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5.3-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5.3-flash",
+        "model_info": "https://openrouter.ai/z-ai/glm-5.3-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "glm-5.3",
+    "model_name": "GLM-5.3",
+    "model_provider": "zai",
+    "model_description": "Z.AI's flagship model for complex coding, long-horizon agentic work, and cybersecurity tasks, released\nAugust 2026. Uses the same base model as GLM-5.2 with its capability gains coming from scaled-up post-training. Shipped\nvia API and the GLM Coding Plan; weights are not publicly available.\n",
+    "model_info": "https://docs.z.ai/guides/overview/pricing",
+    "model_type": "chat",
+    "context_window": 1310720,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 1.4,
+      "cached_input": 0.26,
+      "output": 4.4
+    },
+    "tuning": [
+      "function",
+      "code",
+      "reasoning"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "zai",
+        "model_id_on_provider": "glm-5.3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "z-ai/glm-5.3",
+        "model_info": "https://openrouter.ai/z-ai/glm-5.3"
       }
     ]
   },
@@ -1528,11 +2025,12 @@
     "model_info": "https://platform.openai.com/docs/models/gpt-5.5-pro",
     "model_type": "chat",
     "context_window": 1050000,
-    "max_tokens": 1049999,
+    "max_tokens": 128000,
     "cost_per_million_tokens": {
       "input": 30,
       "output": 180
     },
+    "knowledge_cutoff": "2025-12-01",
     "tuning": [
       "function"
     ],
@@ -1562,11 +2060,13 @@
     "model_info": "https://platform.openai.com/docs/models/gpt-5.5",
     "model_type": "chat",
     "context_window": 1050000,
-    "max_tokens": 1049999,
+    "max_tokens": 128000,
     "cost_per_million_tokens": {
       "input": 5,
+      "cached_input": 0.5,
       "output": 30
     },
+    "knowledge_cutoff": "2025-12-01",
     "tuning": [
       "function"
     ],
@@ -1585,6 +2085,140 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "openai/gpt-5.5",
         "model_info": "https://openrouter.ai/openai/gpt-5.5"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-luna",
+    "model_name": "GPT-5.6 Luna",
+    "model_provider": "openai",
+    "model_description": "Smallest and cheapest tier of the GPT-5.6 family, at one tenth Terra's input cost while keeping the full\n1.05M-token context window and 128K output limit. Suited to high-volume classification, extraction, and routing.\n",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.6-luna",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 0.2,
+      "cached_input": 0.02,
+      "output": 1.2
+    },
+    "knowledge_cutoff": "2026-02-16",
+    "tuning": [
+      "function",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.6-luna"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.6-luna",
+        "cost_per_million_tokens": {
+          "input": 0.2,
+          "cached_input": 0.02,
+          "cache_write_input": 0.25,
+          "output": 1.2
+        },
+        "model_info": "https://openrouter.ai/openai/gpt-5.6-luna"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-sol",
+    "model_name": "GPT-5.6 Sol",
+    "model_provider": "openai",
+    "model_description": "Top tier of the GPT-5.6 family, superseded as OpenAI's flagship by GPT-6 Astra but still served. Aliased\nas gpt-5.6. Accepts text and image input with text output. OpenAI lists promotional pricing available at least through\n2026-11-21; the rates here are the standard published rates, and OpenRouter currently bills below them.\n",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.6-sol",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 4,
+      "cached_input": 0.4,
+      "output": 20
+    },
+    "knowledge_cutoff": "2026-02-16",
+    "tuning": [
+      "function",
+      "reasoning",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.6-sol"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.6-sol",
+        "cost_per_million_tokens": {
+          "input": 2,
+          "cached_input": 0.2,
+          "cache_write_input": 2.5,
+          "output": 10
+        },
+        "model_info": "https://openrouter.ai/openai/gpt-5.6-sol"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-5.6-terra",
+    "model_name": "GPT-5.6 Terra",
+    "model_provider": "openai",
+    "model_description": "Mid tier of the GPT-5.6 family. Same 1.05M-token context window and 128K output limit as Sol at roughly\nhalf the input cost, making it the general-purpose default of the family.\n",
+    "model_info": "https://platform.openai.com/docs/models/gpt-5.6-terra",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.2,
+      "output": 12
+    },
+    "knowledge_cutoff": "2026-02-16",
+    "tuning": [
+      "function",
+      "reasoning",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-5.6-terra"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-5.6-terra",
+        "cost_per_million_tokens": {
+          "input": 2,
+          "cached_input": 0.2,
+          "cache_write_input": 2.5,
+          "output": 12
+        },
+        "model_info": "https://openrouter.ai/openai/gpt-5.6-terra"
       }
     ]
   },
@@ -1626,6 +2260,51 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "openai/gpt-5",
         "model_info": "https://openrouter.ai/openai/gpt-5"
+      }
+    ]
+  },
+  {
+    "model_id": "gpt-6-astra",
+    "model_name": "GPT-6 Astra",
+    "model_provider": "openai",
+    "model_description": "OpenAI's flagship model and the first of the GPT-6 generation, released September 2026. Accepts text and\nimage input with text output, supports tool calling and the full Responses API tool set, and exposes effort levels from\nlow through max. Prompts beyond 272K input tokens reprice the entire request \u2014 2x input and cache rates, 1.5x output \u2014\nnot just the overflow.\n",
+    "model_info": "https://platform.openai.com/docs/models/gpt-6-astra",
+    "model_type": "chat",
+    "context_window": 1050000,
+    "max_tokens": 128000,
+    "cost_per_million_tokens": {
+      "input": 10,
+      "cached_input": 1,
+      "output": 50
+    },
+    "knowledge_cutoff": "2026-04-30",
+    "tuning": [
+      "function",
+      "reasoning",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openai",
+        "model_id_on_provider": "gpt-6-astra"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "openai/gpt-6-astra",
+        "cost_per_million_tokens": {
+          "input": 10,
+          "cached_input": 1,
+          "cache_write_input": 12.5,
+          "output": 50
+        },
+        "model_info": "https://openrouter.ai/openai/gpt-6-astra"
       }
     ]
   },
@@ -1712,6 +2391,117 @@
     ]
   },
   {
+    "model_id": "grok-4.3",
+    "model_name": "Grok 4.3",
+    "model_provider": "x-ai",
+    "model_description": "Long-context Grok release with a 1M-token window and 900K output limit at roughly half the cost of Grok 4.5 and 4.6.",
+    "model_info": "https://docs.x.ai/docs/models",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 900000,
+    "cost_per_million_tokens": {
+      "input": 1.25,
+      "cached_input": 0.2,
+      "output": 2.5
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "x-ai",
+        "model_id_on_provider": "grok-4.3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "x-ai/grok-4.3",
+        "model_info": "https://openrouter.ai/x-ai/grok-4.3"
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.5",
+    "model_name": "Grok 4.5",
+    "model_provider": "x-ai",
+    "model_description": "Predecessor to Grok 4.6 with the same context window, output limit, and pricing; cached input is billed slightly lower.",
+    "model_info": "https://docs.x.ai/docs/models",
+    "model_type": "chat",
+    "context_window": 500000,
+    "max_tokens": 450000,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.3,
+      "output": 6
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "x-ai",
+        "model_id_on_provider": "grok-4.5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "x-ai/grok-4.5",
+        "model_info": "https://openrouter.ai/x-ai/grok-4.5"
+      }
+    ]
+  },
+  {
+    "model_id": "grok-4.6",
+    "model_name": "Grok 4.6",
+    "model_provider": "x-ai",
+    "model_description": "xAI's current flagship Grok model. Trades the very large context window of the Grok 4.20 line for a\n500K-token window with a 450K output limit, at a higher per-token price.\n",
+    "model_info": "https://docs.x.ai/docs/models",
+    "model_type": "chat",
+    "context_window": 500000,
+    "max_tokens": 450000,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.5,
+      "output": 6
+    },
+    "tuning": [
+      "function",
+      "reasoning"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "x-ai",
+        "model_id_on_provider": "grok-4.6"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "x-ai/grok-4.6",
+        "model_info": "https://openrouter.ai/x-ai/grok-4.6"
+      }
+    ]
+  },
+  {
     "model_id": "kimi-k2.6",
     "model_name": "Kimi K2.6",
     "model_provider": "moonshotai",
@@ -1745,6 +2535,46 @@
         "provider_id": "openrouter",
         "model_id_on_provider": "moonshotai/kimi-k2.6",
         "model_info": "https://openrouter.ai/moonshotai/kimi-k2.6"
+      }
+    ]
+  },
+  {
+    "model_id": "kimi-k3",
+    "model_name": "Kimi K3",
+    "model_provider": "moonshotai",
+    "model_description": "Moonshot AI's most capable model, released July 2026. A 2.8-trillion-parameter model built on Kimi Delta\nAttention \u2014 a hybrid linear attention mechanism \u2014 plus Attention Residuals, with native visual understanding and a\n1M-token context window. Supports vision input, tool calling, extended reasoning, prompt caching, and structured outputs.\nFlat pay-as-you-go pricing with no tiering by context length.\n",
+    "model_info": "https://platform.kimi.ai/docs/guide/kimi-k3-quickstart",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 3,
+      "cached_input": 0.3,
+      "output": 15
+    },
+    "tuning": [
+      "function",
+      "reasoning",
+      "multimodal",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "moonshotai",
+        "model_id_on_provider": "kimi-k3"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "moonshotai/kimi-k3",
+        "model_info": "https://openrouter.ai/moonshotai/kimi-k3"
       }
     ]
   },
@@ -2029,7 +2859,7 @@
     "model_description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for\nlong-horizon agentic work, coding, and tool use. It is built on MiniMax Sparse Attention (MSA), which replaces full attention with KV-block selection to cut per-token\ncompute at long context \u2014 roughly 1/20 the cost of the previous generation at 1M tokens, with substantially faster prefill and decode while retaining quality across\nmost tasks.\n",
     "model_info": "https://www.minimax.io/models/text/m3",
     "model_type": "chat",
-    "context_window": 512000,
+    "context_window": 1048576,
     "max_tokens": 128000,
     "cost_per_million_tokens": {
       "input": 0.6,
@@ -2229,6 +3059,43 @@
     ]
   },
   {
+    "model_id": "mistral-medium-3-5",
+    "model_name": "Mistral Medium 3.5",
+    "model_provider": "mistralai",
+    "model_description": "Mistral's current medium-tier model, with a 256K-token context window and text, image, and document input.",
+    "model_info": "https://docs.mistral.ai/getting-started/models/models_overview/",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 209715,
+    "cost_per_million_tokens": {
+      "input": 1.5,
+      "output": 7.5
+    },
+    "tuning": [
+      "function",
+      "multilingual",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "mistralai",
+        "model_id_on_provider": "mistral-medium-3.5"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "mistralai/mistral-medium-3-5",
+        "model_info": "https://openrouter.ai/mistralai/mistral-medium-3-5"
+      }
+    ]
+  },
+  {
     "model_id": "mistral-medium-latest",
     "model_name": "Mistral Medium (latest)",
     "model_provider": "mistralai",
@@ -2376,6 +3243,79 @@
       {
         "provider_id": "cloudflare",
         "model_id_on_provider": "@cf/nvidia/nemotron-3-120b-a12b"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3-ultra-550b-a55b",
+    "model_name": "Nemotron 3 Ultra 550B A55B",
+    "model_provider": "nvidia",
+    "model_description": "Largest model in NVIDIA's Nemotron 3 family: a 550B mixture of experts with 55B active parameters and a 256K-token context window.",
+    "model_info": "https://build.nvidia.com/nvidia",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 32768,
+    "cost_per_million_tokens": {
+      "input": 0.625,
+      "cached_input": 0.1875,
+      "output": 3.125
+    },
+    "tuning": [
+      "function",
+      "instruction",
+      "reasoning"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "nvidia",
+        "model_id_on_provider": "nemotron-3-ultra-550b-a55b"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "nvidia/nemotron-3-ultra-550b-a55b",
+        "model_info": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b"
+      }
+    ]
+  },
+  {
+    "model_id": "nemotron-3.5-lightning",
+    "model_name": "Nemotron 3.5 Lightning",
+    "model_provider": "nvidia",
+    "model_description": "NVIDIA's latency-optimized Nemotron model, with a 256K-token context window at very low per-token cost.",
+    "model_info": "https://build.nvidia.com/nvidia",
+    "model_type": "chat",
+    "context_window": 262144,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 0.08,
+      "cached_input": 0.04,
+      "output": 0.2
+    },
+    "tuning": [
+      "function",
+      "instruction"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "nvidia",
+        "model_id_on_provider": "nemotron-3.5-lightning"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "nvidia/nemotron-3.5-lightning",
+        "model_info": "https://openrouter.ai/nvidia/nemotron-3.5-lightning"
       }
     ]
   },
@@ -2585,7 +3525,7 @@
   },
   {
     "model_id": "qwen3.7-plus",
-    "model_name": "Qwen 3.6 Plus",
+    "model_name": "Qwen 3.7 Plus",
     "model_provider": "qwen",
     "model_description": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output,\nbuilding on the series' text capabilities with a comprehensive upgrade to its vision-language abilities while retaining\nfull-stack, agent-level intelligence for coding, tool use, and productivity workflows. Its distinguishing trait is\nmulti-modal interactive hybrid agent capability: it can perceive real-world scenes, read screens and interact with GUIs,\ngenerate code from visual references, and perform end-to-end navigation within mobile apps.\n",
     "model_info": "https://openrouter.ai/qwen/qwen3.7-plus",
@@ -2622,6 +3562,154 @@
           "output": 1.6
         },
         "model_info": "https://openrouter.ai/qwen/qwen3.7-plus"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-2.4t-a95b",
+    "model_name": "Qwen 3.8 2.4T A95B",
+    "model_provider": "qwen",
+    "model_description": "Open-weights release of the Qwen 3.8 Max architecture: a 2.4-trillion-parameter mixture of experts with\n95B active parameters. Text-only, in contrast to the multimodal hosted Max endpoint.\n",
+    "model_info": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b",
+    "model_type": "chat",
+    "context_window": 1048576,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.25,
+      "output": 6
+    },
+    "tuning": [
+      "function",
+      "reasoning",
+      "code"
+    ],
+    "input_type": [
+      "text"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.8-2.4t-a95b",
+        "model_info": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-27b",
+    "model_name": "Qwen 3.8 27B",
+    "model_provider": "qwen",
+    "model_description": "Open-weights 27B dense model in the Qwen 3.8 family, with a 1M-token context window and text, image, and video input.",
+    "model_info": "https://openrouter.ai/qwen/qwen3.8-27b",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 0.214,
+      "cached_input": 0.15,
+      "output": 2.55
+    },
+    "tuning": [
+      "function",
+      "multimodal"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.8-27b",
+        "model_info": "https://openrouter.ai/qwen/qwen3.8-27b"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-flash",
+    "model_name": "Qwen 3.8 Flash",
+    "model_provider": "qwen",
+    "model_description": "Fast, low-cost tier of the Qwen 3.8 family. Keeps the 1M-token context window and multimodal text, image,\nand video input of Qwen 3.8 Max at a small fraction of the cost.\n",
+    "model_info": "https://openrouter.ai/qwen/qwen3.8-flash",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 0.15,
+      "cached_input": 0.016,
+      "cache_write_input": 0.2,
+      "output": 0.47
+    },
+    "tuning": [
+      "function",
+      "multimodal",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3.8-flash"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.8-flash",
+        "model_info": "https://openrouter.ai/qwen/qwen3.8-flash"
+      }
+    ]
+  },
+  {
+    "model_id": "qwen3.8-max",
+    "model_name": "Qwen 3.8 Max",
+    "model_provider": "qwen",
+    "model_description": "Alibaba's most capable Qwen model to date: a 2.4-trillion-parameter mixture-of-experts model accepting\ntext, image, and video input with text output, and reasoning enabled by default. Post-trained for coding and agentic\nwork including multi-step software projects, multi-tool orchestration, and long-horizon task execution. The 0902 snapshot\nis the current release.\n",
+    "model_info": "https://openrouter.ai/qwen/qwen3.8-max-0902",
+    "model_type": "chat",
+    "context_window": 1000000,
+    "max_tokens": 131072,
+    "cost_per_million_tokens": {
+      "input": 2,
+      "cached_input": 0.25,
+      "cache_write_input": 2.5,
+      "output": 6
+    },
+    "tuning": [
+      "function",
+      "reasoning",
+      "code",
+      "structured"
+    ],
+    "input_type": [
+      "text",
+      "image",
+      "video"
+    ],
+    "output_type": [
+      "text"
+    ],
+    "providers": [
+      {
+        "provider_id": "qwen",
+        "model_id_on_provider": "qwen3.8-max"
+      },
+      {
+        "provider_id": "openrouter",
+        "model_id_on_provider": "qwen/qwen3.8-max-0902",
+        "model_info": "https://openrouter.ai/qwen/qwen3.8-max-0902"
       }
     ]
   }
