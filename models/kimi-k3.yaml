@@ -1,0 +1,25 @@
+model_id: kimi-k3
+model_name: Kimi K3
+model_provider: moonshotai
+model_description: |
+  Moonshot AI's most capable model, released July 2026. A 2.8-trillion-parameter model built on Kimi Delta
+  Attention — a hybrid linear attention mechanism — plus Attention Residuals, with native visual understanding and a
+  1M-token context window. Supports vision input, tool calling, extended reasoning, prompt caching, and structured outputs.
+  Flat pay-as-you-go pricing with no tiering by context length.
+model_info: https://platform.kimi.ai/docs/guide/kimi-k3-quickstart
+model_type: chat
+context_window: 1048576
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 3
+  cached_input: 0.3
+  output: 15
+tuning: [function, reasoning, multimodal, structured]
+input_type: [text, image, video]
+output_type: [text]
+providers:
+  - provider_id: moonshotai
+    model_id_on_provider: kimi-k3
+  - provider_id: openrouter
+    model_id_on_provider: moonshotai/kimi-k3
+    model_info: https://openrouter.ai/moonshotai/kimi-k3

@@ -1,0 +1,23 @@
+model_id: gemini-3.8-flash
+model_name: Gemini 3.8 Flash
+model_provider: google
+model_description: |
+  Google's current Flash-tier Gemini model. Natively multimodal — text, image, audio, video, and document
+  input with text output — with a 1M-token context window and 64K max output.
+model_info: https://ai.google.dev/gemini-api/docs/models
+model_type: chat
+context_window: 1048576
+max_tokens: 65536
+cost_per_million_tokens:
+  input: 0.75
+  cached_input: 0.075
+  output: 3.75
+tuning: [function, multimodal, structured]
+input_type: [text, image, audio, video]
+output_type: [text]
+providers:
+  - provider_id: google
+    model_id_on_provider: gemini-3.8-flash
+  - provider_id: openrouter
+    model_id_on_provider: google/gemini-3.8-flash
+    model_info: https://openrouter.ai/google/gemini-3.8-flash

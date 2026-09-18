@@ -8,7 +8,7 @@ model_description: |
   most tasks.
 model_info: "https://www.minimax.io/models/text/m3"
 model_type: chat
-context_window: 512000
+context_window: 1048576
 max_tokens: 128000
 cost_per_million_tokens:
   input: 0.6

@@ -1,0 +1,19 @@
+model_id: qwen3.8-27b
+model_name: Qwen 3.8 27B
+model_provider: qwen
+model_description: Open-weights 27B dense model in the Qwen 3.8 family, with a 1M-token context window and text, image, and video input.
+model_info: https://openrouter.ai/qwen/qwen3.8-27b
+model_type: chat
+context_window: 1000000
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 0.214
+  cached_input: 0.15
+  output: 2.55
+tuning: [function, multimodal]
+input_type: [text, image, video]
+output_type: [text]
+providers:
+  - provider_id: openrouter
+    model_id_on_provider: qwen/qwen3.8-27b
+    model_info: https://openrouter.ai/qwen/qwen3.8-27b

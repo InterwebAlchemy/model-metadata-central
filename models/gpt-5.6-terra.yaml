@@ -1,0 +1,29 @@
+model_id: gpt-5.6-terra
+model_name: GPT-5.6 Terra
+model_provider: openai
+model_description: |
+  Mid tier of the GPT-5.6 family. Same 1.05M-token context window and 128K output limit as Sol at roughly
+  half the input cost, making it the general-purpose default of the family.
+model_info: https://platform.openai.com/docs/models/gpt-5.6-terra
+model_type: chat
+context_window: 1050000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 2
+  cached_input: 0.2
+  output: 12
+knowledge_cutoff: "2026-02-16"
+tuning: [function, reasoning, structured]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: openai
+    model_id_on_provider: gpt-5.6-terra
+  - provider_id: openrouter
+    model_id_on_provider: openai/gpt-5.6-terra
+    cost_per_million_tokens:
+      input: 2
+      cached_input: 0.2
+      cache_write_input: 2.5
+      output: 12
+    model_info: https://openrouter.ai/openai/gpt-5.6-terra

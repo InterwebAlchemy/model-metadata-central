@@ -1,0 +1,23 @@
+model_id: deepseek-v4.1-flash
+model_name: DeepSeek V4.1 Flash
+model_provider: deepseek
+model_description: |
+  Current DeepSeek Flash-tier model, adding image input over the V4 Flash line. 1M-token context window
+  with a 384K output limit and an unusually cheap cache-read rate.
+model_info: https://api-docs.deepseek.com/quick_start/pricing
+model_type: chat
+context_window: 1048576
+max_tokens: 384000
+cost_per_million_tokens:
+  input: 0.15
+  cached_input: 0.003
+  output: 0.6
+tuning: [function, code, multimodal]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: deepseek
+    model_id_on_provider: deepseek-v4.1-flash
+  - provider_id: openrouter
+    model_id_on_provider: deepseek/deepseek-v4.1-flash
+    model_info: https://openrouter.ai/deepseek/deepseek-v4.1-flash

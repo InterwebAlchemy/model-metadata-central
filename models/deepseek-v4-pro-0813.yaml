@@ -1,0 +1,21 @@
+model_id: deepseek-v4-pro-0813
+model_name: DeepSeek V4 Pro (0813)
+model_provider: deepseek
+model_description: August 2026 snapshot of DeepSeek V4 Pro, priced well below the original V4 Pro release with the same 1M-token context window.
+model_info: https://api-docs.deepseek.com/quick_start/pricing
+model_type: chat
+context_window: 1048576
+max_tokens: 384000
+cost_per_million_tokens:
+  input: 0.66
+  cached_input: 0.022
+  output: 1.98
+tuning: [function, code, reasoning]
+input_type: [text]
+output_type: [text]
+providers:
+  - provider_id: deepseek
+    model_id_on_provider: deepseek-v4-pro-0813
+  - provider_id: openrouter
+    model_id_on_provider: deepseek/deepseek-v4-pro-0813
+    model_info: https://openrouter.ai/deepseek/deepseek-v4-pro-0813

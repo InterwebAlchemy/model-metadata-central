@@ -1,0 +1,21 @@
+model_id: nemotron-3.5-lightning
+model_name: Nemotron 3.5 Lightning
+model_provider: nvidia
+model_description: NVIDIA's latency-optimized Nemotron model, with a 256K-token context window at very low per-token cost.
+model_info: https://build.nvidia.com/nvidia
+model_type: chat
+context_window: 262144
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 0.08
+  cached_input: 0.04
+  output: 0.2
+tuning: [function, instruction]
+input_type: [text]
+output_type: [text]
+providers:
+  - provider_id: nvidia
+    model_id_on_provider: nemotron-3.5-lightning
+  - provider_id: openrouter
+    model_id_on_provider: nvidia/nemotron-3.5-lightning
+    model_info: https://openrouter.ai/nvidia/nemotron-3.5-lightning

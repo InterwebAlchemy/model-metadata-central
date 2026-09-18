@@ -1,0 +1,25 @@
+model_id: claude-sonnet-5
+model_name: Claude Sonnet 5
+model_provider: anthropic
+model_description: |
+  Anthropic's balanced mid-tier model: Opus-family context and output limits at a lower price. Adaptive
+  thinking with effort levels low through max, 1M-token context, and 128K max output. Does not support mid-conversation
+  system messages; budget_tokens and assistant prefill are removed.
+model_info: https://docs.anthropic.com/en/docs/models/claude-sonnet-5
+model_type: chat
+context_window: 1000000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 2
+  cached_input: 0.2
+  cache_write_input: 2.5
+  output: 10
+tuning: [function, reasoning]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-sonnet-5
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-sonnet-5
+    model_info: https://openrouter.ai/anthropic/claude-sonnet-5

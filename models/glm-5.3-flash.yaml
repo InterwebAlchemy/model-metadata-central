@@ -1,0 +1,23 @@
+model_id: glm-5.3-flash
+model_name: GLM-5.3 Flash
+model_provider: zai
+model_description: |
+  Fast, low-cost variant of GLM-5.3 with the largest context window in the family. Unlike the full GLM-5.3
+  it accepts image and video input alongside text, at roughly one fifteenth the input cost.
+model_info: https://docs.z.ai/guides/overview/pricing
+model_type: chat
+context_window: 1310720
+max_tokens: 131072
+cost_per_million_tokens:
+  input: 0.09
+  cached_input: 0.018
+  output: 0.3
+tuning: [function, code, multimodal]
+input_type: [text, image, video]
+output_type: [text]
+providers:
+  - provider_id: zai
+    model_id_on_provider: glm-5.3-flash
+  - provider_id: openrouter
+    model_id_on_provider: z-ai/glm-5.3-flash
+    model_info: https://openrouter.ai/z-ai/glm-5.3-flash

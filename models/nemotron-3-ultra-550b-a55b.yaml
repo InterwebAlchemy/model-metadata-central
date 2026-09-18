@@ -1,0 +1,21 @@
+model_id: nemotron-3-ultra-550b-a55b
+model_name: Nemotron 3 Ultra 550B A55B
+model_provider: nvidia
+model_description: "Largest model in NVIDIA's Nemotron 3 family: a 550B mixture of experts with 55B active parameters and a 256K-token context window."
+model_info: https://build.nvidia.com/nvidia
+model_type: chat
+context_window: 262144
+max_tokens: 32768
+cost_per_million_tokens:
+  input: 0.625
+  cached_input: 0.1875
+  output: 3.125
+tuning: [function, instruction, reasoning]
+input_type: [text]
+output_type: [text]
+providers:
+  - provider_id: nvidia
+    model_id_on_provider: nemotron-3-ultra-550b-a55b
+  - provider_id: openrouter
+    model_id_on_provider: nvidia/nemotron-3-ultra-550b-a55b
+    model_info: https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b

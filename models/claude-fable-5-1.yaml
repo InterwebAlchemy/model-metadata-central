@@ -1,0 +1,26 @@
+model_id: claude-fable-5-1
+model_name: Claude Fable 5.1
+model_provider: anthropic
+model_description: |
+  Anthropic's most capable widely released model, aimed at demanding reasoning and long-horizon agentic
+  work. Thinking is always on and cannot be disabled; the raw chain of thought is never returned. Forced tool choice
+  (any/tool) returns a 400, thinking blocks are bound to the producing model, and editing earlier turns invalidates them
+  ("preserved thinking"). Requires 30-day data retention.
+model_info: https://docs.anthropic.com/en/docs/models/claude-fable-5-1
+model_type: chat
+context_window: 1000000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 10
+  cached_input: 0.25
+  cache_write_input: 12.5
+  output: 50
+tuning: [function, reasoning]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-fable-5-1
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-fable-5.1
+    model_info: https://openrouter.ai/anthropic/claude-fable-5.1

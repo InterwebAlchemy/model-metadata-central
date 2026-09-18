@@ -1,0 +1,25 @@
+model_id: claude-opus-4-8
+model_name: Claude Opus 4.8
+model_provider: anthropic
+model_description: |
+  Opus-tier model preceding Claude Opus 5, with the same request surface as Opus 4.7. Adaptive thinking
+  must be requested explicitly — omitting the thinking parameter runs without it. Supports fast mode, task budgets, and
+  mid-conversation system messages.
+model_info: https://docs.anthropic.com/en/docs/models/claude-opus-4-8
+model_type: chat
+context_window: 1000000
+max_tokens: 128000
+cost_per_million_tokens:
+  input: 5
+  cached_input: 0.5
+  cache_write_input: 6.25
+  output: 25
+tuning: [function, reasoning]
+input_type: [text, image]
+output_type: [text]
+providers:
+  - provider_id: anthropic
+    model_id_on_provider: claude-opus-4-8
+  - provider_id: openrouter
+    model_id_on_provider: anthropic/claude-opus-4.8
+    model_info: https://openrouter.ai/anthropic/claude-opus-4.8
